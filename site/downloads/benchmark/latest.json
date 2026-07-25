@@ -1,0 +1,2643 @@
+{
+  "schemaVersion": 1,
+  "benchmark": "seqeyes-web-seq-vs-bseq-parser-and-accuracy",
+  "mode": "reporting-first-performance-blocking-accuracy",
+  "timestamp": "2026-07-24T07:07:56.019Z",
+  "environment": {
+    "node": "v20.20.2",
+    "platform": "darwin",
+    "architecture": "arm64",
+    "cpuModel": "Apple M3 Pro",
+    "logicalCpuCount": 11,
+    "totalMemoryBytes": 19327352832,
+    "rootCommit": "84c112b458c5ba508056448f84c06a19167663ff"
+  },
+  "parser": {
+    "packageVersion": "0.2.12",
+    "pluginCommit": "80cabb39ee9173d0929365248ca9da60a37ca8da",
+    "compiledModuleDirectory": "seqeyes_plugin/out/pulseq"
+  },
+  "fixtureDirectory": "bseq/benchmark_data/demo_seq_pairs",
+  "options": {
+    "warmupIterations": 3,
+    "measuredIterations": 15,
+    "filter": "^(writeEpi|writeEpiRS|writeEpiSpinEchoRS|writeSpiral|writeGradientEcho|writeRadialGradientEcho|writeUTE|writeZTE_Petra|writeTSE|writeHASTE|writeTrufi|wave_test_R3x2)$",
+    "includeExtremeFixture": true
+  },
+  "summary": {
+    "pairCount": 13,
+    "accuracyPassedPairs": 13,
+    "accuracyFailedPairs": 0,
+    "totalSeqBytes": 17307935,
+    "totalBseqBytes": 13384835,
+    "aggregateBseqToSeqSizeRatio": 0.7733351783444992,
+    "parseSpeedupGeometricMean": 5.085136722628615,
+    "parseSpeedupMedian": 4.606793998595075
+  },
+  "pairs": [
+    {
+      "name": "writeEpi",
+      "category": "demoSeq",
+      "files": {
+        "seq": "bseq/benchmark_data/demo_seq_pairs/writeEpi.seq",
+        "bseq": "bseq/benchmark_data/demo_seq_pairs/writeEpi.bseq",
+        "seqBytes": 51653,
+        "bseqBytes": 25502,
+        "bseqToSeqSizeRatio": 0.4937176930671984,
+        "seqSha256": "0215d0bb5d67a5f6884f99077556ae4df7a9b822eb909e56090c959a89cd5de3",
+        "bseqSha256": "31abdcf29db995f7094d3203dd969476357a7fab19ecc206da676365de5bf140"
+      },
+      "descriptors": {
+        "version": "1.5.1",
+        "blocks": 390,
+        "rfEvents": 3,
+        "arbitraryGradientEvents": 0,
+        "arbitraryGradientBlocks": {
+          "blocksWithAny": 0,
+          "totalBlockReferences": 0,
+          "perAxisBlockReferences": {
+            "gx": 0,
+            "gy": 0,
+            "gz": 0
+          },
+          "uniqueReferencedEvents": 0,
+          "fractionOfBlocksWithAny": 0
+        },
+        "trapezoidGradientEvents": 7,
+        "adcEvents": 1,
+        "extensionNodes": 0,
+        "shapes": 2,
+        "expandedShapeSamples": 6000,
+        "totalDurationSeconds": 0.15405000000000102
+      },
+      "accuracy": {
+        "passed": true,
+        "versionCompatibility": {
+          "passed": true,
+          "seq": {
+            "major": 1,
+            "minor": 5,
+            "revision": 1
+          },
+          "bseq": {
+            "major": 1,
+            "minor": 5,
+            "revision": 2
+          },
+          "note": "Pulseq MATLAB write() and writeBinary() may emit text revision 1 and binary revision 2 from the same object."
+        },
+        "structure": {
+          "name": "normalizedStructure",
+          "mismatchCount": 0,
+          "mismatches": [],
+          "numericComparisonCount": 9221,
+          "maxAbsoluteDifference": 3.6363636364694685,
+          "maxRelativeDifference": 0.000003200000000093132
+        },
+        "decoded": {
+          "passed": true,
+          "metrics": {
+            "blockCountSeq": 390,
+            "blockCountBseq": 390,
+            "presenceMismatchCount": 0,
+            "lengthMismatchCount": 0,
+            "metadataMismatchCount": 0,
+            "maxTimeDifferenceSec": 0,
+            "maxGradientAbsoluteDifference": 3.6363636364694685,
+            "maxGradientMagnitude": 1183910,
+            "maxRfMagnitudeDifference": 0.00029836352115353293,
+            "maxRfPhaseDifferenceRad": 0.00006282138109625635
+          },
+          "tolerances": {
+            "timeSeconds": 1e-9,
+            "gradientAbsolute": 5.91955,
+            "rfMagnitudeAbsolute": 0.001,
+            "rfPhaseAbsoluteRad": 0.001
+          },
+          "mismatches": []
+        },
+        "totalDuration": {
+          "seqSeconds": 0.15405000000000102,
+          "bseqSeconds": 0.15405000000000102,
+          "absoluteDifferenceSeconds": 0,
+          "toleranceSeconds": 1e-9,
+          "passed": true
+        }
+      },
+      "performance": {
+        "acquisition": {
+          "note": "Warm filesystem read plus allocation; not a controlled cold-cache measurement.",
+          "seq": {
+            "medianMs": 0.01795899999999051,
+            "p95Ms": 0.08920899999999676,
+            "minMs": 0.010165999999998121,
+            "maxMs": 0.08920899999999676,
+            "medianAbsoluteDeviationMs": 0.003624000000016281,
+            "medianMegabytesPerSecond": 2876.1623698439384,
+            "samplesMs": [
+              0.08920899999999676,
+              0.01995900000000006,
+              0.02158300000000679,
+              0.021458000000009747,
+              0.023958000000007473,
+              0.02108400000000188,
+              0.019458000000000197,
+              0.017957999999993035,
+              0.01795899999999051,
+              0.014082999999999402,
+              0.017416000000011422,
+              0.010790999999997553,
+              0.011958999999990283,
+              0.010165999999998121,
+              0.012999999999991019
+            ]
+          },
+          "bseq": {
+            "medianMs": 0.01533399999999574,
+            "p95Ms": 0.07250000000000512,
+            "minMs": 0.010459000000011542,
+            "maxMs": 0.07250000000000512,
+            "medianAbsoluteDeviationMs": 0.003250999999991677,
+            "medianMegabytesPerSecond": 1663.1016042785368,
+            "samplesMs": [
+              0.024916999999987866,
+              0.02541600000000699,
+              0.01391599999999471,
+              0.03387499999999477,
+              0.01533399999999574,
+              0.07250000000000512,
+              0.012499999999988631,
+              0.01850000000000307,
+              0.013917000000006396,
+              0.01762500000000955,
+              0.011916999999996847,
+              0.012791999999990367,
+              0.0557500000000033,
+              0.012083000000004063,
+              0.010459000000011542
+            ]
+          },
+          "speedupTextOverBinary": 1.1711882092080017
+        },
+        "parsePreloadedBytes": {
+          "note": "Includes UTF-8 decoding for .seq and complete parser validation/shape decompression for both formats.",
+          "seq": {
+            "medianMs": 0.529791000000003,
+            "p95Ms": 0.9915419999999955,
+            "minMs": 0.4462919999999997,
+            "maxMs": 0.9915419999999955,
+            "medianAbsoluteDeviationMs": 0.08249899999999855,
+            "medianMegabytesPerSecond": 97.49693747156843,
+            "samplesMs": [
+              0.9915419999999955,
+              0.8021670000000114,
+              0.699458000000007,
+              0.5784170000000017,
+              0.6332089999999937,
+              0.6482090000000085,
+              0.4787910000000011,
+              0.46595800000000054,
+              0.6222500000000082,
+              0.4613340000000079,
+              0.45291700000001356,
+              0.5197909999999979,
+              0.4462919999999997,
+              0.44729200000000446,
+              0.529791000000003
+            ]
+          },
+          "bseq": {
+            "medianMs": 0.07004200000000083,
+            "p95Ms": 0.530791999999991,
+            "minMs": 0.06587499999999125,
+            "maxMs": 0.530791999999991,
+            "medianAbsoluteDeviationMs": 0.00416700000000958,
+            "medianMegabytesPerSecond": 364.09582821735097,
+            "samplesMs": [
+              0.3402499999999975,
+              0.530791999999991,
+              0.3270830000000018,
+              0.5130840000000063,
+              0.09466600000000369,
+              0.08070800000000133,
+              0.07516700000000753,
+              0.06991699999998957,
+              0.07004200000000083,
+              0.06812499999999488,
+              0.06800000000001205,
+              0.06774999999998954,
+              0.06716699999999776,
+              0.06687500000001023,
+              0.06587499999999125
+            ]
+          },
+          "speedupTextOverBinary": 7.56390451443415
+        }
+      }
+    },
+    {
+      "name": "writeEpiRS",
+      "category": "demoSeq",
+      "files": {
+        "seq": "bseq/benchmark_data/demo_seq_pairs/writeEpiRS.seq",
+        "bseq": "bseq/benchmark_data/demo_seq_pairs/writeEpiRS.bseq",
+        "seqBytes": 132167,
+        "bseqBytes": 43674,
+        "bseqToSeqSizeRatio": 0.33044557264672725,
+        "seqSha256": "455ac599ffed29d86e51124438c034f9926efa0028bc18e9fdec569c56fc3b63",
+        "bseqSha256": "1cdb47639d73865789a5c3ca00cb56ec4dc5061867512277bede432f61f2b79c"
+      },
+      "descriptors": {
+        "version": "1.5.1",
+        "blocks": 67,
+        "rfEvents": 2,
+        "arbitraryGradientEvents": 3,
+        "arbitraryGradientBlocks": {
+          "blocksWithAny": 64,
+          "totalBlockReferences": 64,
+          "perAxisBlockReferences": {
+            "gx": 0,
+            "gy": 64,
+            "gz": 0
+          },
+          "uniqueReferencedEvents": 3,
+          "fractionOfBlocksWithAny": 0.9552238805970149
+        },
+        "trapezoidGradientEvents": 7,
+        "adcEvents": 1,
+        "extensionNodes": 1,
+        "shapes": 10,
+        "expandedShapeSamples": 20024,
+        "totalDurationSeconds": 0.042680000000000065
+      },
+      "accuracy": {
+        "passed": true,
+        "versionCompatibility": {
+          "passed": true,
+          "seq": {
+            "major": 1,
+            "minor": 5,
+            "revision": 1
+          },
+          "bseq": {
+            "major": 1,
+            "minor": 5,
+            "revision": 2
+          },
+          "note": "Pulseq MATLAB write() and writeBinary() may emit text revision 1 and binary revision 2 from the same object."
+        },
+        "structure": {
+          "name": "normalizedStructure",
+          "mismatchCount": 0,
+          "mismatches": [],
+          "numericComparisonCount": 20692,
+          "maxAbsoluteDifference": 3.8461538462433964,
+          "maxRelativeDifference": 0.00000285714285720938
+        },
+        "decoded": {
+          "passed": true,
+          "metrics": {
+            "blockCountSeq": 67,
+            "blockCountBseq": 67,
+            "presenceMismatchCount": 0,
+            "lengthMismatchCount": 0,
+            "metadataMismatchCount": 0,
+            "maxTimeDifferenceSec": 0,
+            "maxGradientAbsoluteDifference": 3.8461538462433964,
+            "maxGradientMagnitude": 1351351.3513513512,
+            "maxRfMagnitudeDifference": 0.0003512552806341773,
+            "maxRfPhaseDifferenceRad": 0.000005461767006664786
+          },
+          "tolerances": {
+            "timeSeconds": 1e-9,
+            "gradientAbsolute": 6.756756756756757,
+            "rfMagnitudeAbsolute": 0.001,
+            "rfPhaseAbsoluteRad": 0.001
+          },
+          "mismatches": []
+        },
+        "totalDuration": {
+          "seqSeconds": 0.042680000000000065,
+          "bseqSeconds": 0.042680000000000065,
+          "absoluteDifferenceSeconds": 0,
+          "toleranceSeconds": 1e-9,
+          "passed": true
+        }
+      },
+      "performance": {
+        "acquisition": {
+          "note": "Warm filesystem read plus allocation; not a controlled cold-cache measurement.",
+          "seq": {
+            "medianMs": 0.022665999999986752,
+            "p95Ms": 0.13683399999999324,
+            "minMs": 0.018624999999985903,
+            "maxMs": 0.13683399999999324,
+            "medianAbsoluteDeviationMs": 0.0017090000000052896,
+            "medianMegabytesPerSecond": 5831.068560843433,
+            "samplesMs": [
+              0.13683399999999324,
+              0.020542000000006055,
+              0.028083000000009406,
+              0.02395900000001916,
+              0.019042000000013104,
+              0.018624999999985903,
+              0.022665999999986752,
+              0.022041999999999007,
+              0.021333999999995967,
+              0.02191699999997354,
+              0.024374999999992042,
+              0.022625000000005002,
+              0.04970900000000711,
+              0.05170899999998824,
+              0.02316600000000335
+            ]
+          },
+          "bseq": {
+            "medianMs": 0.015707999999989397,
+            "p95Ms": 0.06720799999999372,
+            "minMs": 0.011291999999997415,
+            "maxMs": 0.06720799999999372,
+            "medianAbsoluteDeviationMs": 0.0017919999999946867,
+            "medianMegabytesPerSecond": 2780.3666921332747,
+            "samplesMs": [
+              0.02479199999999082,
+              0.020624999999995453,
+              0.015707999999989397,
+              0.06720799999999372,
+              0.011291999999997415,
+              0.017083000000013726,
+              0.01362499999999045,
+              0.01633300000000304,
+              0.012541999999996278,
+              0.014250000000004093,
+              0.014083999999996877,
+              0.01520800000000122,
+              0.017499999999984084,
+              0.02791700000000219,
+              0.015500000000002956
+            ]
+          },
+          "speedupTextOverBinary": 1.442959001782662
+        },
+        "parsePreloadedBytes": {
+          "note": "Includes UTF-8 decoding for .seq and complete parser validation/shape decompression for both formats.",
+          "seq": {
+            "medianMs": 1.1620419999999854,
+            "p95Ms": 2.330959000000007,
+            "minMs": 1.1103750000000048,
+            "maxMs": 2.330959000000007,
+            "medianAbsoluteDeviationMs": 0.03220899999996618,
+            "medianMegabytesPerSecond": 113.73685288483694,
+            "samplesMs": [
+              1.152667000000008,
+              1.2452080000000194,
+              1.1714589999999987,
+              1.1520419999999945,
+              1.1910000000000025,
+              1.1863749999999982,
+              1.1298330000000192,
+              1.2255830000000003,
+              1.1463329999999985,
+              1.1999590000000069,
+              1.1258339999999976,
+              1.1103750000000048,
+              2.330959000000007,
+              1.1620419999999854,
+              1.12741699999998
+            ]
+          },
+          "bseq": {
+            "medianMs": 0.11820800000000986,
+            "p95Ms": 0.14133300000000304,
+            "minMs": 0.10029199999999605,
+            "maxMs": 0.14133300000000304,
+            "medianAbsoluteDeviationMs": 0.00766699999999787,
+            "medianMegabytesPerSecond": 369.4673795343492,
+            "samplesMs": [
+              0.12604200000001242,
+              0.12587500000000773,
+              0.11812499999999204,
+              0.11820800000000986,
+              0.12762499999999477,
+              0.11725000000001273,
+              0.11645800000002282,
+              0.14133300000000304,
+              0.13291700000002038,
+              0.11912499999999682,
+              0.11866699999998787,
+              0.11308299999998894,
+              0.10770800000000236,
+              0.1074999999999875,
+              0.10029199999999605
+            ]
+          },
+          "speedupTextOverBinary": 9.83048524634448
+        }
+      }
+    },
+    {
+      "name": "writeEpiSpinEchoRS",
+      "category": "demoSeq",
+      "files": {
+        "seq": "bseq/benchmark_data/demo_seq_pairs/writeEpiSpinEchoRS.seq",
+        "bseq": "bseq/benchmark_data/demo_seq_pairs/writeEpiSpinEchoRS.bseq",
+        "seqBytes": 136363,
+        "bseqBytes": 47726,
+        "bseqToSeqSizeRatio": 0.3499922999640665,
+        "seqSha256": "69be28ded2d4fe3d9d5b1ee4585b891400c0c6bcfbeac2bbfb92a13885926a51",
+        "bseqSha256": "39134a022fca891a06e98309b6718da556eb86926b2342672a26b67bcd8e302e"
+      },
+      "descriptors": {
+        "version": "1.5.1",
+        "blocks": 180,
+        "rfEvents": 7,
+        "arbitraryGradientEvents": 4,
+        "arbitraryGradientBlocks": {
+          "blocksWithAny": 171,
+          "totalBlockReferences": 171,
+          "perAxisBlockReferences": {
+            "gx": 0,
+            "gy": 168,
+            "gz": 3
+          },
+          "uniqueReferencedEvents": 4,
+          "fractionOfBlocksWithAny": 0.95
+        },
+        "trapezoidGradientEvents": 6,
+        "adcEvents": 1,
+        "extensionNodes": 1,
+        "shapes": 12,
+        "expandedShapeSamples": 20040,
+        "totalDurationSeconds": 0.21735000000000068
+      },
+      "accuracy": {
+        "passed": true,
+        "versionCompatibility": {
+          "passed": true,
+          "seq": {
+            "major": 1,
+            "minor": 5,
+            "revision": 1
+          },
+          "bseq": {
+            "major": 1,
+            "minor": 5,
+            "revision": 2
+          },
+          "note": "Pulseq MATLAB write() and writeBinary() may emit text revision 1 and binary revision 2 from the same object."
+        },
+        "structure": {
+          "name": "normalizedStructure",
+          "mismatchCount": 0,
+          "mismatches": [],
+          "numericComparisonCount": 21674,
+          "maxAbsoluteDifference": 4.185544768348336,
+          "maxRelativeDifference": 0.000004628723598366431
+        },
+        "decoded": {
+          "passed": true,
+          "metrics": {
+            "blockCountSeq": 180,
+            "blockCountBseq": 180,
+            "presenceMismatchCount": 0,
+            "lengthMismatchCount": 0,
+            "metadataMismatchCount": 0,
+            "maxTimeDifferenceSec": 0,
+            "maxGradientAbsoluteDifference": 4.1905461945571005,
+            "maxGradientMagnitude": 1362400,
+            "maxRfMagnitudeDifference": 0.000239128366871455,
+            "maxRfPhaseDifferenceRad": 0.00004938359264983205
+          },
+          "tolerances": {
+            "timeSeconds": 1e-9,
+            "gradientAbsolute": 6.812,
+            "rfMagnitudeAbsolute": 0.001,
+            "rfPhaseAbsoluteRad": 0.001
+          },
+          "mismatches": []
+        },
+        "totalDuration": {
+          "seqSeconds": 0.21735000000000068,
+          "bseqSeconds": 0.21735000000000068,
+          "absoluteDifferenceSeconds": 0,
+          "toleranceSeconds": 1e-9,
+          "passed": true
+        }
+      },
+      "performance": {
+        "acquisition": {
+          "note": "Warm filesystem read plus allocation; not a controlled cold-cache measurement.",
+          "seq": {
+            "medianMs": 0.021500000000003183,
+            "p95Ms": 0.07408300000000168,
+            "minMs": 0.013666999999998097,
+            "maxMs": 0.07408300000000168,
+            "medianAbsoluteDeviationMs": 0.0019169999999917309,
+            "medianMegabytesPerSecond": 6342.465116278132,
+            "samplesMs": [
+              0.07408300000000168,
+              0.024082999999990307,
+              0.01916599999998425,
+              0.021874999999994316,
+              0.023416999999994914,
+              0.021500000000003183,
+              0.022999999999996135,
+              0.021208000000001448,
+              0.013666999999998097,
+              0.020624999999995453,
+              0.014207999999996446,
+              0.020207999999996673,
+              0.026292000000012195,
+              0.018374999999991815,
+              0.02225000000001387
+            ]
+          },
+          "bseq": {
+            "medianMs": 0.014249999999975671,
+            "p95Ms": 0.049207999999993035,
+            "minMs": 0.010541999999986729,
+            "maxMs": 0.049207999999993035,
+            "medianAbsoluteDeviationMs": 0.0015829999999823485,
+            "medianMegabytesPerSecond": 3349.1929824618583,
+            "samplesMs": [
+              0.021665999999981977,
+              0.049207999999993035,
+              0.012874999999979764,
+              0.01762500000000955,
+              0.014249999999975671,
+              0.015542000000010603,
+              0.012750000000011141,
+              0.014124999999978627,
+              0.01616599999999835,
+              0.012833999999998014,
+              0.010541999999986729,
+              0.014959000000004608,
+              0.012666999999993322,
+              0.017291999999997643,
+              0.011625000000009322
+            ]
+          },
+          "speedupTextOverBinary": 1.5087719298273607
+        },
+        "parsePreloadedBytes": {
+          "note": "Includes UTF-8 decoding for .seq and complete parser validation/shape decompression for both formats.",
+          "seq": {
+            "medianMs": 1.1549159999999858,
+            "p95Ms": 1.4095829999999978,
+            "minMs": 1.126749999999987,
+            "maxMs": 1.4095829999999978,
+            "medianAbsoluteDeviationMs": 0.026540999999980386,
+            "medianMegabytesPerSecond": 118.07179050251419,
+            "samplesMs": [
+              1.4095829999999978,
+              1.174666000000002,
+              1.2260419999999783,
+              1.1336660000000052,
+              1.1410419999999988,
+              1.2197920000000124,
+              1.1346249999999998,
+              1.1356660000000147,
+              1.197291000000007,
+              1.126749999999987,
+              1.1982919999999808,
+              1.1283750000000055,
+              1.1549159999999858,
+              1.204499999999996,
+              1.146917000000002
+            ]
+          },
+          "bseq": {
+            "medianMs": 0.1032080000000235,
+            "p95Ms": 0.11383299999999963,
+            "minMs": 0.09745800000001736,
+            "maxMs": 0.11383299999999963,
+            "medianAbsoluteDeviationMs": 0.005083000000013271,
+            "medianMegabytesPerSecond": 462.4253933802528,
+            "samplesMs": [
+              0.11145799999999895,
+              0.11383299999999963,
+              0.10204199999998309,
+              0.1032080000000235,
+              0.11025000000000773,
+              0.1098750000000166,
+              0.10775000000001,
+              0.10462499999999864,
+              0.10550000000000637,
+              0.09879100000000562,
+              0.09754200000000424,
+              0.09745800000001736,
+              0.09812500000001023,
+              0.09749999999999659,
+              0.10150000000001569
+            ]
+          },
+          "speedupTextOverBinary": 11.190179055884455
+        }
+      }
+    },
+    {
+      "name": "writeGradientEcho",
+      "category": "demoSeq",
+      "files": {
+        "seq": "bseq/benchmark_data/demo_seq_pairs/writeGradientEcho.seq",
+        "bseq": "bseq/benchmark_data/demo_seq_pairs/writeGradientEcho.bseq",
+        "seqBytes": 66689,
+        "bseqBytes": 44338,
+        "bseqToSeqSizeRatio": 0.6648472761624855,
+        "seqSha256": "16bdc9905043b07460f4ec0023df798d106e7b486a24048e5b2374741e1164d2",
+        "bseqSha256": "84ddce8d3e563a824735f593b63e98f69d618d9ed37ba96ab2907ca4f2de024d"
+      },
+      "descriptors": {
+        "version": "1.5.1",
+        "blocks": 640,
+        "rfEvents": 12,
+        "arbitraryGradientEvents": 0,
+        "arbitraryGradientBlocks": {
+          "blocksWithAny": 0,
+          "totalBlockReferences": 0,
+          "perAxisBlockReferences": {
+            "gx": 0,
+            "gy": 0,
+            "gz": 0
+          },
+          "uniqueReferencedEvents": 0,
+          "fractionOfBlocksWithAny": 0
+        },
+        "trapezoidGradientEvents": 136,
+        "adcEvents": 12,
+        "extensionNodes": 129,
+        "shapes": 2,
+        "expandedShapeSamples": 6000,
+        "totalDurationSeconds": 1.5359999999999914
+      },
+      "accuracy": {
+        "passed": true,
+        "versionCompatibility": {
+          "passed": true,
+          "seq": {
+            "major": 1,
+            "minor": 5,
+            "revision": 1
+          },
+          "bseq": {
+            "major": 1,
+            "minor": 5,
+            "revision": 2
+          },
+          "note": "Pulseq MATLAB write() and writeBinary() may emit text revision 1 and binary revision 2 from the same object."
+        },
+        "structure": {
+          "name": "normalizedStructure",
+          "mismatchCount": 0,
+          "mismatches": [],
+          "numericComparisonCount": 13274,
+          "maxAbsoluteDifference": 0.49999999997089617,
+          "maxRelativeDifference": 0.000003583987154843509
+        },
+        "decoded": {
+          "passed": true,
+          "metrics": {
+            "blockCountSeq": 640,
+            "blockCountBseq": 640,
+            "presenceMismatchCount": 0,
+            "lengthMismatchCount": 0,
+            "metadataMismatchCount": 0,
+            "maxTimeDifferenceSec": 0,
+            "maxGradientAbsoluteDifference": 0.49999999997089617,
+            "maxGradientMagnitude": 934579.4392523365,
+            "maxRfMagnitudeDifference": 0.00003846261866868872,
+            "maxRfPhaseDifferenceRad": 0.000004897606805442933
+          },
+          "tolerances": {
+            "timeSeconds": 1e-9,
+            "gradientAbsolute": 4.672897196261683,
+            "rfMagnitudeAbsolute": 0.001,
+            "rfPhaseAbsoluteRad": 0.001
+          },
+          "mismatches": []
+        },
+        "totalDuration": {
+          "seqSeconds": 1.5359999999999914,
+          "bseqSeconds": 1.5359999999999914,
+          "absoluteDifferenceSeconds": 0,
+          "toleranceSeconds": 1e-9,
+          "passed": true
+        }
+      },
+      "performance": {
+        "acquisition": {
+          "note": "Warm filesystem read plus allocation; not a controlled cold-cache measurement.",
+          "seq": {
+            "medianMs": 0.02025000000000432,
+            "p95Ms": 0.07749999999998636,
+            "minMs": 0.014166999999986274,
+            "maxMs": 0.07749999999998636,
+            "medianAbsoluteDeviationMs": 0.0026670000000024174,
+            "medianMegabytesPerSecond": 3293.283950616581,
+            "samplesMs": [
+              0.07749999999998636,
+              0.017583000000001903,
+              0.021708000000018046,
+              0.024124999999997954,
+              0.023416999999994914,
+              0.02200000000001978,
+              0.030082999999990534,
+              0.017917000000011285,
+              0.018207999999987123,
+              0.018167000000005373,
+              0.014166999999986274,
+              0.016958000000016682,
+              0.01604199999999878,
+              0.021250000000009095,
+              0.02025000000000432
+            ]
+          },
+          "bseq": {
+            "medianMs": 0.01616599999999835,
+            "p95Ms": 0.03899999999998727,
+            "minMs": 0.014375000000001137,
+            "maxMs": 0.03899999999998727,
+            "medianAbsoluteDeviationMs": 0.0017079999999793927,
+            "medianMegabytesPerSecond": 2742.669800816809,
+            "samplesMs": [
+              0.019915999999994938,
+              0.021208000000001448,
+              0.015790999999978794,
+              0.03899999999998727,
+              0.01608300000000895,
+              0.02075000000002092,
+              0.014375000000001137,
+              0.016832999999991216,
+              0.014458000000018956,
+              0.017917000000011285,
+              0.014625000000023647,
+              0.01616599999999835,
+              0.014624999999995225,
+              0.03162499999999113,
+              0.015292000000016515
+            ]
+          },
+          "speedupTextOverBinary": 1.2526289743910917
+        },
+        "parsePreloadedBytes": {
+          "note": "Includes UTF-8 decoding for .seq and complete parser validation/shape decompression for both formats.",
+          "seq": {
+            "medianMs": 0.7620420000000081,
+            "p95Ms": 1.086624999999998,
+            "minMs": 0.6950410000000034,
+            "maxMs": 1.086624999999998,
+            "medianAbsoluteDeviationMs": 0.04029199999999378,
+            "medianMegabytesPerSecond": 87.51354912196346,
+            "samplesMs": [
+              1.086624999999998,
+              1.0042919999999924,
+              1.039166999999992,
+              0.7620420000000081,
+              0.7575410000000034,
+              0.7373330000000067,
+              0.8943330000000174,
+              0.7822079999999971,
+              0.7062080000000037,
+              0.7217500000000143,
+              0.8254999999999768,
+              0.737749999999977,
+              0.7387500000000102,
+              0.8019159999999772,
+              0.6950410000000034
+            ]
+          },
+          "bseq": {
+            "medianMs": 0.17979099999999448,
+            "p95Ms": 0.49687499999998863,
+            "minMs": 0.15408399999998323,
+            "maxMs": 0.49687499999998863,
+            "medianAbsoluteDeviationMs": 0.010498999999981606,
+            "medianMegabytesPerSecond": 246.6085621638534,
+            "samplesMs": [
+              0.49687499999998863,
+              0.46712500000001,
+              0.17825000000001978,
+              0.29454200000000696,
+              0.19016700000000242,
+              0.18850000000000477,
+              0.19395899999997823,
+              0.17979099999999448,
+              0.18141700000001038,
+              0.16929200000001288,
+              0.16970900000001166,
+              0.17775000000000318,
+              0.15554199999999696,
+              0.15408399999998323,
+              0.16366700000000378
+            ]
+          },
+          "speedupTextOverBinary": 4.238488022203733
+        }
+      }
+    },
+    {
+      "name": "writeHASTE",
+      "category": "demoSeq",
+      "files": {
+        "seq": "bseq/benchmark_data/demo_seq_pairs/writeHASTE.seq",
+        "bseq": "bseq/benchmark_data/demo_seq_pairs/writeHASTE.bseq",
+        "seqBytes": 74922,
+        "bseqBytes": 36910,
+        "bseqToSeqSizeRatio": 0.49264568484557275,
+        "seqSha256": "501b1cb655dbaa6482f26db3b44d21d73d3f726fcf78173b3197a8db18db1368",
+        "bseqSha256": "eb6823acb22b97c2ec3438dfe02e9392cbaf0c0585abd4549a2251429eaa52af"
+      },
+      "descriptors": {
+        "version": "1.5.1",
+        "blocks": 295,
+        "rfEvents": 2,
+        "arbitraryGradientEvents": 9,
+        "arbitraryGradientBlocks": {
+          "blocksWithAny": 293,
+          "totalBlockReferences": 437,
+          "perAxisBlockReferences": {
+            "gx": 216,
+            "gy": 0,
+            "gz": 221
+          },
+          "uniqueReferencedEvents": 9,
+          "fractionOfBlocksWithAny": 0.9932203389830508
+        },
+        "trapezoidGradientEvents": 129,
+        "adcEvents": 1,
+        "extensionNodes": 73,
+        "shapes": 17,
+        "expandedShapeSamples": 9040,
+        "totalDurationSeconds": 6.999999999999997
+      },
+      "accuracy": {
+        "passed": true,
+        "versionCompatibility": {
+          "passed": true,
+          "seq": {
+            "major": 1,
+            "minor": 5,
+            "revision": 1
+          },
+          "bseq": {
+            "major": 1,
+            "minor": 5,
+            "revision": 2
+          },
+          "note": "Pulseq MATLAB write() and writeBinary() may emit text revision 1 and binary revision 2 from the same object."
+        },
+        "structure": {
+          "name": "normalizedStructure",
+          "mismatchCount": 0,
+          "mismatches": [],
+          "numericComparisonCount": 12890,
+          "maxAbsoluteDifference": 0.4375,
+          "maxRelativeDifference": 0.00000390735315361568
+        },
+        "decoded": {
+          "passed": true,
+          "metrics": {
+            "blockCountSeq": 295,
+            "blockCountBseq": 295,
+            "presenceMismatchCount": 0,
+            "lengthMismatchCount": 0,
+            "metadataMismatchCount": 0,
+            "maxTimeDifferenceSec": 0,
+            "maxGradientAbsoluteDifference": 0.4375,
+            "maxGradientMagnitude": 491667,
+            "maxRfMagnitudeDifference": 0.00013682378141766094,
+            "maxRfPhaseDifferenceRad": 0.000003673205103638111
+          },
+          "tolerances": {
+            "timeSeconds": 1e-9,
+            "gradientAbsolute": 2.4583350000000004,
+            "rfMagnitudeAbsolute": 0.001,
+            "rfPhaseAbsoluteRad": 0.001
+          },
+          "mismatches": []
+        },
+        "totalDuration": {
+          "seqSeconds": 6.999999999999997,
+          "bseqSeconds": 6.999999999999997,
+          "absoluteDifferenceSeconds": 0,
+          "toleranceSeconds": 1e-9,
+          "passed": true
+        }
+      },
+      "performance": {
+        "acquisition": {
+          "note": "Warm filesystem read plus allocation; not a controlled cold-cache measurement.",
+          "seq": {
+            "medianMs": 0.019208999999989373,
+            "p95Ms": 0.06608300000002032,
+            "minMs": 0.01229200000000219,
+            "maxMs": 0.06608300000002032,
+            "medianAbsoluteDeviationMs": 0.002458000000018501,
+            "medianMegabytesPerSecond": 3900.359206624054,
+            "samplesMs": [
+              0.06608300000002032,
+              0.019624999999990678,
+              0.021667000000007874,
+              0.02041700000000901,
+              0.01979200000002379,
+              0.03420800000000668,
+              0.020458000000019183,
+              0.019208999999989373,
+              0.017957999999993035,
+              0.016208000000005995,
+              0.01229200000000219,
+              0.01474999999999227,
+              0.017166000000003123,
+              0.013708000000008269,
+              0.014624999999995225
+            ]
+          },
+          "bseq": {
+            "medianMs": 0.013708000000008269,
+            "p95Ms": 0.025207999999992126,
+            "minMs": 0.010084000000006199,
+            "maxMs": 0.025207999999992126,
+            "medianAbsoluteDeviationMs": 0.002165999999988344,
+            "medianMegabytesPerSecond": 2692.5882696219533,
+            "samplesMs": [
+              0.019459000000011883,
+              0.02254100000001813,
+              0.014417000000008784,
+              0.025207999999992126,
+              0.01274999999998272,
+              0.014624999999995225,
+              0.013458999999983234,
+              0.016250000000013642,
+              0.012042000000008102,
+              0.013708000000008269,
+              0.010084000000006199,
+              0.011542000000019925,
+              0.01099999999999568,
+              0.014125000000007049,
+              0.010500000000007503
+            ]
+          },
+          "speedupTextOverBinary": 1.401298511816296
+        },
+        "parsePreloadedBytes": {
+          "note": "Includes UTF-8 decoding for .seq and complete parser validation/shape decompression for both formats.",
+          "seq": {
+            "medianMs": 0.6941249999999854,
+            "p95Ms": 1.1840419999999767,
+            "minMs": 0.6662500000000193,
+            "maxMs": 1.1840419999999767,
+            "medianAbsoluteDeviationMs": 0.02174999999999727,
+            "medianMegabytesPerSecond": 107.93733117234154,
+            "samplesMs": [
+              0.7137500000000045,
+              0.7534579999999949,
+              0.6841249999999945,
+              0.7099999999999795,
+              0.6957500000000039,
+              0.689707999999996,
+              0.7271250000000009,
+              0.6941249999999854,
+              0.678040999999979,
+              0.6677919999999915,
+              0.7728340000000173,
+              0.666499999999985,
+              0.6723749999999882,
+              0.6662500000000193,
+              1.1840419999999767
+            ]
+          },
+          "bseq": {
+            "medianMs": 0.10966700000000174,
+            "p95Ms": 0.2115829999999903,
+            "minMs": 0.1044159999999863,
+            "maxMs": 0.2115829999999903,
+            "medianAbsoluteDeviationMs": 0.00462500000000432,
+            "medianMegabytesPerSecond": 336.56432655219356,
+            "samplesMs": [
+              0.11458300000001032,
+              0.11474999999998658,
+              0.11095900000000825,
+              0.2115829999999903,
+              0.1144159999999772,
+              0.10966700000000174,
+              0.2034580000000119,
+              0.10641599999999585,
+              0.10533399999999915,
+              0.10583299999998985,
+              0.10520800000000463,
+              0.10445899999999142,
+              0.10504199999999742,
+              0.1044159999999863,
+              0.11429099999998016
+            ]
+          },
+          "speedupTextOverBinary": 6.329388056571024
+        }
+      }
+    },
+    {
+      "name": "writeRadialGradientEcho",
+      "category": "demoSeq",
+      "files": {
+        "seq": "bseq/benchmark_data/demo_seq_pairs/writeRadialGradientEcho.seq",
+        "bseq": "bseq/benchmark_data/demo_seq_pairs/writeRadialGradientEcho.bseq",
+        "seqBytes": 122142,
+        "bseqBytes": 96243,
+        "bseqToSeqSizeRatio": 0.787959915508179,
+        "seqSha256": "8d9afdd4048284ed9c2e1c097909b93680ece81dca8227313559de2d06590374",
+        "bseqSha256": "2ea3bec99a0bdf380c0934aec4b9817922e69d2ec3fb85a39917728833c50be8"
+      },
+      "descriptors": {
+        "version": "1.5.1",
+        "blocks": 1385,
+        "rfEvents": 12,
+        "arbitraryGradientEvents": 0,
+        "arbitraryGradientBlocks": {
+          "blocksWithAny": 0,
+          "totalBlockReferences": 0,
+          "perAxisBlockReferences": {
+            "gx": 0,
+            "gy": 0,
+            "gz": 0
+          },
+          "uniqueReferencedEvents": 0,
+          "fractionOfBlocksWithAny": 0
+        },
+        "trapezoidGradientEvents": 768,
+        "adcEvents": 12,
+        "extensionNodes": 0,
+        "shapes": 2,
+        "expandedShapeSamples": 8000,
+        "totalDurationSeconds": 5.542769999999974
+      },
+      "accuracy": {
+        "passed": true,
+        "versionCompatibility": {
+          "passed": true,
+          "seq": {
+            "major": 1,
+            "minor": 5,
+            "revision": 1
+          },
+          "bseq": {
+            "major": 1,
+            "minor": 5,
+            "revision": 2
+          },
+          "note": "Pulseq MATLAB write() and writeBinary() may emit text revision 1 and binary revision 2 from the same object."
+        },
+        "structure": {
+          "name": "normalizedStructure",
+          "mismatchCount": 0,
+          "mismatches": [],
+          "numericComparisonCount": 23990,
+          "maxAbsoluteDifference": 4.963664460927248,
+          "maxRelativeDifference": 0.00000458787187559709
+        },
+        "decoded": {
+          "passed": true,
+          "metrics": {
+            "blockCountSeq": 1385,
+            "blockCountBseq": 1385,
+            "presenceMismatchCount": 0,
+            "lengthMismatchCount": 0,
+            "metadataMismatchCount": 0,
+            "maxTimeDifferenceSec": 0,
+            "maxGradientAbsoluteDifference": 4.963664460927248,
+            "maxGradientMagnitude": 1190480,
+            "maxRfMagnitudeDifference": 0.000022050705677401083,
+            "maxRfPhaseDifferenceRad": 0.000004897606805442933
+          },
+          "tolerances": {
+            "timeSeconds": 1e-9,
+            "gradientAbsolute": 5.952400000000001,
+            "rfMagnitudeAbsolute": 0.001,
+            "rfPhaseAbsoluteRad": 0.001
+          },
+          "mismatches": []
+        },
+        "totalDuration": {
+          "seqSeconds": 5.542769999999974,
+          "bseqSeconds": 5.542769999999974,
+          "absoluteDifferenceSeconds": 0,
+          "toleranceSeconds": 1e-9,
+          "passed": true
+        }
+      },
+      "performance": {
+        "acquisition": {
+          "note": "Warm filesystem read plus allocation; not a controlled cold-cache measurement.",
+          "seq": {
+            "medianMs": 0.02391600000004246,
+            "p95Ms": 0.09533299999998235,
+            "minMs": 0.01616599999999835,
+            "maxMs": 0.09533299999998235,
+            "medianAbsoluteDeviationMs": 0.0047910000000683794,
+            "medianMegabytesPerSecond": 5107.124937271415,
+            "samplesMs": [
+              0.09533299999998235,
+              0.021917000000030384,
+              0.03099999999994907,
+              0.041459000000031665,
+              0.03974999999996953,
+              0.03845900000004576,
+              0.020790999999974247,
+              0.03545800000000554,
+              0.022542000000044027,
+              0.02141599999998789,
+              0.028083000000037828,
+              0.02208300000000918,
+              0.02391600000004246,
+              0.01912499999997408,
+              0.01616599999999835
+            ]
+          },
+          "bseq": {
+            "medianMs": 0.025250000000028194,
+            "p95Ms": 0.04837500000002137,
+            "minMs": 0.018250000000023192,
+            "maxMs": 0.04837500000002137,
+            "medianAbsoluteDeviationMs": 0.006917000000044027,
+            "medianMegabytesPerSecond": 3811.6039603917834,
+            "samplesMs": [
+              0.03275000000002137,
+              0.025250000000028194,
+              0.03637500000002092,
+              0.04837500000002137,
+              0.04533299999997098,
+              0.02495800000002646,
+              0.029541999999992186,
+              0.047832999999968706,
+              0.018250000000023192,
+              0.03329199999996035,
+              0.02229099999999562,
+              0.020916999999997188,
+              0.020041000000048825,
+              0.018332999999984168,
+              0.018749999999954525
+            ]
+          },
+          "speedupTextOverBinary": 0.9471683168323071
+        },
+        "parsePreloadedBytes": {
+          "note": "Includes UTF-8 decoding for .seq and complete parser validation/shape decompression for both formats.",
+          "seq": {
+            "medianMs": 1.1946250000000305,
+            "p95Ms": 1.3894159999999829,
+            "minMs": 1.180833000000007,
+            "maxMs": 1.3894159999999829,
+            "medianAbsoluteDeviationMs": 0.011833000000024185,
+            "medianMegabytesPerSecond": 102.242963272991,
+            "samplesMs": [
+              1.3173340000000167,
+              1.3894159999999829,
+              1.3597919999999704,
+              1.2148750000000064,
+              1.196957999999995,
+              1.1946250000000305,
+              1.183334000000002,
+              1.1827920000000063,
+              1.180833000000007,
+              1.32733300000001,
+              1.3002500000000055,
+              1.188916000000006,
+              1.191082999999992,
+              1.184833000000026,
+              1.1872920000000136
+            ]
+          },
+          "bseq": {
+            "medianMs": 0.3854580000000283,
+            "p95Ms": 0.5973329999999919,
+            "minMs": 0.32320900000001984,
+            "maxMs": 0.5973329999999919,
+            "medianAbsoluteDeviationMs": 0.04924900000003163,
+            "medianMegabytesPerSecond": 249.68479056082097,
+            "samplesMs": [
+              0.3961250000000405,
+              0.38645800000000463,
+              0.3869579999999928,
+              0.5973329999999919,
+              0.3347919999999931,
+              0.33095800000000963,
+              0.49491599999998925,
+              0.33620899999999665,
+              0.3854580000000283,
+              0.371167000000014,
+              0.4615000000000009,
+              0.3385420000000181,
+              0.32320900000001984,
+              0.3242079999999987,
+              0.41970799999995734
+            ]
+          },
+          "speedupTextOverBinary": 3.0992351955334767
+        }
+      }
+    },
+    {
+      "name": "writeSpiral",
+      "category": "demoSeq",
+      "files": {
+        "seq": "bseq/benchmark_data/demo_seq_pairs/writeSpiral.seq",
+        "bseq": "bseq/benchmark_data/demo_seq_pairs/writeSpiral.bseq",
+        "seqBytes": 231138,
+        "bseqBytes": 79031,
+        "bseqToSeqSizeRatio": 0.3419212764668726,
+        "seqSha256": "83362940977b4256c1ae02ad7c237e1c30a85bd787b7a6f4e2ed03debd1dbf74",
+        "bseqSha256": "8d9599e50a873d11a13ac91318f724df47d22e96bb0481b9f71e0a390010e3eb"
+      },
+      "descriptors": {
+        "version": "1.5.1",
+        "blocks": 179,
+        "rfEvents": 12,
+        "arbitraryGradientEvents": 8,
+        "arbitraryGradientBlocks": {
+          "blocksWithAny": 88,
+          "totalBlockReferences": 176,
+          "perAxisBlockReferences": {
+            "gx": 88,
+            "gy": 88,
+            "gz": 0
+          },
+          "uniqueReferencedEvents": 8,
+          "fractionOfBlocksWithAny": 0.49162011173184356
+        },
+        "trapezoidGradientEvents": 4,
+        "adcEvents": 1,
+        "extensionNodes": 0,
+        "shapes": 9,
+        "expandedShapeSamples": 22374,
+        "totalDurationSeconds": 5.43936
+      },
+      "accuracy": {
+        "passed": true,
+        "versionCompatibility": {
+          "passed": true,
+          "seq": {
+            "major": 1,
+            "minor": 5,
+            "revision": 1
+          },
+          "bseq": {
+            "major": 1,
+            "minor": 5,
+            "revision": 2
+          },
+          "note": "Pulseq MATLAB write() and writeBinary() may emit text revision 1 and binary revision 2 from the same object."
+        },
+        "structure": {
+          "name": "normalizedStructure",
+          "mismatchCount": 0,
+          "mismatches": [],
+          "numericComparisonCount": 24065,
+          "maxAbsoluteDifference": 3.292032488854602,
+          "maxRelativeDifference": 0.0000024999999999977263
+        },
+        "decoded": {
+          "passed": true,
+          "metrics": {
+            "blockCountSeq": 179,
+            "blockCountBseq": 179,
+            "presenceMismatchCount": 0,
+            "lengthMismatchCount": 0,
+            "metadataMismatchCount": 0,
+            "maxTimeDifferenceSec": 0,
+            "maxGradientAbsoluteDifference": 3.292032488854602,
+            "maxGradientMagnitude": 1702130,
+            "maxRfMagnitudeDifference": 0.00031194364751740977,
+            "maxRfPhaseDifferenceRad": 0.0000628213811353362
+          },
+          "tolerances": {
+            "timeSeconds": 1e-9,
+            "gradientAbsolute": 8.51065,
+            "rfMagnitudeAbsolute": 0.001,
+            "rfPhaseAbsoluteRad": 0.001
+          },
+          "mismatches": []
+        },
+        "totalDuration": {
+          "seqSeconds": 5.43936,
+          "bseqSeconds": 5.43936,
+          "absoluteDifferenceSeconds": 0,
+          "toleranceSeconds": 1e-9,
+          "passed": true
+        }
+      },
+      "performance": {
+        "acquisition": {
+          "note": "Warm filesystem read plus allocation; not a controlled cold-cache measurement.",
+          "seq": {
+            "medianMs": 0.029291999999998097,
+            "p95Ms": 0.09941700000001674,
+            "minMs": 0.01841699999999946,
+            "maxMs": 0.09941700000001674,
+            "medianAbsoluteDeviationMs": 0.0028750000000172804,
+            "medianMegabytesPerSecond": 7890.823433019767,
+            "samplesMs": [
+              0.09941700000001674,
+              0.029291999999998097,
+              0.03308300000003328,
+              0.02770900000001575,
+              0.03129100000001017,
+              0.03491700000000719,
+              0.01841699999999946,
+              0.026416999999980817,
+              0.03741700000000492,
+              0.03216599999996106,
+              0.031708999999978005,
+              0.027916000000004715,
+              0.02504199999998491,
+              0.026749999999992724,
+              0.025624999999990905
+            ]
+          },
+          "bseq": {
+            "medianMs": 0.018166000000007898,
+            "p95Ms": 0.023500000000012733,
+            "minMs": 0.014667000000031294,
+            "maxMs": 0.023500000000012733,
+            "medianAbsoluteDeviationMs": 0.0016660000000570108,
+            "medianMegabytesPerSecond": 4350.489926233933,
+            "samplesMs": [
+              0.023500000000012733,
+              0.023500000000012733,
+              0.019207999999991898,
+              0.018833000000029188,
+              0.016000000000019554,
+              0.021667000000036296,
+              0.015166999999962627,
+              0.016707999999994172,
+              0.018167000000005373,
+              0.01866699999999355,
+              0.016332999999974618,
+              0.016875000000027285,
+              0.018166000000007898,
+              0.016499999999950887,
+              0.014667000000031294
+            ]
+          },
+          "speedupTextOverBinary": 1.6124628426723198
+        },
+        "parsePreloadedBytes": {
+          "note": "Includes UTF-8 decoding for .seq and complete parser validation/shape decompression for both formats.",
+          "seq": {
+            "medianMs": 1.9195000000000277,
+            "p95Ms": 2.054457999999954,
+            "minMs": 1.903209000000004,
+            "maxMs": 2.054457999999954,
+            "medianAbsoluteDeviationMs": 0.016291000000023814,
+            "medianMegabytesPerSecond": 120.41573326386907,
+            "samplesMs": [
+              2.054457999999954,
+              1.9195000000000277,
+              1.9193329999999946,
+              2.0238330000000246,
+              1.912458000000015,
+              1.9433750000000032,
+              2.0358750000000327,
+              1.908457999999996,
+              1.9959579999999733,
+              2.0238749999999754,
+              1.9046670000000177,
+              1.903209000000004,
+              1.9123749999999973,
+              2.0205419999999776,
+              1.9136670000000322
+            ]
+          },
+          "bseq": {
+            "medianMs": 0.1256670000000213,
+            "p95Ms": 0.1327089999999771,
+            "minMs": 0.11712499999998727,
+            "maxMs": 0.1327089999999771,
+            "medianAbsoluteDeviationMs": 0.0020000000000095497,
+            "medianMegabytesPerSecond": 628.8922310549835,
+            "samplesMs": [
+              0.11791699999997718,
+              0.11712499999998727,
+              0.12487500000003138,
+              0.12366700000001174,
+              0.12874999999996817,
+              0.1327089999999771,
+              0.12308400000000574,
+              0.12725000000000364,
+              0.12745799999999008,
+              0.11720799999994824,
+              0.12675000000001546,
+              0.1262919999999781,
+              0.11716699999999491,
+              0.1264590000000112,
+              0.1256670000000213
+            ]
+          },
+          "speedupTextOverBinary": 15.274495293113567
+        }
+      }
+    },
+    {
+      "name": "writeTSE",
+      "category": "demoSeq",
+      "files": {
+        "seq": "bseq/benchmark_data/demo_seq_pairs/writeTSE.seq",
+        "bseq": "bseq/benchmark_data/demo_seq_pairs/writeTSE.bseq",
+        "seqBytes": 111896,
+        "bseqBytes": 76420,
+        "bseqToSeqSizeRatio": 0.6829556016300851,
+        "seqSha256": "04916eb8c367c759b46d0271d2b79502d966491d0c2c2da2428c4aad9b68f778",
+        "bseqSha256": "e4cb054208b15b0a336b51267eb7509a397eff94d4e136448d3ac84e0a6a2708"
+      },
+      "descriptors": {
+        "version": "1.5.1",
+        "blocks": 1190,
+        "rfEvents": 2,
+        "arbitraryGradientEvents": 9,
+        "arbitraryGradientBlocks": {
+          "blocksWithAny": 1173,
+          "totalBlockReferences": 1717,
+          "perAxisBlockReferences": {
+            "gx": 816,
+            "gy": 0,
+            "gz": 901
+          },
+          "uniqueReferencedEvents": 9,
+          "fractionOfBlocksWithAny": 0.9857142857142858
+        },
+        "trapezoidGradientEvents": 259,
+        "adcEvents": 1,
+        "extensionNodes": 257,
+        "shapes": 17,
+        "expandedShapeSamples": 9040,
+        "totalDurationSeconds": 33.99999999999977
+      },
+      "accuracy": {
+        "passed": true,
+        "versionCompatibility": {
+          "passed": true,
+          "seq": {
+            "major": 1,
+            "minor": 5,
+            "revision": 1
+          },
+          "bseq": {
+            "major": 1,
+            "minor": 5,
+            "revision": 2
+          },
+          "note": "Pulseq MATLAB write() and writeBinary() may emit text revision 1 and binary revision 2 from the same object."
+        },
+        "structure": {
+          "name": "normalizedStructure",
+          "mismatchCount": 0,
+          "mismatches": [],
+          "numericComparisonCount": 22302,
+          "maxAbsoluteDifference": 0.5,
+          "maxRelativeDifference": 0.00000390735315361568
+        },
+        "decoded": {
+          "passed": true,
+          "metrics": {
+            "blockCountSeq": 1190,
+            "blockCountBseq": 1190,
+            "presenceMismatchCount": 0,
+            "lengthMismatchCount": 0,
+            "metadataMismatchCount": 0,
+            "maxTimeDifferenceSec": 0,
+            "maxGradientAbsoluteDifference": 0.5,
+            "maxGradientMagnitude": 721487,
+            "maxRfMagnitudeDifference": 0.00013682378141766094,
+            "maxRfPhaseDifferenceRad": 0.000003673205103638111
+          },
+          "tolerances": {
+            "timeSeconds": 1e-9,
+            "gradientAbsolute": 3.607435,
+            "rfMagnitudeAbsolute": 0.001,
+            "rfPhaseAbsoluteRad": 0.001
+          },
+          "mismatches": []
+        },
+        "totalDuration": {
+          "seqSeconds": 33.99999999999977,
+          "bseqSeconds": 33.99999999999977,
+          "absoluteDifferenceSeconds": 0,
+          "toleranceSeconds": 1e-9,
+          "passed": true
+        }
+      },
+      "performance": {
+        "acquisition": {
+          "note": "Warm filesystem read plus allocation; not a controlled cold-cache measurement.",
+          "seq": {
+            "medianMs": 0.02304199999997536,
+            "p95Ms": 0.0815420000000131,
+            "minMs": 0.01554100000004155,
+            "maxMs": 0.0815420000000131,
+            "medianAbsoluteDeviationMs": 0.00333299999999781,
+            "medianMegabytesPerSecond": 4856.175679199708,
+            "samplesMs": [
+              0.0815420000000131,
+              0.02637499999997317,
+              0.023500000000012733,
+              0.017917000000011285,
+              0.03500000000002501,
+              0.018542000000024927,
+              0.021584000000018477,
+              0.019875000000013188,
+              0.028834000000017568,
+              0.021457999999995536,
+              0.02304199999997536,
+              0.021541000000013355,
+              0.01554100000004155,
+              0.03316699999999173,
+              0.025666999999998552
+            ]
+          },
+          "bseq": {
+            "medianMs": 0.018167000000005373,
+            "p95Ms": 0.03012499999999818,
+            "minMs": 0.01608299999998053,
+            "maxMs": 0.03012499999999818,
+            "medianAbsoluteDeviationMs": 0.0012919999999780885,
+            "medianMegabytesPerSecond": 4206.52832058003,
+            "samplesMs": [
+              0.02816699999999628,
+              0.025791999999967175,
+              0.017457999999976437,
+              0.02549999999996544,
+              0.01791600000001381,
+              0.018167000000005373,
+              0.01841699999999946,
+              0.017083000000013726,
+              0.01608299999998053,
+              0.019749999999987722,
+              0.01762500000000955,
+              0.020000000000038654,
+              0.018167000000005373,
+              0.03012499999999818,
+              0.016875000000027285
+            ]
+          },
+          "speedupTextOverBinary": 1.2683437001138627
+        },
+        "parsePreloadedBytes": {
+          "note": "Includes UTF-8 decoding for .seq and complete parser validation/shape decompression for both formats.",
+          "seq": {
+            "medianMs": 1.140375000000006,
+            "p95Ms": 1.3530420000000163,
+            "minMs": 1.1289999999999623,
+            "maxMs": 1.3530420000000163,
+            "medianAbsoluteDeviationMs": 0.007542000000000826,
+            "medianMegabytesPerSecond": 98.12210895538696,
+            "samplesMs": [
+              1.34454199999999,
+              1.1352500000000418,
+              1.1289999999999623,
+              1.1582500000000095,
+              1.3530420000000163,
+              1.140375000000006,
+              1.138040999999987,
+              1.141916999999978,
+              1.3106669999999667,
+              1.132916000000023,
+              1.1308329999999955,
+              1.151625000000024,
+              1.1417079999999942,
+              1.132833000000005,
+              1.1394999999999982
+            ]
+          },
+          "bseq": {
+            "medianMs": 0.24754199999995308,
+            "p95Ms": 0.357167000000004,
+            "minMs": 0.23529200000001538,
+            "maxMs": 0.357167000000004,
+            "medianAbsoluteDeviationMs": 0.010041999999998552,
+            "medianMegabytesPerSecond": 308.7152887187406,
+            "samplesMs": [
+              0.2583750000000009,
+              0.26004199999999855,
+              0.27341599999999744,
+              0.2691249999999741,
+              0.2547079999999937,
+              0.24087500000001683,
+              0.2390839999999912,
+              0.23749999999995453,
+              0.24754199999995308,
+              0.24041699999997945,
+              0.2400000000000091,
+              0.255375000000015,
+              0.357167000000004,
+              0.23645799999997053,
+              0.23529200000001538
+            ]
+          },
+          "speedupTextOverBinary": 4.606793998595075
+        }
+      }
+    },
+    {
+      "name": "writeTrufi",
+      "category": "demoSeq",
+      "files": {
+        "seq": "bseq/benchmark_data/demo_seq_pairs/writeTrufi.seq",
+        "bseq": "bseq/benchmark_data/demo_seq_pairs/writeTrufi.bseq",
+        "seqBytes": 40381,
+        "bseqBytes": 39119,
+        "bseqToSeqSizeRatio": 0.9687476783635869,
+        "seqSha256": "f6c7b1661e11808183112dacbb25c9332ed50fe51721f1d1708d0f0f826b3f4c",
+        "bseqSha256": "64d8036e105bc39ea835f01e50ebbaa01aa74643ea85b2a8d29679285d10967e"
+      },
+      "descriptors": {
+        "version": "1.5.1",
+        "blocks": 516,
+        "rfEvents": 3,
+        "arbitraryGradientEvents": 5,
+        "arbitraryGradientBlocks": {
+          "blocksWithAny": 515,
+          "totalBlockReferences": 1028,
+          "perAxisBlockReferences": {
+            "gx": 514,
+            "gy": 0,
+            "gz": 514
+          },
+          "uniqueReferencedEvents": 5,
+          "fractionOfBlocksWithAny": 0.998062015503876
+        },
+        "trapezoidGradientEvents": 258,
+        "adcEvents": 2,
+        "extensionNodes": 260,
+        "shapes": 12,
+        "expandedShapeSamples": 1252,
+        "totalDurationSeconds": 1.216559999999996
+      },
+      "accuracy": {
+        "passed": true,
+        "versionCompatibility": {
+          "passed": true,
+          "seq": {
+            "major": 1,
+            "minor": 5,
+            "revision": 1
+          },
+          "bseq": {
+            "major": 1,
+            "minor": 5,
+            "revision": 2
+          },
+          "note": "Pulseq MATLAB write() and writeBinary() may emit text revision 1 and binary revision 2 from the same object."
+        },
+        "structure": {
+          "name": "normalizedStructure",
+          "mismatchCount": 0,
+          "mismatches": [],
+          "numericComparisonCount": 9131,
+          "maxAbsoluteDifference": 5,
+          "maxRelativeDifference": 0.000004781250000113141
+        },
+        "decoded": {
+          "passed": true,
+          "metrics": {
+            "blockCountSeq": 516,
+            "blockCountBseq": 516,
+            "presenceMismatchCount": 0,
+            "lengthMismatchCount": 0,
+            "metadataMismatchCount": 0,
+            "maxTimeDifferenceSec": 0,
+            "maxGradientAbsoluteDifference": 5,
+            "maxGradientMagnitude": 1276600,
+            "maxRfMagnitudeDifference": 0.00038837660238755234,
+            "maxRfPhaseDifferenceRad": 0.0000026535897932333796
+          },
+          "tolerances": {
+            "timeSeconds": 1e-9,
+            "gradientAbsolute": 6.383000000000001,
+            "rfMagnitudeAbsolute": 0.001,
+            "rfPhaseAbsoluteRad": 0.001
+          },
+          "mismatches": []
+        },
+        "totalDuration": {
+          "seqSeconds": 1.216559999999996,
+          "bseqSeconds": 1.216559999999996,
+          "absoluteDifferenceSeconds": 0,
+          "toleranceSeconds": 1e-9,
+          "passed": true
+        }
+      },
+      "performance": {
+        "acquisition": {
+          "note": "Warm filesystem read plus allocation; not a controlled cold-cache measurement.",
+          "seq": {
+            "medianMs": 0.013416000000006534,
+            "p95Ms": 0.07258300000000872,
+            "minMs": 0.010999999999967258,
+            "maxMs": 0.07258300000000872,
+            "medianAbsoluteDeviationMs": 0.0009169999999585343,
+            "medianMegabytesPerSecond": 3009.913536074861,
+            "samplesMs": [
+              0.07258300000000872,
+              0.014708999999982098,
+              0.01641600000004928,
+              0.010999999999967258,
+              0.011874999999974989,
+              0.013249999999970896,
+              0.013541000000032,
+              0.013416000000006534,
+              0.014332999999965068,
+              0.012958000000026004,
+              0.014124999999978627,
+              0.012791999999990367,
+              0.013708000000008269,
+              0.011875000000031832,
+              0.011916000000042004
+            ]
+          },
+          "bseq": {
+            "medianMs": 0.01325000000002774,
+            "p95Ms": 0.021666999999979453,
+            "minMs": 0.009666000000038366,
+            "maxMs": 0.021666999999979453,
+            "medianAbsoluteDeviationMs": 0.001082999999994172,
+            "medianMegabytesPerSecond": 2952.3773584843852,
+            "samplesMs": [
+              0.021666999999979453,
+              0.018000000000029104,
+              0.013874999999984539,
+              0.014333000000021912,
+              0.010207999999977346,
+              0.011374999999986812,
+              0.012875000000008185,
+              0.013916999999992186,
+              0.01325000000002774,
+              0.014166999999986274,
+              0.013083999999992102,
+              0.017166999999972177,
+              0.010708000000022366,
+              0.012207999999986896,
+              0.009666000000038366
+            ]
+          },
+          "speedupTextOverBinary": 1.0125283018851658
+        },
+        "parsePreloadedBytes": {
+          "note": "Includes UTF-8 decoding for .seq and complete parser validation/shape decompression for both formats.",
+          "seq": {
+            "medianMs": 0.4950420000000122,
+            "p95Ms": 0.6253329999999551,
+            "minMs": 0.4849169999999958,
+            "maxMs": 0.6253329999999551,
+            "medianAbsoluteDeviationMs": 0.005876000000057502,
+            "medianMegabytesPerSecond": 81.57085661418427,
+            "samplesMs": [
+              0.49900000000002365,
+              0.5010829999999942,
+              0.5186249999999859,
+              0.4970000000000141,
+              0.4959999999999809,
+              0.4948339999999689,
+              0.4849169999999958,
+              0.4903749999999718,
+              0.500458999999978,
+              0.4857499999999959,
+              0.488584000000003,
+              0.4891659999999547,
+              0.6253329999999551,
+              0.4878750000000309,
+              0.4950420000000122
+            ]
+          },
+          "bseq": {
+            "medianMs": 0.16304099999996424,
+            "p95Ms": 0.44366600000000744,
+            "minMs": 0.16179199999999128,
+            "maxMs": 0.44366600000000744,
+            "medianAbsoluteDeviationMs": 0.0009579999999687061,
+            "medianMegabytesPerSecond": 239.93351365612685,
+            "samplesMs": [
+              0.1714579999999728,
+              0.17879199999998718,
+              0.1658750000000282,
+              0.44366600000000744,
+              0.163250000000005,
+              0.16229099999998198,
+              0.16270900000000665,
+              0.16283300000003464,
+              0.16199999999997772,
+              0.16208299999999554,
+              0.16304099999996424,
+              0.16500000000002046,
+              0.16179199999999128,
+              0.163250000000005,
+              0.16300000000001091
+            ]
+          },
+          "speedupTextOverBinary": 3.0363037518177682
+        }
+      }
+    },
+    {
+      "name": "writeUTE",
+      "category": "demoSeq",
+      "files": {
+        "seq": "bseq/benchmark_data/demo_seq_pairs/writeUTE.seq",
+        "bseq": "bseq/benchmark_data/demo_seq_pairs/writeUTE.bseq",
+        "seqBytes": 53680,
+        "bseqBytes": 48031,
+        "bseqToSeqSizeRatio": 0.8947652757078987,
+        "seqSha256": "32ea346c9e216003d1de556f388bdb9c2d7f1996830a6f1b92543fa89d1a8bd9",
+        "bseqSha256": "45eb94b85f698793ecfd120cffdf60c5d56a4334bb29e2e7f624f1c872fdd81d"
+      },
+      "descriptors": {
+        "version": "1.5.1",
+        "blocks": 1024,
+        "rfEvents": 12,
+        "arbitraryGradientEvents": 0,
+        "arbitraryGradientBlocks": {
+          "blocksWithAny": 0,
+          "totalBlockReferences": 0,
+          "perAxisBlockReferences": {
+            "gx": 0,
+            "gy": 0,
+            "gz": 0
+          },
+          "uniqueReferencedEvents": 0,
+          "fractionOfBlocksWithAny": 0
+        },
+        "trapezoidGradientEvents": 208,
+        "adcEvents": 12,
+        "extensionNodes": 0,
+        "shapes": 2,
+        "expandedShapeSamples": 2000,
+        "totalDurationSeconds": 2.5600000000000143
+      },
+      "accuracy": {
+        "passed": true,
+        "versionCompatibility": {
+          "passed": true,
+          "seq": {
+            "major": 1,
+            "minor": 5,
+            "revision": 1
+          },
+          "bseq": {
+            "major": 1,
+            "minor": 5,
+            "revision": 2
+          },
+          "note": "Pulseq MATLAB write() and writeBinary() may emit text revision 1 and binary revision 2 from the same object."
+        },
+        "structure": {
+          "name": "normalizedStructure",
+          "mismatchCount": 0,
+          "mismatches": [],
+          "numericComparisonCount": 11742,
+          "maxAbsoluteDifference": 0.49382897923351265,
+          "maxRelativeDifference": 0.000004387832793996554
+        },
+        "decoded": {
+          "passed": true,
+          "metrics": {
+            "blockCountSeq": 1024,
+            "blockCountBseq": 1024,
+            "presenceMismatchCount": 0,
+            "lengthMismatchCount": 0,
+            "metadataMismatchCount": 0,
+            "maxTimeDifferenceSec": 0,
+            "maxGradientAbsoluteDifference": 0.49382897923351265,
+            "maxGradientMagnitude": 666667,
+            "maxRfMagnitudeDifference": 0.00008828462384258273,
+            "maxRfPhaseDifferenceRad": 0.000004897606805442933
+          },
+          "tolerances": {
+            "timeSeconds": 1e-9,
+            "gradientAbsolute": 3.3333350000000004,
+            "rfMagnitudeAbsolute": 0.001,
+            "rfPhaseAbsoluteRad": 0.001
+          },
+          "mismatches": []
+        },
+        "totalDuration": {
+          "seqSeconds": 2.5600000000000143,
+          "bseqSeconds": 2.5600000000000143,
+          "absoluteDifferenceSeconds": 0,
+          "toleranceSeconds": 1e-9,
+          "passed": true
+        }
+      },
+      "performance": {
+        "acquisition": {
+          "note": "Warm filesystem read plus allocation; not a controlled cold-cache measurement.",
+          "seq": {
+            "medianMs": 0.0160420000000272,
+            "p95Ms": 0.070083000000011,
+            "minMs": 0.013666999999998097,
+            "maxMs": 0.070083000000011,
+            "medianAbsoluteDeviationMs": 0.0014170000000035543,
+            "medianMegabytesPerSecond": 3346.216182515209,
+            "samplesMs": [
+              0.070083000000011,
+              0.0160420000000272,
+              0.014417000000037206,
+              0.015166999999962627,
+              0.016541000000017902,
+              0.014041000000020176,
+              0.01779199999998582,
+              0.013666999999998097,
+              0.015667000000007647,
+              0.01737500000001546,
+              0.02241700000001856,
+              0.016374999999982265,
+              0.01637500000003911,
+              0.01412500000003547,
+              0.014625000000023647
+            ]
+          },
+          "bseq": {
+            "medianMs": 0.014416999999980362,
+            "p95Ms": 0.02529200000003584,
+            "minMs": 0.011209000000008018,
+            "maxMs": 0.02529200000003584,
+            "medianAbsoluteDeviationMs": 0.0020420000000171967,
+            "medianMegabytesPerSecond": 3331.5530276801987,
+            "samplesMs": [
+              0.02287499999999909,
+              0.02529200000003584,
+              0.011209000000008018,
+              0.016416999999989912,
+              0.013541999999972631,
+              0.014416999999980362,
+              0.012916000000018357,
+              0.013541000000032,
+              0.012374999999963165,
+              0.02408300000001873,
+              0.01904100000001563,
+              0.019000000000005457,
+              0.012375000000020009,
+              0.017291000000000167,
+              0.013041999999984455
+            ]
+          },
+          "speedupTextOverBinary": 1.1127141569015089
+        },
+        "parsePreloadedBytes": {
+          "note": "Includes UTF-8 decoding for .seq and complete parser validation/shape decompression for both formats.",
+          "seq": {
+            "medianMs": 0.5787919999999644,
+            "p95Ms": 0.9813750000000141,
+            "minMs": 0.5697920000000067,
+            "maxMs": 0.9813750000000141,
+            "medianAbsoluteDeviationMs": 0.007000999999945634,
+            "medianMegabytesPerSecond": 92.74488935576736,
+            "samplesMs": [
+              0.5787919999999644,
+              0.9813750000000141,
+              0.60125000000005,
+              0.5891659999999774,
+              0.5697920000000067,
+              0.5729160000000206,
+              0.5713750000000459,
+              0.5717910000000188,
+              0.5815420000000131,
+              0.6075840000000312,
+              0.5808749999999918,
+              0.5798750000000155,
+              0.5725830000000087,
+              0.5723340000000121,
+              0.5715000000000146
+            ]
+          },
+          "bseq": {
+            "medianMs": 0.16675000000003593,
+            "p95Ms": 0.29633400000000165,
+            "minMs": 0.16337499999997362,
+            "maxMs": 0.29633400000000165,
+            "medianAbsoluteDeviationMs": 0.003041000000052918,
+            "medianMegabytesPerSecond": 288.04197901043267,
+            "samplesMs": [
+              0.17020800000000236,
+              0.16654099999999517,
+              0.16849999999999454,
+              0.16920899999996664,
+              0.16345799999999144,
+              0.16645900000003166,
+              0.16591700000003584,
+              0.16337499999997362,
+              0.17316600000003746,
+              0.29633400000000165,
+              0.19454100000001517,
+              0.17816599999997607,
+              0.16675000000003593,
+              0.16387500000001864,
+              0.163708999999983
+            ]
+          },
+          "speedupTextOverBinary": 3.471016491753162
+        }
+      }
+    },
+    {
+      "name": "writeZTE_Petra",
+      "category": "demoSeq",
+      "files": {
+        "seq": "bseq/benchmark_data/demo_seq_pairs/writeZTE_Petra.seq",
+        "bseq": "bseq/benchmark_data/demo_seq_pairs/writeZTE_Petra.bseq",
+        "seqBytes": 5757607,
+        "bseqBytes": 4559988,
+        "bseqToSeqSizeRatio": 0.7919936181819982,
+        "seqSha256": "6874deafb2ae842b5795d8895f934e9531f6b698bdc65f76d9e60124be8b9b17",
+        "bseqSha256": "e9efbf6912655232e42c394e56b62fc742015283f9a205a2d560d308f0340ac8"
+      },
+      "descriptors": {
+        "version": "1.5.1",
+        "blocks": 22784,
+        "rfEvents": 3,
+        "arbitraryGradientEvents": 67067,
+        "arbitraryGradientBlocks": {
+          "blocksWithAny": 22782,
+          "totalBlockReferences": 68274,
+          "perAxisBlockReferences": {
+            "gx": 22749,
+            "gy": 22749,
+            "gz": 22776
+          },
+          "uniqueReferencedEvents": 67067,
+          "fractionOfBlocksWithAny": 0.9999122191011236
+        },
+        "trapezoidGradientEvents": 0,
+        "adcEvents": 1,
+        "extensionNodes": 0,
+        "shapes": 31397,
+        "expandedShapeSamples": 62810,
+        "totalDurationSeconds": 16.337099999995914
+      },
+      "accuracy": {
+        "passed": true,
+        "versionCompatibility": {
+          "passed": true,
+          "seq": {
+            "major": 1,
+            "minor": 5,
+            "revision": 1
+          },
+          "bseq": {
+            "major": 1,
+            "minor": 5,
+            "revision": 2
+          },
+          "note": "Pulseq MATLAB write() and writeBinary() may emit text revision 1 and binary revision 2 from the same object."
+        },
+        "structure": {
+          "name": "normalizedStructure",
+          "mismatchCount": 0,
+          "mismatches": [],
+          "numericComparisonCount": 746020,
+          "maxAbsoluteDifference": 0.49997482169419527,
+          "maxRelativeDifference": 0.000004920036358303153
+        },
+        "decoded": {
+          "passed": true,
+          "metrics": {
+            "blockCountSeq": 22784,
+            "blockCountBseq": 22784,
+            "presenceMismatchCount": 0,
+            "lengthMismatchCount": 0,
+            "metadataMismatchCount": 0,
+            "maxTimeDifferenceSec": 0,
+            "maxGradientAbsoluteDifference": 0.5178167555714026,
+            "maxGradientMagnitude": 704225.3521126761,
+            "maxRfMagnitudeDifference": 0.0005320773479979835,
+            "maxRfPhaseDifferenceRad": 0
+          },
+          "tolerances": {
+            "timeSeconds": 1e-9,
+            "gradientAbsolute": 3.521126760563381,
+            "rfMagnitudeAbsolute": 0.001,
+            "rfPhaseAbsoluteRad": 0.001
+          },
+          "mismatches": []
+        },
+        "totalDuration": {
+          "seqSeconds": 16.337099999995914,
+          "bseqSeconds": 16.337099999995914,
+          "absoluteDifferenceSeconds": 0,
+          "toleranceSeconds": 1e-9,
+          "passed": true
+        }
+      },
+      "performance": {
+        "acquisition": {
+          "note": "Warm filesystem read plus allocation; not a controlled cold-cache measurement.",
+          "seq": {
+            "medianMs": 0.7322499999997945,
+            "p95Ms": 1.93362500000012,
+            "minMs": 0.611833999999817,
+            "maxMs": 1.93362500000012,
+            "medianAbsoluteDeviationMs": 0.053792000000157714,
+            "medianMegabytesPerSecond": 7862.897917380152,
+            "samplesMs": [
+              0.7860419999999522,
+              1.93362500000012,
+              0.7294999999999163,
+              0.6485410000000229,
+              0.7489160000000084,
+              0.7992920000001504,
+              0.7457910000000538,
+              0.649208999999928,
+              0.7322499999997945,
+              0.6355839999998807,
+              0.7401660000000447,
+              0.6203749999999673,
+              0.7232079999998859,
+              0.611833999999817,
+              0.7665000000001783
+            ]
+          },
+          "bseq": {
+            "medianMs": 0.5662090000000717,
+            "p95Ms": 0.6451250000000073,
+            "minMs": 0.5162090000001172,
+            "maxMs": 0.6451250000000073,
+            "medianAbsoluteDeviationMs": 0.030666000000110216,
+            "medianMegabytesPerSecond": 8053.542066621022,
+            "samplesMs": [
+              0.5162090000001172,
+              0.5978339999999207,
+              0.5933340000001408,
+              0.6395419999998921,
+              0.5494580000001861,
+              0.6451250000000073,
+              0.5511250000001837,
+              0.5883330000001479,
+              0.5372919999999795,
+              0.5444169999998394,
+              0.5308749999999236,
+              0.6042090000000826,
+              0.5330000000003565,
+              0.5968750000001819,
+              0.5662090000000717
+            ]
+          },
+          "speedupTextOverBinary": 1.2932503722118542
+        },
+        "parsePreloadedBytes": {
+          "note": "Includes UTF-8 decoding for .seq and complete parser validation/shape decompression for both formats.",
+          "seq": {
+            "medianMs": 65.81308399999989,
+            "p95Ms": 128.419042,
+            "minMs": 63.61729100000002,
+            "maxMs": 128.419042,
+            "medianAbsoluteDeviationMs": 1.2507089999999152,
+            "medianMegabytesPerSecond": 87.48423033936551,
+            "samplesMs": [
+              65.81308399999989,
+              67.89329099999986,
+              69.01808300000016,
+              128.419042,
+              64.75745899999993,
+              67.52929200000017,
+              65.84733300000016,
+              65.407917,
+              76.97741700000006,
+              64.56237499999997,
+              65.11041699999987,
+              76.76037499999984,
+              63.61729100000002,
+              64.65816700000005,
+              65.80295799999976
+            ]
+          },
+          "bseq": {
+            "medianMs": 20.826750000000175,
+            "p95Ms": 39.80879099999993,
+            "minMs": 19.452417000000196,
+            "maxMs": 39.80879099999993,
+            "medianAbsoluteDeviationMs": 0.6465419999997266,
+            "medianMegabytesPerSecond": 218.9486117613147,
+            "samplesMs": [
+              22.994791000000077,
+              23.175457999999935,
+              23.27433300000007,
+              21.11191699999995,
+              20.480290999999852,
+              19.452417000000196,
+              20.339291999999887,
+              21.4732919999999,
+              20.346582999999782,
+              21.64945899999998,
+              20.826750000000175,
+              19.856041000000005,
+              20.675917000000027,
+              20.286791999999878,
+              39.80879099999993
+            ]
+          },
+          "speedupTextOverBinary": 3.1600266004056965
+        }
+      }
+    },
+    {
+      "name": "wave_test_R3x2",
+      "category": "extreme-arbitrary-gradient",
+      "files": {
+        "seq": "demo_files/wave_test_R3x2.seq",
+        "bseq": "demo_files/wave_test_R3x2.bseq",
+        "seqBytes": 3059434,
+        "bseqBytes": 1504068,
+        "bseqToSeqSizeRatio": 0.49161642316846843,
+        "seqSha256": "156e72727997584d504a4c6a25d645019cae51117011f1c513fca917c6dfad8c",
+        "bseqSha256": "adde36fa0e01e59ff23f6459a1e23bdeb1052c53356da6dad6f059da5eea4262"
+      },
+      "descriptors": {
+        "version": "1.5.1",
+        "blocks": 12839,
+        "rfEvents": 17,
+        "arbitraryGradientEvents": 566,
+        "arbitraryGradientBlocks": {
+          "blocksWithAny": 12728,
+          "totalBlockReferences": 31820,
+          "perAxisBlockReferences": {
+            "gx": 12728,
+            "gy": 6364,
+            "gz": 12728
+          },
+          "uniqueReferencedEvents": 247,
+          "fractionOfBlocksWithAny": 0.9913544668587896
+        },
+        "trapezoidGradientEvents": 221,
+        "adcEvents": 16,
+        "extensionNodes": 6372,
+        "shapes": 746,
+        "expandedShapeSamples": 241826,
+        "totalDurationSeconds": 92.50000000000995
+      },
+      "accuracy": {
+        "passed": true,
+        "versionCompatibility": {
+          "passed": true,
+          "seq": {
+            "major": 1,
+            "minor": 5,
+            "revision": 1
+          },
+          "bseq": {
+            "major": 1,
+            "minor": 5,
+            "revision": 2
+          },
+          "note": "Pulseq MATLAB write() and writeBinary() may emit text revision 1 and binary revision 2 from the same object."
+        },
+        "structure": {
+          "name": "normalizedStructure",
+          "mismatchCount": 0,
+          "mismatches": [],
+          "numericComparisonCount": 377118,
+          "maxAbsoluteDifference": 4.99851558660157,
+          "maxRelativeDifference": 1.0000064373016357
+        },
+        "decoded": {
+          "passed": true,
+          "metrics": {
+            "blockCountSeq": 12839,
+            "blockCountBseq": 12839,
+            "presenceMismatchCount": 0,
+            "lengthMismatchCount": 0,
+            "metadataMismatchCount": 0,
+            "maxTimeDifferenceSec": 0,
+            "maxGradientAbsoluteDifference": 4.813723233062774,
+            "maxGradientMagnitude": 1617060,
+            "maxRfMagnitudeDifference": 0.00044444444446867237,
+            "maxRfPhaseDifferenceRad": 0.000004897606804554755
+          },
+          "tolerances": {
+            "timeSeconds": 1e-9,
+            "gradientAbsolute": 8.0853,
+            "rfMagnitudeAbsolute": 0.001,
+            "rfPhaseAbsoluteRad": 0.001
+          },
+          "mismatches": []
+        },
+        "totalDuration": {
+          "seqSeconds": 92.50000000000995,
+          "bseqSeconds": 92.50000000000995,
+          "absoluteDifferenceSeconds": 0,
+          "toleranceSeconds": 1e-9,
+          "passed": true
+        }
+      },
+      "performance": {
+        "acquisition": {
+          "note": "Warm filesystem read plus allocation; not a controlled cold-cache measurement.",
+          "seq": {
+            "medianMs": 0.3856250000003456,
+            "p95Ms": 0.45041600000013204,
+            "minMs": 0.3609999999998763,
+            "maxMs": 0.45041600000013204,
+            "medianAbsoluteDeviationMs": 0.012375000000247383,
+            "medianMegabytesPerSecond": 7933.7024311112045,
+            "samplesMs": [
+              0.42550000000028376,
+              0.3799579999999878,
+              0.4049159999999574,
+              0.3609999999998763,
+              0.41116599999986647,
+              0.3856250000003456,
+              0.3842500000000655,
+              0.37904200000002675,
+              0.45041600000013204,
+              0.3732500000000982,
+              0.38308299999971496,
+              0.38579200000003766,
+              0.4187090000000353,
+              0.37525000000005093,
+              0.44725000000016735
+            ]
+          },
+          "bseq": {
+            "medianMs": 0.2303340000003118,
+            "p95Ms": 0.2784160000001066,
+            "minMs": 0.18112500000006548,
+            "maxMs": 0.2784160000001066,
+            "medianAbsoluteDeviationMs": 0.03033400000049369,
+            "medianMegabytesPerSecond": 6529.943473381975,
+            "samplesMs": [
+              0.19937499999969077,
+              0.2766670000000886,
+              0.19279100000039762,
+              0.2784160000001066,
+              0.18112500000006548,
+              0.25129199999992125,
+              0.22066700000004857,
+              0.25054099999988466,
+              0.1999999999998181,
+              0.26625000000012733,
+              0.2303340000003118,
+              0.27029099999981554,
+              0.21933400000034453,
+              0.2485830000000533,
+              0.2257079999999405
+            ]
+          },
+          "speedupTextOverBinary": 1.6741992063691145
+        },
+        "parsePreloadedBytes": {
+          "note": "Includes UTF-8 decoding for .seq and complete parser validation/shape decompression for both formats.",
+          "seq": {
+            "medianMs": 35.51154099999985,
+            "p95Ms": 40.09770900000012,
+            "minMs": 35.09404100000029,
+            "maxMs": 40.09770900000012,
+            "medianAbsoluteDeviationMs": 0.20758299999988594,
+            "medianMegabytesPerSecond": 86.15323114251822,
+            "samplesMs": [
+              40.09770900000012,
+              35.90537499999982,
+              35.42591599999969,
+              35.66362500000014,
+              35.09404100000029,
+              37.48799999999983,
+              35.51154099999985,
+              35.303957999999966,
+              35.285499999999956,
+              35.51704100000006,
+              35.425750000000335,
+              35.13441600000033,
+              37.46229200000016,
+              35.65720800000008,
+              35.33324999999968
+            ]
+          },
+          "bseq": {
+            "medianMs": 4.3020839999999225,
+            "p95Ms": 4.854291999999987,
+            "minMs": 4.225082999999813,
+            "maxMs": 4.854291999999987,
+            "medianAbsoluteDeviationMs": 0.06000099999982922,
+            "medianMegabytesPerSecond": 349.6138150719575,
+            "samplesMs": [
+              4.27145900000005,
+              4.795125000000098,
+              4.746541999999863,
+              4.22649999999976,
+              4.51583299999993,
+              4.242083000000093,
+              4.356374999999844,
+              4.248250000000098,
+              4.225082999999813,
+              4.3020839999999225,
+              4.270332999999937,
+              4.78754200000003,
+              4.285750000000007,
+              4.854291999999987,
+              4.307416999999987
+            ]
+          },
+          "speedupTextOverBinary": 8.25449735523539
+        }
+      }
+    },
+    {
+      "name": "pypulseq_3dmrf",
+      "category": "demoSeq",
+      "files": {
+        "seq": "demo_files/pypulseq_3dmrf.seq",
+        "bseq": "demo_files/pypulseq_3dmrf.bseq",
+        "seqBytes": 7469863,
+        "bseqBytes": 6783785,
+        "bseqToSeqSizeRatio": 0.9081538710950924,
+        "seqSha256": "c2138e4e8eefd64f8bcbe6c964b9b14ba5a91a33cb9168519e8e17296644e27f",
+        "bseqSha256": "3b4b0195fc24102dd9a6a09b3d9004c2b2cfcf0e1b4072635dc93d667a7327cb"
+      },
+      "descriptors": {
+        "version": "1.5.1",
+        "blocks": 156447,
+        "rfEvents": 6,
+        "arbitraryGradientEvents": 3,
+        "arbitraryGradientBlocks": {
+          "blocksWithAny": 30240,
+          "totalBlockReferences": 90720,
+          "perAxisBlockReferences": {
+            "gx": 30240,
+            "gy": 30240,
+            "gz": 30240
+          },
+          "uniqueReferencedEvents": 3,
+          "fractionOfBlocksWithAny": 0.1932922970718518
+        },
+        "trapezoidGradientEvents": 5,
+        "adcEvents": 2,
+        "extensionNodes": 30240,
+        "shapes": 13,
+        "expandedShapeSamples": 59781,
+        "totalDurationSeconds": 857.7124799993895
+      },
+      "accuracy": {
+        "passed": true,
+        "versionCompatibility": {
+          "passed": true,
+          "seq": {
+            "major": 1,
+            "minor": 5,
+            "revision": 1
+          },
+          "bseq": {
+            "major": 1,
+            "minor": 5,
+            "revision": 2
+          },
+          "note": "Pulseq MATLAB write() and writeBinary() may emit text revision 1 and binary revision 2 from the same object."
+        },
+        "structure": {
+          "name": "normalizedStructure",
+          "mismatchCount": 0,
+          "mismatches": [],
+          "numericComparisonCount": 1583690,
+          "maxAbsoluteDifference": 3.055850381072922e-8,
+          "maxRelativeDifference": 1.000476115342943
+        },
+        "decoded": {
+          "passed": true,
+          "metrics": {
+            "blockCountSeq": 156447,
+            "blockCountBseq": 156447,
+            "presenceMismatchCount": 0,
+            "lengthMismatchCount": 0,
+            "metadataMismatchCount": 0,
+            "maxTimeDifferenceSec": 0,
+            "maxGradientAbsoluteDifference": 0.04412748930917587,
+            "maxGradientMagnitude": 1965220,
+            "maxRfMagnitudeDifference": 0.00002085785524741368,
+            "maxRfPhaseDifferenceRad": 1.9200474210556706e-7
+          },
+          "tolerances": {
+            "timeSeconds": 1e-9,
+            "gradientAbsolute": 9.8261,
+            "rfMagnitudeAbsolute": 0.001,
+            "rfPhaseAbsoluteRad": 0.001
+          },
+          "mismatches": []
+        },
+        "totalDuration": {
+          "seqSeconds": 857.7124799993895,
+          "bseqSeconds": 857.7124799993895,
+          "absoluteDifferenceSeconds": 0,
+          "toleranceSeconds": 1e-9,
+          "passed": true
+        }
+      },
+      "performance": {
+        "acquisition": {
+          "note": "Warm filesystem read plus allocation; not a controlled cold-cache measurement.",
+          "seq": {
+            "medianMs": 0.934625000001688,
+            "p95Ms": 3.7564999999995052,
+            "minMs": 0.8007499999985157,
+            "maxMs": 3.7564999999995052,
+            "medianAbsoluteDeviationMs": 0.0970000000015716,
+            "medianMegabytesPerSecond": 7992.36378225118,
+            "samplesMs": [
+              3.7564999999995052,
+              1.050041999998939,
+              0.9218330000003334,
+              0.818583000000217,
+              0.8601669999989099,
+              0.829834000000119,
+              0.9562079999996058,
+              0.9945840000000317,
+              1.0611250000001746,
+              1.271166999998968,
+              1.0196670000004815,
+              0.8007499999985157,
+              0.8983330000010028,
+              0.8376250000001164,
+              0.934625000001688
+            ]
+          },
+          "bseq": {
+            "medianMs": 0.8709170000001905,
+            "p95Ms": 4.671416999997746,
+            "minMs": 0.7318750000013097,
+            "maxMs": 4.671416999997746,
+            "medianAbsoluteDeviationMs": 0.10408400000233087,
+            "medianMegabytesPerSecond": 7789.243980767991,
+            "samplesMs": [
+              1.9762080000000424,
+              1.0201249999990978,
+              0.8015839999970922,
+              1.0731660000019474,
+              0.9696670000012091,
+              0.8486249999987194,
+              0.7609159999992698,
+              0.8709170000001905,
+              0.7668329999978596,
+              1.1815839999981108,
+              4.671416999997746,
+              0.9465420000015001,
+              0.7318750000013097,
+              0.829833999996481,
+              0.7767499999972642
+            ]
+          },
+          "speedupTextOverBinary": 1.073150483916933
+        },
+        "parsePreloadedBytes": {
+          "note": "Includes UTF-8 decoding for .seq and complete parser validation/shape decompression for both formats.",
+          "seq": {
+            "medianMs": 586.1134169999968,
+            "p95Ms": 639.6992500000015,
+            "minMs": 427.62916699999914,
+            "maxMs": 639.6992500000015,
+            "medianAbsoluteDeviationMs": 9.68370899999718,
+            "medianMegabytesPerSecond": 12.744739812021809,
+            "samplesMs": [
+              602.3666660000017,
+              608.8915000000015,
+              583.1969169999975,
+              586.1134169999968,
+              583.091207999998,
+              592.3318330000002,
+              601.7957920000008,
+              583.6326670000017,
+              584.2401250000003,
+              639.6992500000015,
+              598.9286250000005,
+              427.62916699999914,
+              576.4297079999997,
+              599.0585419999989,
+              580.2327090000035
+            ]
+          },
+          "bseq": {
+            "medianMs": 515.919084000001,
+            "p95Ms": 906.481917000001,
+            "minMs": 509.4006670000017,
+            "maxMs": 906.481917000001,
+            "medianAbsoluteDeviationMs": 4.982665999999881,
+            "medianMegabytesPerSecond": 13.148932091064085,
+            "samplesMs": [
+              533.8793330000008,
+              514.9525829999984,
+              514.5408749999988,
+              509.4006670000017,
+              512.5016249999971,
+              515.919084000001,
+              512.3135419999999,
+              545.0152500000004,
+              575.2702499999978,
+              520.9017500000009,
+              526.577874999999,
+              906.481917000001,
+              521.3468749999993,
+              511.3748330000017,
+              511.5509579999998
+            ]
+          },
+          "speedupTextOverBinary": 1.1360568646846094
+        }
+      }
+    }
+  ],
+  "appendedBenchmarkPairs": [
+    "pypulseq_3dmrf"
+  ],
+  "lastUpdated": "2026-07-24T07:30:13.341Z"
+}

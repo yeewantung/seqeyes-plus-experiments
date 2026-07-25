@@ -1,0 +1,189 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="922" viewBox="0 0 1600 922" role="img">
+<rect width="1600" height="922" fill="#f8fafc"/>
+<text x="55" y="58" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="30" fill="#0f172a" font-weight="700" text-anchor="start">BSEQ comparison: storage and parser gains versus complete viewer work</text>
+<text x="55" y="92" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="17" fill="#475569" font-weight="400" text-anchor="start">Each value is SEQ ÷ BSEQ (bytes or median time). Right of 1× favors BSEQ; left favors SEQ.</text>
+<rect x="55" y="118" width="1490" height="55" rx="10" fill="#e2e8f0"/>
+<circle cx="78" cy="148" r="7" fill="#7c3aed"/><text x="95" y="141" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14" fill="#475569" font-weight="600" text-anchor="start">Aggregate storage reduction</text><text x="95" y="168" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="20" fill="#0f172a" font-weight="750" text-anchor="start">1.29×</text>
+<circle cx="430" cy="148" r="7" fill="#2563eb"/><text x="447" y="141" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14" fill="#475569" font-weight="600" text-anchor="start">Parser geometric mean</text><text x="447" y="168" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="20" fill="#0f172a" font-weight="750" text-anchor="start">5.09×</text>
+<circle cx="790" cy="148" r="7" fill="#f59e0b"/><text x="807" y="141" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14" fill="#475569" font-weight="600" text-anchor="start">File-to-ready geometric mean</text><text x="807" y="168" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="20" fill="#0f172a" font-weight="750" text-anchor="start">1.03×</text>
+<circle cx="1190" cy="148" r="7" fill="#059669"/><text x="1207" y="141" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14" fill="#475569" font-weight="600" text-anchor="start">K-space geometric mean</text><text x="1207" y="168" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="20" fill="#0f172a" font-weight="750" text-anchor="start">1×</text>
+<rect x="370" y="255" width="135" height="577" fill="#fef2f2"/>
+<rect x="505" y="255" width="675" height="577" fill="#f0fdf4"/>
+<line x1="370" y1="233" x2="370" y2="832" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3 5"/>
+<text x="370" y="225" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14" fill="#475569" font-weight="500" text-anchor="middle">0.5×</text>
+<line x1="505" y1="233" x2="505" y2="832" stroke="#334155" stroke-width="2.5" />
+<text x="505" y="225" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14" fill="#475569" font-weight="700" text-anchor="middle">1×</text>
+<line x1="640" y1="233" x2="640" y2="832" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3 5"/>
+<text x="640" y="225" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14" fill="#475569" font-weight="500" text-anchor="middle">2×</text>
+<line x1="775" y1="233" x2="775" y2="832" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3 5"/>
+<text x="775" y="225" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14" fill="#475569" font-weight="500" text-anchor="middle">4×</text>
+<line x1="910" y1="233" x2="910" y2="832" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3 5"/>
+<text x="910" y="225" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14" fill="#475569" font-weight="500" text-anchor="middle">8×</text>
+<line x1="1045" y1="233" x2="1045" y2="832" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3 5"/>
+<text x="1045" y="225" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14" fill="#475569" font-weight="500" text-anchor="middle">16×</text>
+<line x1="1180" y1="233" x2="1180" y2="832" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3 5"/>
+<text x="1180" y="225" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14" fill="#475569" font-weight="500" text-anchor="middle">32×</text>
+<text x="370" y="200" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="15" fill="#334155" font-weight="650" text-anchor="start">Per-sequence median speedup (log₂ scale)</text>
+<text x="1225" y="200" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14" fill="#6d28d9" font-weight="700" text-anchor="middle">Storage</text>
+<text x="1320" y="200" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14" fill="#2563eb" font-weight="700" text-anchor="middle">Parser</text>
+<text x="1415" y="200" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14" fill="#b45309" font-weight="700" text-anchor="middle">Ready</text>
+<text x="1510" y="200" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14" fill="#047857" font-weight="700" text-anchor="middle">K-space</text>
+<line x1="370" y1="282" x2="1180" y2="282" stroke="#e2e8f0"/>
+<text x="55" y="281" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14" fill="#0f172a" font-weight="500" text-anchor="start">pypulseq_3dmrf</text>
+<text x="55" y="297" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" fill="#64748b" font-weight="400" text-anchor="start">30,240 arbitrary-gradient / 156,447 total blocks</text>
+<path d="M 523.7638304590763 264 L 529.7638304590763 270 L 523.7638304590763 276 L 517.7638304590763 270 Z" fill="#7c3aed" stroke="#ffffff" stroke-width="1"><title>pypulseq_3dmrf: storage 1.1×</title></path>
+<circle cx="529.8447317412594" cy="278" r="5.5" fill="#2563eb" stroke="#ffffff" stroke-width="1.5"><title>pypulseq_3dmrf: parser 1.14×</title></circle>
+<rect x="510.8816717726147" y="280.5" width="11" height="11" rx="1" fill="#f59e0b" stroke="#ffffff" stroke-width="1.5"><title>pypulseq_3dmrf: file-to-ready 1.06×</title></rect>
+<text x="1225" y="287" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#6d28d9" font-weight="600" text-anchor="middle">1.1×</text>
+<text x="1320" y="287" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#1e40af" font-weight="600" text-anchor="middle">1.14×</text>
+<text x="1415" y="287" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#92400e" font-weight="600" text-anchor="middle">1.06×</text>
+<text x="1510" y="287" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#065f46" font-weight="600" text-anchor="middle">n/a</text>
+<rect x="40" y="304" width="1505" height="44" fill="#ffffff" opacity="0.72"/>
+<line x1="370" y1="326" x2="1180" y2="326" stroke="#e2e8f0"/>
+<text x="55" y="325" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14" fill="#0f172a" font-weight="500" text-anchor="start">writeZTE_Petra</text>
+<text x="55" y="341" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" fill="#64748b" font-weight="400" text-anchor="start">22,782 arbitrary-gradient / 22,784 total blocks</text>
+<path d="M 550.4193041028864 308 L 556.4193041028864 314 L 550.4193041028864 320 L 544.4193041028864 314 Z" fill="#7c3aed" stroke="#ffffff" stroke-width="1"><title>writeZTE_Petra: storage 1.26×</title></path>
+<circle cx="729.0914548701126" cy="322" r="5.5" fill="#2563eb" stroke="#ffffff" stroke-width="1.5"><title>writeZTE_Petra: parser 3.16×</title></circle>
+<rect x="517.7055207380881" y="324.5" width="11" height="11" rx="1" fill="#f59e0b" stroke="#ffffff" stroke-width="1.5"><title>writeZTE_Petra: file-to-ready 1.1×</title></rect>
+<path d="M 509.7976694723176 331.5 L 515.7976694723176 343.5 L 503.7976694723176 343.5 Z" fill="#059669" stroke="#ffffff" stroke-width="1.5"><title>writeZTE_Petra: k-space 1.02×</title></path>
+<text x="1225" y="331" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#6d28d9" font-weight="600" text-anchor="middle">1.26×</text>
+<text x="1320" y="331" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#1e40af" font-weight="600" text-anchor="middle">3.16×</text>
+<text x="1415" y="331" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#92400e" font-weight="600" text-anchor="middle">1.1×</text>
+<text x="1510" y="331" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#065f46" font-weight="600" text-anchor="middle">1.02×</text>
+<rect x="40" y="348" width="1505" height="44" rx="5" fill="#fef3c7" opacity="0.8"/>
+<line x1="370" y1="370" x2="1180" y2="370" stroke="#e2e8f0"/>
+<text x="55" y="369" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14" fill="#0f172a" font-weight="700" text-anchor="start">wave_test_R3x2</text>
+<text x="55" y="385" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" fill="#64748b" font-weight="400" text-anchor="start">12,728 arbitrary-gradient / 12,839 total blocks</text>
+<path d="M 643.2933227084515 352 L 649.2933227084515 358 L 643.2933227084515 364 L 637.2933227084515 358 Z" fill="#7c3aed" stroke="#ffffff" stroke-width="1"><title>wave_test_R3x2: storage 2.03×</title></path>
+<circle cx="916.0993495645586" cy="366" r="5.5" fill="#2563eb" stroke="#ffffff" stroke-width="1.5"><title>wave_test_R3x2: parser 8.25×</title></circle>
+<rect x="508.2105744929024" y="368.5" width="11" height="11" rx="1" fill="#f59e0b" stroke="#ffffff" stroke-width="1.5"><title>wave_test_R3x2: file-to-ready 1.05×</title></rect>
+<path d="M 515.2989942842449 375.5 L 521.2989942842449 387.5 L 509.29899428424494 387.5 Z" fill="#059669" stroke="#ffffff" stroke-width="1.5"><title>wave_test_R3x2: k-space 1.05×</title></path>
+<text x="1225" y="375" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#6d28d9" font-weight="600" text-anchor="middle">2.03×</text>
+<text x="1320" y="375" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#1e40af" font-weight="600" text-anchor="middle">8.25×</text>
+<text x="1415" y="375" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#92400e" font-weight="600" text-anchor="middle">1.05×</text>
+<text x="1510" y="375" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#065f46" font-weight="600" text-anchor="middle">1.05×</text>
+<rect x="40" y="392" width="1505" height="44" fill="#ffffff" opacity="0.72"/>
+<line x1="370" y1="414" x2="1180" y2="414" stroke="#e2e8f0"/>
+<text x="55" y="413" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14" fill="#0f172a" font-weight="500" text-anchor="start">writeTSE</text>
+<text x="55" y="429" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" fill="#64748b" font-weight="400" text-anchor="start">1,173 arbitrary-gradient / 1,190 total blocks</text>
+<path d="M 579.268400731685 396 L 585.268400731685 402 L 579.268400731685 408 L 573.268400731685 402 Z" fill="#7c3aed" stroke="#ffffff" stroke-width="1"><title>writeTSE: storage 1.46×</title></path>
+<circle cx="802.5080166881605" cy="410" r="5.5" fill="#2563eb" stroke="#ffffff" stroke-width="1.5"><title>writeTSE: parser 4.61×</title></circle>
+<rect x="500.41257302984945" y="412.5" width="11" height="11" rx="1" fill="#f59e0b" stroke="#ffffff" stroke-width="1.5"><title>writeTSE: file-to-ready 1×</title></rect>
+<path d="M 503.8528810707555 419.5 L 509.8528810707555 431.5 L 497.8528810707555 431.5 Z" fill="#059669" stroke="#ffffff" stroke-width="1.5"><title>writeTSE: k-space 0.99×</title></path>
+<text x="1225" y="419" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#6d28d9" font-weight="600" text-anchor="middle">1.46×</text>
+<text x="1320" y="419" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#1e40af" font-weight="600" text-anchor="middle">4.61×</text>
+<text x="1415" y="419" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#92400e" font-weight="600" text-anchor="middle">1×</text>
+<text x="1510" y="419" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#065f46" font-weight="600" text-anchor="middle">0.99×</text>
+<line x1="370" y1="458" x2="1180" y2="458" stroke="#e2e8f0"/>
+<text x="55" y="457" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14" fill="#0f172a" font-weight="500" text-anchor="start">writeTrufi</text>
+<text x="55" y="473" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" fill="#64748b" font-weight="400" text-anchor="start">515 arbitrary-gradient / 516 total blocks</text>
+<path d="M 511.18396485528694 440 L 517.183964855287 446 L 511.18396485528694 452 L 505.18396485528694 446 Z" fill="#7c3aed" stroke="#ffffff" stroke-width="1"><title>writeTrufi: storage 1.03×</title></path>
+<circle cx="721.3126768993612" cy="454" r="5.5" fill="#2563eb" stroke="#ffffff" stroke-width="1.5"><title>writeTrufi: parser 3.04×</title></circle>
+<rect x="502.54060757428147" y="456.5" width="11" height="11" rx="1" fill="#f59e0b" stroke="#ffffff" stroke-width="1.5"><title>writeTrufi: file-to-ready 1.02×</title></rect>
+<path d="M 507.9288352809715 463.5 L 513.9288352809715 475.5 L 501.9288352809715 475.5 Z" fill="#059669" stroke="#ffffff" stroke-width="1.5"><title>writeTrufi: k-space 1.02×</title></path>
+<text x="1225" y="463" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#6d28d9" font-weight="600" text-anchor="middle">1.03×</text>
+<text x="1320" y="463" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#1e40af" font-weight="600" text-anchor="middle">3.04×</text>
+<text x="1415" y="463" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#92400e" font-weight="600" text-anchor="middle">1.02×</text>
+<text x="1510" y="463" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#065f46" font-weight="600" text-anchor="middle">1.02×</text>
+<rect x="40" y="480" width="1505" height="44" fill="#ffffff" opacity="0.72"/>
+<line x1="370" y1="502" x2="1180" y2="502" stroke="#e2e8f0"/>
+<text x="55" y="501" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14" fill="#0f172a" font-weight="500" text-anchor="start">writeHASTE</text>
+<text x="55" y="517" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" fill="#64748b" font-weight="400" text-anchor="start">293 arbitrary-gradient / 295 total blocks</text>
+<path d="M 642.8859860482696 484 L 648.8859860482696 490 L 642.8859860482696 496 L 636.8859860482696 490 Z" fill="#7c3aed" stroke="#ffffff" stroke-width="1"><title>writeHASTE: storage 2.03×</title></path>
+<circle cx="864.3789130365478" cy="498" r="5.5" fill="#2563eb" stroke="#ffffff" stroke-width="1.5"><title>writeHASTE: parser 6.33×</title></circle>
+<rect x="502.2033897202541" y="500.5" width="11" height="11" rx="1" fill="#f59e0b" stroke="#ffffff" stroke-width="1.5"><title>writeHASTE: file-to-ready 1.01×</title></rect>
+<path d="M 503.9327975799663 507.5 L 509.9327975799663 519.5 L 497.9327975799663 519.5 Z" fill="#059669" stroke="#ffffff" stroke-width="1.5"><title>writeHASTE: k-space 0.99×</title></path>
+<text x="1225" y="507" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#6d28d9" font-weight="600" text-anchor="middle">2.03×</text>
+<text x="1320" y="507" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#1e40af" font-weight="600" text-anchor="middle">6.33×</text>
+<text x="1415" y="507" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#92400e" font-weight="600" text-anchor="middle">1.01×</text>
+<text x="1510" y="507" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#065f46" font-weight="600" text-anchor="middle">0.99×</text>
+<line x1="370" y1="546" x2="1180" y2="546" stroke="#e2e8f0"/>
+<text x="55" y="545" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14" fill="#0f172a" font-weight="500" text-anchor="start">writeEpiSpinEchoRS</text>
+<text x="55" y="561" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" fill="#64748b" font-weight="400" text-anchor="start">171 arbitrary-gradient / 180 total blocks</text>
+<path d="M 709.4716632034185 528 L 715.4716632034185 534 L 709.4716632034185 540 L 703.4716632034185 534 Z" fill="#7c3aed" stroke="#ffffff" stroke-width="1"><title>writeEpiSpinEchoRS: storage 2.86×</title></path>
+<circle cx="975.3617641850514" cy="542" r="5.5" fill="#2563eb" stroke="#ffffff" stroke-width="1.5"><title>writeEpiSpinEchoRS: parser 11.2×</title></circle>
+<rect x="507.16382673244016" y="544.5" width="11" height="11" rx="1" fill="#f59e0b" stroke="#ffffff" stroke-width="1.5"><title>writeEpiSpinEchoRS: file-to-ready 1.04×</title></rect>
+<path d="M 505 551.5 L 511 563.5 L 499 563.5 Z" fill="#059669" stroke="#ffffff" stroke-width="1.5"><title>writeEpiSpinEchoRS: k-space 1×</title></path>
+<text x="1225" y="551" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#6d28d9" font-weight="600" text-anchor="middle">2.86×</text>
+<text x="1320" y="551" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#1e40af" font-weight="600" text-anchor="middle">11.2×</text>
+<text x="1415" y="551" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#92400e" font-weight="600" text-anchor="middle">1.04×</text>
+<text x="1510" y="551" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#065f46" font-weight="600" text-anchor="middle">1×</text>
+<rect x="40" y="568" width="1505" height="44" fill="#ffffff" opacity="0.72"/>
+<line x1="370" y1="590" x2="1180" y2="590" stroke="#e2e8f0"/>
+<text x="55" y="589" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14" fill="#0f172a" font-weight="500" text-anchor="start">writeSpiral</text>
+<text x="55" y="605" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" fill="#64748b" font-weight="400" text-anchor="start">88 arbitrary-gradient / 179 total blocks</text>
+<path d="M 714.0156259425812 572 L 720.0156259425812 578 L 714.0156259425812 584 L 708.0156259425812 578 Z" fill="#7c3aed" stroke="#ffffff" stroke-width="1"><title>writeSpiral: storage 2.92×</title></path>
+<circle cx="1035.9621287461446" cy="586" r="5.5" fill="#2563eb" stroke="#ffffff" stroke-width="1.5"><title>writeSpiral: parser 15.3×</title></circle>
+<rect x="500.22151532009207" y="588.5" width="11" height="11" rx="1" fill="#f59e0b" stroke="#ffffff" stroke-width="1.5"><title>writeSpiral: file-to-ready 1×</title></rect>
+<path d="M 505.35443851491823 595.5 L 511.35443851491823 607.5 L 499.35443851491823 607.5 Z" fill="#059669" stroke="#ffffff" stroke-width="1.5"><title>writeSpiral: k-space 1×</title></path>
+<text x="1225" y="595" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#6d28d9" font-weight="600" text-anchor="middle">2.92×</text>
+<text x="1320" y="595" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#1e40af" font-weight="600" text-anchor="middle">15.3×</text>
+<text x="1415" y="595" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#92400e" font-weight="600" text-anchor="middle">1×</text>
+<text x="1510" y="595" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#065f46" font-weight="600" text-anchor="middle">1×</text>
+<line x1="370" y1="634" x2="1180" y2="634" stroke="#e2e8f0"/>
+<text x="55" y="633" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14" fill="#0f172a" font-weight="500" text-anchor="start">writeEpiRS</text>
+<text x="55" y="649" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" fill="#64748b" font-weight="400" text-anchor="start">64 arbitrary-gradient / 67 total blocks</text>
+<path d="M 720.664582836154 616 L 726.664582836154 622 L 720.664582836154 628 L 714.664582836154 622 Z" fill="#7c3aed" stroke="#ffffff" stroke-width="1"><title>writeEpiRS: storage 3.03×</title></path>
+<circle cx="950.1304552856504" cy="630" r="5.5" fill="#2563eb" stroke="#ffffff" stroke-width="1.5"><title>writeEpiRS: parser 9.83×</title></circle>
+<rect x="514.3213980464272" y="632.5" width="11" height="11" rx="1" fill="#f59e0b" stroke="#ffffff" stroke-width="1.5"><title>writeEpiRS: file-to-ready 1.08×</title></rect>
+<path d="M 505.00001820992725 639.5 L 511.00001820992725 651.5 L 499.00001820992725 651.5 Z" fill="#059669" stroke="#ffffff" stroke-width="1.5"><title>writeEpiRS: k-space 1×</title></path>
+<text x="1225" y="639" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#6d28d9" font-weight="600" text-anchor="middle">3.03×</text>
+<text x="1320" y="639" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#1e40af" font-weight="600" text-anchor="middle">9.83×</text>
+<text x="1415" y="639" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#92400e" font-weight="600" text-anchor="middle">1.08×</text>
+<text x="1510" y="639" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#065f46" font-weight="600" text-anchor="middle">1×</text>
+<rect x="40" y="656" width="1505" height="44" fill="#ffffff" opacity="0.72"/>
+<line x1="370" y1="678" x2="1180" y2="678" stroke="#e2e8f0"/>
+<text x="55" y="677" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14" fill="#0f172a" font-weight="500" text-anchor="start">writeRadialGradientEcho</text>
+<text x="55" y="693" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" fill="#64748b" font-weight="400" text-anchor="start">0 arbitrary-gradient / 1,385 total blocks</text>
+<path d="M 551.4137904268118 660 L 557.4137904268118 666 L 551.4137904268118 672 L 545.4137904268118 666 Z" fill="#7c3aed" stroke="#ffffff" stroke-width="1"><title>writeRadialGradientEcho: storage 1.27×</title></path>
+<circle cx="725.308152761756" cy="674" r="5.5" fill="#2563eb" stroke="#ffffff" stroke-width="1.5"><title>writeRadialGradientEcho: parser 3.1×</title></circle>
+<rect x="501.2732804246801" y="676.5" width="11" height="11" rx="1" fill="#f59e0b" stroke="#ffffff" stroke-width="1.5"><title>writeRadialGradientEcho: file-to-ready 1.01×</title></rect>
+<path d="M 503.6113050250142 683.5 L 509.6113050250142 695.5 L 497.6113050250142 695.5 Z" fill="#059669" stroke="#ffffff" stroke-width="1.5"><title>writeRadialGradientEcho: k-space 0.99×</title></path>
+<text x="1225" y="683" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#6d28d9" font-weight="600" text-anchor="middle">1.27×</text>
+<text x="1320" y="683" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#1e40af" font-weight="600" text-anchor="middle">3.1×</text>
+<text x="1415" y="683" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#92400e" font-weight="600" text-anchor="middle">1.01×</text>
+<text x="1510" y="683" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#065f46" font-weight="600" text-anchor="middle">0.99×</text>
+<line x1="370" y1="722" x2="1180" y2="722" stroke="#e2e8f0"/>
+<text x="55" y="721" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14" fill="#0f172a" font-weight="500" text-anchor="start">writeUTE</text>
+<text x="55" y="737" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" fill="#64748b" font-weight="400" text-anchor="start">0 arbitrary-gradient / 1,024 total blocks</text>
+<path d="M 526.656541496788 704 L 532.656541496788 710 L 526.656541496788 716 L 520.656541496788 710 Z" fill="#7c3aed" stroke="#ffffff" stroke-width="1"><title>writeUTE: storage 1.12×</title></path>
+<circle cx="747.3733596761623" cy="718" r="5.5" fill="#2563eb" stroke="#ffffff" stroke-width="1.5"><title>writeUTE: parser 3.47×</title></circle>
+<rect x="502.8622213610944" y="720.5" width="11" height="11" rx="1" fill="#f59e0b" stroke="#ffffff" stroke-width="1.5"><title>writeUTE: file-to-ready 1.02×</title></rect>
+<path d="M 504.58070243314853 727.5 L 510.58070243314853 739.5 L 498.58070243314853 739.5 Z" fill="#059669" stroke="#ffffff" stroke-width="1.5"><title>writeUTE: k-space 1×</title></path>
+<text x="1225" y="727" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#6d28d9" font-weight="600" text-anchor="middle">1.12×</text>
+<text x="1320" y="727" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#1e40af" font-weight="600" text-anchor="middle">3.47×</text>
+<text x="1415" y="727" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#92400e" font-weight="600" text-anchor="middle">1.02×</text>
+<text x="1510" y="727" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#065f46" font-weight="600" text-anchor="middle">1×</text>
+<rect x="40" y="744" width="1505" height="44" fill="#ffffff" opacity="0.72"/>
+<line x1="370" y1="766" x2="1180" y2="766" stroke="#e2e8f0"/>
+<text x="55" y="765" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14" fill="#0f172a" font-weight="500" text-anchor="start">writeGradientEcho</text>
+<text x="55" y="781" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" fill="#64748b" font-weight="400" text-anchor="start">0 arbitrary-gradient / 640 total blocks</text>
+<path d="M 584.5021914070102 748 L 590.5021914070102 754 L 584.5021914070102 760 L 578.5021914070102 754 Z" fill="#7c3aed" stroke="#ffffff" stroke-width="1"><title>writeGradientEcho: storage 1.5×</title></path>
+<circle cx="786.2792108631742" cy="762" r="5.5" fill="#2563eb" stroke="#ffffff" stroke-width="1.5"><title>writeGradientEcho: parser 4.24×</title></circle>
+<rect x="504.51565596691677" y="764.5" width="11" height="11" rx="1" fill="#f59e0b" stroke="#ffffff" stroke-width="1.5"><title>writeGradientEcho: file-to-ready 1.03×</title></rect>
+<path d="M 500.78873010001155 771.5 L 506.78873010001155 783.5 L 494.78873010001155 783.5 Z" fill="#059669" stroke="#ffffff" stroke-width="1.5"><title>writeGradientEcho: k-space 0.98×</title></path>
+<text x="1225" y="771" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#6d28d9" font-weight="600" text-anchor="middle">1.5×</text>
+<text x="1320" y="771" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#1e40af" font-weight="600" text-anchor="middle">4.24×</text>
+<text x="1415" y="771" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#92400e" font-weight="600" text-anchor="middle">1.03×</text>
+<text x="1510" y="771" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#065f46" font-weight="600" text-anchor="middle">0.98×</text>
+<line x1="370" y1="810" x2="1180" y2="810" stroke="#e2e8f0"/>
+<text x="55" y="809" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14" fill="#0f172a" font-weight="500" text-anchor="start">writeEpi</text>
+<text x="55" y="825" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" fill="#64748b" font-weight="400" text-anchor="start">0 arbitrary-gradient / 390 total blocks</text>
+<path d="M 642.4626359635546 792 L 648.4626359635546 798 L 642.4626359635546 804 L 636.4626359635546 798 Z" fill="#7c3aed" stroke="#ffffff" stroke-width="1"><title>writeEpi: storage 2.03×</title></path>
+<circle cx="899.0827053907494" cy="806" r="5.5" fill="#2563eb" stroke="#ffffff" stroke-width="1.5"><title>writeEpi: parser 7.56×</title></circle>
+<rect x="504.378063102886" y="808.5" width="11" height="11" rx="1" fill="#f59e0b" stroke="#ffffff" stroke-width="1.5"><title>writeEpi: file-to-ready 1.03×</title></rect>
+<path d="M 505 815.5 L 511 827.5 L 499 827.5 Z" fill="#059669" stroke="#ffffff" stroke-width="1.5"><title>writeEpi: k-space 1×</title></path>
+<text x="1225" y="815" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#6d28d9" font-weight="600" text-anchor="middle">2.03×</text>
+<text x="1320" y="815" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#1e40af" font-weight="600" text-anchor="middle">7.56×</text>
+<text x="1415" y="815" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#92400e" font-weight="600" text-anchor="middle">1.03×</text>
+<text x="1510" y="815" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#065f46" font-weight="600" text-anchor="middle">1×</text>
+<path d="M 65 868 L 71 874 L 65 880 L 59 874 Z" fill="#7c3aed" stroke="#ffffff" stroke-width="1"><title>Storage reduction</title></path>
+<text x="82" y="879" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14" fill="#334155" font-weight="400" text-anchor="start">SEQ bytes ÷ BSEQ bytes</text>
+<circle cx="300" cy="874" r="5.5" fill="#2563eb" stroke="#ffffff" stroke-width="1.5"><title>Parser speedup</title></circle>
+<text x="317" y="879" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14" fill="#334155" font-weight="400" text-anchor="start">preloaded-byte parser</text>
+<rect x="539.5" y="868.5" width="11" height="11" rx="1" fill="#f59e0b" stroke="#ffffff" stroke-width="1.5"><title>Ready speedup</title></rect>
+<text x="562" y="879" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14" fill="#334155" font-weight="400" text-anchor="start">local file input → viewer ready</text>
+<path d="M 875 867.5 L 881 879.5 L 869 879.5 Z" fill="#059669" stroke="#ffffff" stroke-width="1.5"><title>K-space speedup</title></path>
+<text x="892" y="879" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14" fill="#334155" font-weight="400" text-anchor="start">bounded estimate/calculation phase</text>
+<text x="55" y="897" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#64748b" font-weight="400" text-anchor="start">Parser report 2026-07-24 07:07:56 UTC · Browser report 2026-07-24 07:10:38 UTC · 13 matched pairs</text>
+</svg>

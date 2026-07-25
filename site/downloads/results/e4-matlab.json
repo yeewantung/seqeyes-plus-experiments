@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "experiment": "E4",
+  "host": "matlab_desktop",
+  "matlabVersion": "24.2.0.2712019 (R2024b)",
+  "inputMode": "in_memory_mr.Sequence",
+  "sourceFixture": "workspace://bseq/benchmark_data/demo_seq_pairs/writeGradientEcho_label.seq",
+  "sequence": {
+    "durationSec": 15.119999999999976,
+    "blockCount": 2567,
+    "eventCounts": [
+      0,
+      512,
+      1536,
+      1024,
+      1536,
+      512,
+      517
+    ]
+  },
+  "viewer": {
+    "figureCreated": true,
+    "uihtmlCreated": true,
+    "matlabHostStamped": true,
+    "sequencePreloaded": true
+  },
+  "pass": true
+}

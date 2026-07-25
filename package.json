@@ -1,0 +1,12 @@
+{
+  "name": "seqeyes-plus-evidence",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Markdown-first technical supplement for SeqEyes-Plus experiments",
+  "scripts": {
+    "build": "node scripts/build.cjs"
+  },
+  "devDependencies": {
+    "markdown-it": "^14.1.0"
+  }
+}

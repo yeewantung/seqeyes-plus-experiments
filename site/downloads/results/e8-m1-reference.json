@@ -1,0 +1,607 @@
+{
+  "cases": {
+    "bipolar_gradient": {
+      "final_m0_1_per_m": "0.000",
+      "final_m1_observationTime_s_per_m": "-0.0050000000000000000000000000000000000000000000000000",
+      "final_m1_rfCenter_s_per_m": "-0.0050000000000000000000000000000000000000000000000000",
+      "samples": [
+        {
+          "m0_1_per_m": "0",
+          "m1_observationTime_s_per_m": "0.000",
+          "m1_rfCenter_s_per_m": "0",
+          "timeSec": "0.000"
+        },
+        {
+          "m0_1_per_m": "0.010",
+          "m1_observationTime_s_per_m": "-0.0000033333333333333333333333333333333333333333333333333",
+          "m1_rfCenter_s_per_m": "0.0000066666666666666666666666666666666666666666666666667",
+          "timeSec": "0.001"
+        },
+        {
+          "m0_1_per_m": "0.040",
+          "m1_observationTime_s_per_m": "-0.000026666666666666666666666666666666666666666666666668",
+          "m1_rfCenter_s_per_m": "0.000053333333333333333333333333333333333333333333333332",
+          "timeSec": "0.002"
+        },
+        {
+          "m0_1_per_m": "0.090",
+          "m1_observationTime_s_per_m": "-0.000090",
+          "m1_rfCenter_s_per_m": "0.000180",
+          "timeSec": "0.003"
+        },
+        {
+          "m0_1_per_m": "0.160",
+          "m1_observationTime_s_per_m": "-0.00021333333333333333333333333333333333333333333333333",
+          "m1_rfCenter_s_per_m": "0.00042666666666666666666666666666666666666666666666667",
+          "timeSec": "0.004"
+        },
+        {
+          "m0_1_per_m": "0.250",
+          "m1_observationTime_s_per_m": "-0.00041666666666666666666666666666666666666666666666668",
+          "m1_rfCenter_s_per_m": "0.00083333333333333333333333333333333333333333333333332",
+          "timeSec": "0.005"
+        },
+        {
+          "m0_1_per_m": "0.340",
+          "m1_observationTime_s_per_m": "-0.0007133333333333333333333333333333333333333333333334",
+          "m1_rfCenter_s_per_m": "0.0013266666666666666666666666666666666666666666666666",
+          "timeSec": "0.006"
+        },
+        {
+          "m0_1_per_m": "0.410",
+          "m1_observationTime_s_per_m": "-0.0010900000000000000000000000000000000000000000000000",
+          "m1_rfCenter_s_per_m": "0.0017800000000000000000000000000000000000000000000000",
+          "timeSec": "0.007"
+        },
+        {
+          "m0_1_per_m": "0.460",
+          "m1_observationTime_s_per_m": "-0.0015266666666666666666666666666666666666666666666667",
+          "m1_rfCenter_s_per_m": "0.0021533333333333333333333333333333333333333333333333",
+          "timeSec": "0.008"
+        },
+        {
+          "m0_1_per_m": "0.490",
+          "m1_observationTime_s_per_m": "-0.0020033333333333333333333333333333333333333333333334",
+          "m1_rfCenter_s_per_m": "0.0024066666666666666666666666666666666666666666666666",
+          "timeSec": "0.009"
+        },
+        {
+          "m0_1_per_m": "0.500",
+          "m1_observationTime_s_per_m": "-0.0025000000000000000000000000000000000000000000000000",
+          "m1_rfCenter_s_per_m": "0.0025000000000000000000000000000000000000000000000000",
+          "timeSec": "0.010"
+        },
+        {
+          "m0_1_per_m": "0.490",
+          "m1_observationTime_s_per_m": "-0.0029966666666666666666666666666666666666666666666667",
+          "m1_rfCenter_s_per_m": "0.0023933333333333333333333333333333333333333333333333",
+          "timeSec": "0.011"
+        },
+        {
+          "m0_1_per_m": "0.460",
+          "m1_observationTime_s_per_m": "-0.0034733333333333333333333333333333333333333333333333",
+          "m1_rfCenter_s_per_m": "0.0020466666666666666666666666666666666666666666666667",
+          "timeSec": "0.012"
+        },
+        {
+          "m0_1_per_m": "0.410",
+          "m1_observationTime_s_per_m": "-0.0039100000000000000000000000000000000000000000000000",
+          "m1_rfCenter_s_per_m": "0.0014200000000000000000000000000000000000000000000000",
+          "timeSec": "0.013"
+        },
+        {
+          "m0_1_per_m": "0.340",
+          "m1_observationTime_s_per_m": "-0.0042866666666666666666666666666666666666666666666667",
+          "m1_rfCenter_s_per_m": "0.0004733333333333333333333333333333333333333333333333",
+          "timeSec": "0.014"
+        },
+        {
+          "m0_1_per_m": "0.250",
+          "m1_observationTime_s_per_m": "-0.0045833333333333333333333333333333333333333333333333",
+          "m1_rfCenter_s_per_m": "-0.0008333333333333333333333333333333333333333333333333",
+          "timeSec": "0.015"
+        },
+        {
+          "m0_1_per_m": "0.160",
+          "m1_observationTime_s_per_m": "-0.0047866666666666666666666666666666666666666666666666",
+          "m1_rfCenter_s_per_m": "-0.0022266666666666666666666666666666666666666666666666",
+          "timeSec": "0.016"
+        },
+        {
+          "m0_1_per_m": "0.090",
+          "m1_observationTime_s_per_m": "-0.0049100000000000000000000000000000000000000000000000",
+          "m1_rfCenter_s_per_m": "-0.0033800000000000000000000000000000000000000000000000",
+          "timeSec": "0.017"
+        },
+        {
+          "m0_1_per_m": "0.040",
+          "m1_observationTime_s_per_m": "-0.0049733333333333333333333333333333333333333333333333",
+          "m1_rfCenter_s_per_m": "-0.0042533333333333333333333333333333333333333333333333",
+          "timeSec": "0.018"
+        },
+        {
+          "m0_1_per_m": "0.010",
+          "m1_observationTime_s_per_m": "-0.0049966666666666666666666666666666666666666666666666",
+          "m1_rfCenter_s_per_m": "-0.0048066666666666666666666666666666666666666666666666",
+          "timeSec": "0.019"
+        },
+        {
+          "m0_1_per_m": "0.000",
+          "m1_observationTime_s_per_m": "-0.0050000000000000000000000000000000000000000000000000",
+          "m1_rfCenter_s_per_m": "-0.0050000000000000000000000000000000000000000000000000",
+          "timeSec": "0.020"
+        }
+      ]
+    },
+    "constant_gradient": {
+      "final_m0_1_per_m": "2.00",
+      "final_m1_observationTime_s_per_m": "-0.0200",
+      "final_m1_rfCenter_s_per_m": "0.0200",
+      "samples": [
+        {
+          "m0_1_per_m": "0",
+          "m1_observationTime_s_per_m": "0.000",
+          "m1_rfCenter_s_per_m": "0",
+          "timeSec": "0.000"
+        },
+        {
+          "m0_1_per_m": "0.1000",
+          "m1_observationTime_s_per_m": "-0.0000500",
+          "m1_rfCenter_s_per_m": "0.0000500",
+          "timeSec": "0.001"
+        },
+        {
+          "m0_1_per_m": "0.2000",
+          "m1_observationTime_s_per_m": "-0.0002000",
+          "m1_rfCenter_s_per_m": "0.0002000",
+          "timeSec": "0.002"
+        },
+        {
+          "m0_1_per_m": "0.3000",
+          "m1_observationTime_s_per_m": "-0.0004500",
+          "m1_rfCenter_s_per_m": "0.0004500",
+          "timeSec": "0.003"
+        },
+        {
+          "m0_1_per_m": "0.4000",
+          "m1_observationTime_s_per_m": "-0.0008000",
+          "m1_rfCenter_s_per_m": "0.0008000",
+          "timeSec": "0.004"
+        },
+        {
+          "m0_1_per_m": "0.5000",
+          "m1_observationTime_s_per_m": "-0.0012500",
+          "m1_rfCenter_s_per_m": "0.0012500",
+          "timeSec": "0.005"
+        },
+        {
+          "m0_1_per_m": "0.6000",
+          "m1_observationTime_s_per_m": "-0.0018000",
+          "m1_rfCenter_s_per_m": "0.0018000",
+          "timeSec": "0.006"
+        },
+        {
+          "m0_1_per_m": "0.7000",
+          "m1_observationTime_s_per_m": "-0.0024500",
+          "m1_rfCenter_s_per_m": "0.0024500",
+          "timeSec": "0.007"
+        },
+        {
+          "m0_1_per_m": "0.8000",
+          "m1_observationTime_s_per_m": "-0.0032000",
+          "m1_rfCenter_s_per_m": "0.0032000",
+          "timeSec": "0.008"
+        },
+        {
+          "m0_1_per_m": "0.9000",
+          "m1_observationTime_s_per_m": "-0.0040500",
+          "m1_rfCenter_s_per_m": "0.0040500",
+          "timeSec": "0.009"
+        },
+        {
+          "m0_1_per_m": "1.0000",
+          "m1_observationTime_s_per_m": "-0.0050000",
+          "m1_rfCenter_s_per_m": "0.0050000",
+          "timeSec": "0.010"
+        },
+        {
+          "m0_1_per_m": "1.1000",
+          "m1_observationTime_s_per_m": "-0.0060500",
+          "m1_rfCenter_s_per_m": "0.0060500",
+          "timeSec": "0.011"
+        },
+        {
+          "m0_1_per_m": "1.2000",
+          "m1_observationTime_s_per_m": "-0.0072000",
+          "m1_rfCenter_s_per_m": "0.0072000",
+          "timeSec": "0.012"
+        },
+        {
+          "m0_1_per_m": "1.3000",
+          "m1_observationTime_s_per_m": "-0.0084500",
+          "m1_rfCenter_s_per_m": "0.0084500",
+          "timeSec": "0.013"
+        },
+        {
+          "m0_1_per_m": "1.4000",
+          "m1_observationTime_s_per_m": "-0.0098000",
+          "m1_rfCenter_s_per_m": "0.0098000",
+          "timeSec": "0.014"
+        },
+        {
+          "m0_1_per_m": "1.5000",
+          "m1_observationTime_s_per_m": "-0.0112500",
+          "m1_rfCenter_s_per_m": "0.0112500",
+          "timeSec": "0.015"
+        },
+        {
+          "m0_1_per_m": "1.6000",
+          "m1_observationTime_s_per_m": "-0.0128000",
+          "m1_rfCenter_s_per_m": "0.0128000",
+          "timeSec": "0.016"
+        },
+        {
+          "m0_1_per_m": "1.7000",
+          "m1_observationTime_s_per_m": "-0.0144500",
+          "m1_rfCenter_s_per_m": "0.0144500",
+          "timeSec": "0.017"
+        },
+        {
+          "m0_1_per_m": "1.8000",
+          "m1_observationTime_s_per_m": "-0.0162000",
+          "m1_rfCenter_s_per_m": "0.0162000",
+          "timeSec": "0.018"
+        },
+        {
+          "m0_1_per_m": "1.9000",
+          "m1_observationTime_s_per_m": "-0.0180500",
+          "m1_rfCenter_s_per_m": "0.0180500",
+          "timeSec": "0.019"
+        },
+        {
+          "m0_1_per_m": "2.00",
+          "m1_observationTime_s_per_m": "-0.02000",
+          "m1_rfCenter_s_per_m": "0.0200",
+          "timeSec": "0.020"
+        }
+      ]
+    },
+    "linear_ramp": {
+      "final_m0_1_per_m": "1.80",
+      "final_m1_observationTime_s_per_m": "-0.0180",
+      "final_m1_rfCenter_s_per_m": "0.0360",
+      "samples": [
+        {
+          "m0_1_per_m": "0",
+          "m1_observationTime_s_per_m": "0.000",
+          "m1_rfCenter_s_per_m": "0",
+          "timeSec": "0.000"
+        },
+        {
+          "m0_1_per_m": "0.0020",
+          "m1_observationTime_s_per_m": "-6.666666666666666666666666666666666666666666666667E-7",
+          "m1_rfCenter_s_per_m": "0.0000013333333333333333333333333333333333333333333333333",
+          "timeSec": "0.001"
+        },
+        {
+          "m0_1_per_m": "0.0080",
+          "m1_observationTime_s_per_m": "-0.000005333333333333333333333333333333333333333333333333",
+          "m1_rfCenter_s_per_m": "0.000010666666666666666666666666666666666666666666666667",
+          "timeSec": "0.002"
+        },
+        {
+          "m0_1_per_m": "0.0180",
+          "m1_observationTime_s_per_m": "-0.0000180",
+          "m1_rfCenter_s_per_m": "0.0000360",
+          "timeSec": "0.003"
+        },
+        {
+          "m0_1_per_m": "0.0320",
+          "m1_observationTime_s_per_m": "-0.000042666666666666666666666666666666666666666666666667",
+          "m1_rfCenter_s_per_m": "0.000085333333333333333333333333333333333333333333333333",
+          "timeSec": "0.004"
+        },
+        {
+          "m0_1_per_m": "0.0500",
+          "m1_observationTime_s_per_m": "-0.00008333333333333333333333333333333333333333333333333",
+          "m1_rfCenter_s_per_m": "0.00016666666666666666666666666666666666666666666666667",
+          "timeSec": "0.005"
+        },
+        {
+          "m0_1_per_m": "0.0720",
+          "m1_observationTime_s_per_m": "-0.0001440",
+          "m1_rfCenter_s_per_m": "0.0002880",
+          "timeSec": "0.006"
+        },
+        {
+          "m0_1_per_m": "0.0980",
+          "m1_observationTime_s_per_m": "-0.00022866666666666666666666666666666666666666666666667",
+          "m1_rfCenter_s_per_m": "0.00045733333333333333333333333333333333333333333333333",
+          "timeSec": "0.007"
+        },
+        {
+          "m0_1_per_m": "0.1280",
+          "m1_observationTime_s_per_m": "-0.00034133333333333333333333333333333333333333333333331",
+          "m1_rfCenter_s_per_m": "0.00068266666666666666666666666666666666666666666666669",
+          "timeSec": "0.008"
+        },
+        {
+          "m0_1_per_m": "0.1620",
+          "m1_observationTime_s_per_m": "-0.0004860",
+          "m1_rfCenter_s_per_m": "0.0009720",
+          "timeSec": "0.009"
+        },
+        {
+          "m0_1_per_m": "0.2000",
+          "m1_observationTime_s_per_m": "-0.0006666666666666666666666666666666666666666666666667",
+          "m1_rfCenter_s_per_m": "0.0013333333333333333333333333333333333333333333333333",
+          "timeSec": "0.010"
+        },
+        {
+          "m0_1_per_m": "0.2420",
+          "m1_observationTime_s_per_m": "-0.0008873333333333333333333333333333333333333333333333",
+          "m1_rfCenter_s_per_m": "0.0017746666666666666666666666666666666666666666666667",
+          "timeSec": "0.011"
+        },
+        {
+          "m0_1_per_m": "0.2880",
+          "m1_observationTime_s_per_m": "-0.0011520",
+          "m1_rfCenter_s_per_m": "0.0023040",
+          "timeSec": "0.012"
+        },
+        {
+          "m0_1_per_m": "0.3380",
+          "m1_observationTime_s_per_m": "-0.0014646666666666666666666666666666666666666666666667",
+          "m1_rfCenter_s_per_m": "0.0029293333333333333333333333333333333333333333333333",
+          "timeSec": "0.013"
+        },
+        {
+          "m0_1_per_m": "0.3920",
+          "m1_observationTime_s_per_m": "-0.0018293333333333333333333333333333333333333333333333",
+          "m1_rfCenter_s_per_m": "0.0036586666666666666666666666666666666666666666666667",
+          "timeSec": "0.014"
+        },
+        {
+          "m0_1_per_m": "0.4500",
+          "m1_observationTime_s_per_m": "-0.0022500",
+          "m1_rfCenter_s_per_m": "0.0045000",
+          "timeSec": "0.015"
+        },
+        {
+          "m0_1_per_m": "0.5120",
+          "m1_observationTime_s_per_m": "-0.0027306666666666666666666666666666666666666666666668",
+          "m1_rfCenter_s_per_m": "0.0054613333333333333333333333333333333333333333333332",
+          "timeSec": "0.016"
+        },
+        {
+          "m0_1_per_m": "0.5780",
+          "m1_observationTime_s_per_m": "-0.0032753333333333333333333333333333333333333333333332",
+          "m1_rfCenter_s_per_m": "0.0065506666666666666666666666666666666666666666666668",
+          "timeSec": "0.017"
+        },
+        {
+          "m0_1_per_m": "0.6480",
+          "m1_observationTime_s_per_m": "-0.0038880",
+          "m1_rfCenter_s_per_m": "0.0077760",
+          "timeSec": "0.018"
+        },
+        {
+          "m0_1_per_m": "0.7220",
+          "m1_observationTime_s_per_m": "-0.0045726666666666666666666666666666666666666666666668",
+          "m1_rfCenter_s_per_m": "0.0091453333333333333333333333333333333333333333333332",
+          "timeSec": "0.019"
+        },
+        {
+          "m0_1_per_m": "0.8000",
+          "m1_observationTime_s_per_m": "-0.005333333333333333333333333333333333333333333333333",
+          "m1_rfCenter_s_per_m": "0.010666666666666666666666666666666666666666666666667",
+          "timeSec": "0.020"
+        },
+        {
+          "m0_1_per_m": "0.8820",
+          "m1_observationTime_s_per_m": "-0.0061740",
+          "m1_rfCenter_s_per_m": "0.0123480",
+          "timeSec": "0.021"
+        },
+        {
+          "m0_1_per_m": "0.9680",
+          "m1_observationTime_s_per_m": "-0.007098666666666666666666666666666666666666666666667",
+          "m1_rfCenter_s_per_m": "0.014197333333333333333333333333333333333333333333333",
+          "timeSec": "0.022"
+        },
+        {
+          "m0_1_per_m": "1.0580",
+          "m1_observationTime_s_per_m": "-0.008111333333333333333333333333333333333333333333333",
+          "m1_rfCenter_s_per_m": "0.016222666666666666666666666666666666666666666666667",
+          "timeSec": "0.023"
+        },
+        {
+          "m0_1_per_m": "1.1520",
+          "m1_observationTime_s_per_m": "-0.0092160",
+          "m1_rfCenter_s_per_m": "0.0184320",
+          "timeSec": "0.024"
+        },
+        {
+          "m0_1_per_m": "1.2500",
+          "m1_observationTime_s_per_m": "-0.010416666666666666666666666666666666666666666666667",
+          "m1_rfCenter_s_per_m": "0.020833333333333333333333333333333333333333333333333",
+          "timeSec": "0.025"
+        },
+        {
+          "m0_1_per_m": "1.3520",
+          "m1_observationTime_s_per_m": "-0.011717333333333333333333333333333333333333333333333",
+          "m1_rfCenter_s_per_m": "0.023434666666666666666666666666666666666666666666667",
+          "timeSec": "0.026"
+        },
+        {
+          "m0_1_per_m": "1.4580",
+          "m1_observationTime_s_per_m": "-0.0131220",
+          "m1_rfCenter_s_per_m": "0.0262440",
+          "timeSec": "0.027"
+        },
+        {
+          "m0_1_per_m": "1.5680",
+          "m1_observationTime_s_per_m": "-0.014634666666666666666666666666666666666666666666667",
+          "m1_rfCenter_s_per_m": "0.029269333333333333333333333333333333333333333333333",
+          "timeSec": "0.028"
+        },
+        {
+          "m0_1_per_m": "1.6820",
+          "m1_observationTime_s_per_m": "-0.016259333333333333333333333333333333333333333333333",
+          "m1_rfCenter_s_per_m": "0.032518666666666666666666666666666666666666666666667",
+          "timeSec": "0.029"
+        },
+        {
+          "m0_1_per_m": "1.80",
+          "m1_observationTime_s_per_m": "-0.01800",
+          "m1_rfCenter_s_per_m": "0.0360",
+          "timeSec": "0.030"
+        }
+      ]
+    },
+    "refocusing_sign_flip": {
+      "final_m0_1_per_m": "0.00",
+      "final_m1_observationTime_s_per_m": "-0.0100",
+      "final_m1_rfCenter_s_per_m": "-0.0100",
+      "samples": [
+        {
+          "m0_1_per_m": "0",
+          "m1_observationTime_s_per_m": "0.000",
+          "m1_rfCenter_s_per_m": "0",
+          "timeSec": "0.000"
+        },
+        {
+          "m0_1_per_m": "0.1000",
+          "m1_observationTime_s_per_m": "-0.0000500",
+          "m1_rfCenter_s_per_m": "0.0000500",
+          "timeSec": "0.001"
+        },
+        {
+          "m0_1_per_m": "0.2000",
+          "m1_observationTime_s_per_m": "-0.0002000",
+          "m1_rfCenter_s_per_m": "0.0002000",
+          "timeSec": "0.002"
+        },
+        {
+          "m0_1_per_m": "0.3000",
+          "m1_observationTime_s_per_m": "-0.0004500",
+          "m1_rfCenter_s_per_m": "0.0004500",
+          "timeSec": "0.003"
+        },
+        {
+          "m0_1_per_m": "0.4000",
+          "m1_observationTime_s_per_m": "-0.0008000",
+          "m1_rfCenter_s_per_m": "0.0008000",
+          "timeSec": "0.004"
+        },
+        {
+          "m0_1_per_m": "0.5000",
+          "m1_observationTime_s_per_m": "-0.0012500",
+          "m1_rfCenter_s_per_m": "0.0012500",
+          "timeSec": "0.005"
+        },
+        {
+          "m0_1_per_m": "0.6000",
+          "m1_observationTime_s_per_m": "-0.0018000",
+          "m1_rfCenter_s_per_m": "0.0018000",
+          "timeSec": "0.006"
+        },
+        {
+          "m0_1_per_m": "0.7000",
+          "m1_observationTime_s_per_m": "-0.0024500",
+          "m1_rfCenter_s_per_m": "0.0024500",
+          "timeSec": "0.007"
+        },
+        {
+          "m0_1_per_m": "0.8000",
+          "m1_observationTime_s_per_m": "-0.0032000",
+          "m1_rfCenter_s_per_m": "0.0032000",
+          "timeSec": "0.008"
+        },
+        {
+          "m0_1_per_m": "0.9000",
+          "m1_observationTime_s_per_m": "-0.0040500",
+          "m1_rfCenter_s_per_m": "0.0040500",
+          "timeSec": "0.009"
+        },
+        {
+          "m0_1_per_m": "1.0000",
+          "m1_observationTime_s_per_m": "-0.0050000",
+          "m1_rfCenter_s_per_m": "0.0050000",
+          "timeSec": "0.010"
+        },
+        {
+          "m0_1_per_m": "0.9000",
+          "m1_observationTime_s_per_m": "-0.0059500",
+          "m1_rfCenter_s_per_m": "0.0039500",
+          "timeSec": "0.011"
+        },
+        {
+          "m0_1_per_m": "0.8000",
+          "m1_observationTime_s_per_m": "-0.0068000",
+          "m1_rfCenter_s_per_m": "0.0028000",
+          "timeSec": "0.012"
+        },
+        {
+          "m0_1_per_m": "0.7000",
+          "m1_observationTime_s_per_m": "-0.0075500",
+          "m1_rfCenter_s_per_m": "0.0015500",
+          "timeSec": "0.013"
+        },
+        {
+          "m0_1_per_m": "0.6000",
+          "m1_observationTime_s_per_m": "-0.0082000",
+          "m1_rfCenter_s_per_m": "0.0002000",
+          "timeSec": "0.014"
+        },
+        {
+          "m0_1_per_m": "0.5000",
+          "m1_observationTime_s_per_m": "-0.0087500",
+          "m1_rfCenter_s_per_m": "-0.0012500",
+          "timeSec": "0.015"
+        },
+        {
+          "m0_1_per_m": "0.4000",
+          "m1_observationTime_s_per_m": "-0.0092000",
+          "m1_rfCenter_s_per_m": "-0.0028000",
+          "timeSec": "0.016"
+        },
+        {
+          "m0_1_per_m": "0.3000",
+          "m1_observationTime_s_per_m": "-0.0095500",
+          "m1_rfCenter_s_per_m": "-0.0044500",
+          "timeSec": "0.017"
+        },
+        {
+          "m0_1_per_m": "0.2000",
+          "m1_observationTime_s_per_m": "-0.0098000",
+          "m1_rfCenter_s_per_m": "-0.0062000",
+          "timeSec": "0.018"
+        },
+        {
+          "m0_1_per_m": "0.1000",
+          "m1_observationTime_s_per_m": "-0.0099500",
+          "m1_rfCenter_s_per_m": "-0.0080500",
+          "timeSec": "0.019"
+        },
+        {
+          "m0_1_per_m": "0.00",
+          "m1_observationTime_s_per_m": "-0.01000",
+          "m1_rfCenter_s_per_m": "-0.0100",
+          "timeSec": "0.020"
+        }
+      ]
+    }
+  },
+  "conventions": [
+    "rfCenter",
+    "observationTime"
+  ],
+  "metamorphic": {
+    "amplitude_x2_m1_s_per_m": "0.0400",
+    "base_m1_s_per_m": "0.0200",
+    "time_x3_m1_s_per_m": "0.1800"
+  },
+  "rasterSec": "0.001",
+  "schemaVersion": 2
+}

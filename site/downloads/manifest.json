@@ -1,0 +1,278 @@
+{
+  "schemaVersion": "1.0.0",
+  "scope": "Files cited directly by the Markdown technical report",
+  "files": [
+    {
+      "publicPath": "downloads/benchmark/latest.json",
+      "sourcePath": "bseq/benchmark_results/latest.json",
+      "sourceSha256": "78c12eb121f23148ec315c86ed0fd8654e3269aadad4f76bd4c27d8606546b81",
+      "bytes": 91416,
+      "sha256": "78c12eb121f23148ec315c86ed0fd8654e3269aadad4f76bd4c27d8606546b81",
+      "transformation": "verbatim copy"
+    },
+    {
+      "publicPath": "downloads/benchmark/latest.md",
+      "sourcePath": "bseq/benchmark_results/latest.md",
+      "sourceSha256": "a6642682b5e214adb21cdeeffff29faf470c5a891920791fb1ca436f3e1609ef",
+      "bytes": 3435,
+      "sha256": "a6642682b5e214adb21cdeeffff29faf470c5a891920791fb1ca436f3e1609ef",
+      "transformation": "verbatim copy"
+    },
+    {
+      "publicPath": "downloads/benchmark/latest-browser.json",
+      "sourcePath": "bseq/benchmark_results/latest-browser.json",
+      "sourceSha256": "a6d377e41e99559d8912d9840c77934df4310d4af7cb84c32fc43d8d74207107",
+      "bytes": 466694,
+      "sha256": "a6d377e41e99559d8912d9840c77934df4310d4af7cb84c32fc43d8d74207107",
+      "transformation": "verbatim copy"
+    },
+    {
+      "publicPath": "downloads/benchmark/latest-browser.md",
+      "sourcePath": "bseq/benchmark_results/latest-browser.md",
+      "sourceSha256": "7b6aa20e934e3713f9bc3662dd464ad85f99002524f018a996acb86666f74b21",
+      "bytes": 6139,
+      "sha256": "7b6aa20e934e3713f9bc3662dd464ad85f99002524f018a996acb86666f74b21",
+      "transformation": "verbatim copy"
+    },
+    {
+      "publicPath": "downloads/benchmark/speedup-comparison.svg",
+      "sourcePath": "bseq/benchmark_results/speedup-comparison.svg",
+      "sourceSha256": "866e91737bcc4837d835f0a45c7a310a6988acb7f9d88f215cf75c468adcd660",
+      "bytes": 31844,
+      "sha256": "866e91737bcc4837d835f0a45c7a310a6988acb7f9d88f215cf75c468adcd660",
+      "transformation": "verbatim copy"
+    },
+    {
+      "publicPath": "downloads/benchmark/tooling-readme.md",
+      "sourcePath": "bseq/benchmarking/README.md",
+      "sourceSha256": "2e3e3211fa09e79256b6f95e34673e2f126394877566921e33042086afbb850e",
+      "bytes": 10230,
+      "sha256": "2e3e3211fa09e79256b6f95e34673e2f126394877566921e33042086afbb850e",
+      "transformation": "verbatim copy"
+    },
+    {
+      "publicPath": "downloads/benchmark/plan.md",
+      "sourcePath": "bseq/BSEQ_SEQ_BENCHMARK_PLAN.md",
+      "sourceSha256": "34bd5de7b4f399b4e951332d0c495007b1adade334d3b9c6e658b19b0477d528",
+      "bytes": 23063,
+      "sha256": "34bd5de7b4f399b4e951332d0c495007b1adade334d3b9c6e658b19b0477d528",
+      "transformation": "verbatim copy"
+    },
+    {
+      "publicPath": "downloads/benchmark/findings.md",
+      "sourcePath": "bseq/BSEQ_SEQ_BENCHMARK_FINDINGS.md",
+      "sourceSha256": "c3c1f3570a8817150d195e76a06c7cd2841e9f48f2549144aa775860a865ebc5",
+      "bytes": 6133,
+      "sha256": "c3c1f3570a8817150d195e76a06c7cd2841e9f48f2549144aa775860a865ebc5",
+      "transformation": "verbatim copy"
+    },
+    {
+      "publicPath": "downloads/protocols/e1-e8-frozen.md",
+      "sourcePath": "abstracts/experiments/public_protocols/seqeyes_plus_e1-e8_frozen_protocol.md",
+      "sourceSha256": "afb0c81767980612e48e5e98a7c7b8ee21035312c4afcff1149d6e65872ddbe7",
+      "bytes": 27626,
+      "sha256": "afb0c81767980612e48e5e98a7c7b8ee21035312c4afcff1149d6e65872ddbe7",
+      "transformation": "verbatim copy"
+    },
+    {
+      "publicPath": "downloads/protocols/eleven-sequence-reference.json",
+      "sourcePath": "abstracts/experiments/public_protocols/eleven_sequence_reference_protocol.json",
+      "sourceSha256": "08eb6a9b11bcbc6ea10b0c64c070131a4ef02ceb5f15165cd6bb73ac10da702c",
+      "bytes": 7201,
+      "sha256": "08eb6a9b11bcbc6ea10b0c64c070131a4ef02ceb5f15165cd6bb73ac10da702c",
+      "transformation": "verbatim copy"
+    },
+    {
+      "publicPath": "downloads/protocols/host-checkpoint-schema.md",
+      "sourcePath": "abstracts/experiments/public_protocols/host_checkpoint_schema.md",
+      "sourceSha256": "627a9f5097c3c796f9047676e4c54b67a78f3b2e9d7622f93dd92b66e6f988b4",
+      "bytes": 4660,
+      "sha256": "627a9f5097c3c796f9047676e4c54b67a78f3b2e9d7622f93dd92b66e6f988b4",
+      "transformation": "verbatim copy"
+    },
+    {
+      "publicPath": "downloads/results/e1-e8-summary.json",
+      "sourcePath": "abstracts/experiments/public_results/core/e1-e8_results_summary.json",
+      "sourceSha256": "859c9dadcc6a64f1d0703624713212a3174f491561c983f3998c733429e25e05",
+      "bytes": 5305,
+      "sha256": "859c9dadcc6a64f1d0703624713212a3174f491561c983f3998c733429e25e05",
+      "transformation": "verbatim copy"
+    },
+    {
+      "publicPath": "downloads/results/e1-e8-summary.md",
+      "sourcePath": "abstracts/experiments/public_results/core/e1-e8_results_summary.md",
+      "sourceSha256": "017e74737fcac0cf3de90b5ab2912c5f08cd10e5a77def9773f8554b2b92b753",
+      "bytes": 1640,
+      "sha256": "017e74737fcac0cf3de90b5ab2912c5f08cd10e5a77def9773f8554b2b92b753",
+      "transformation": "verbatim copy"
+    },
+    {
+      "publicPath": "downloads/results/e3-eleven-sequence-summary.json",
+      "sourcePath": "abstracts/experiments/public_results/core/e3_eleven_sequence_reference/summary.json",
+      "sourceSha256": "92c2f5440f7a21142b07715c82918538891b242cb5254cbd64a9678dde956b1e",
+      "bytes": 14830,
+      "sha256": "92c2f5440f7a21142b07715c82918538891b242cb5254cbd64a9678dde956b1e",
+      "transformation": "verbatim copy"
+    },
+    {
+      "publicPath": "downloads/results/e4-matlab.json",
+      "sourcePath": "abstracts/experiments/public_results/core/e4_matlab_inmemory_result.json",
+      "sourceSha256": "b4501399020624111a51a7202a30c36814025f2af2e47856499f30fd6a2c2f88",
+      "bytes": 596,
+      "sha256": "b4501399020624111a51a7202a30c36814025f2af2e47856499f30fd6a2c2f88",
+      "transformation": "verbatim copy"
+    },
+    {
+      "publicPath": "downloads/results/e4-python-jupyter.json",
+      "sourcePath": "abstracts/experiments/public_results/core/e4_python_notebook_result.json",
+      "sourceSha256": "c2e4bb4051420e26c9f41029282900f78b419487121648a8d264ed714470ee1f",
+      "bytes": 595,
+      "sha256": "c2e4bb4051420e26c9f41029282900f78b419487121648a8d264ed714470ee1f",
+      "transformation": "verbatim copy"
+    },
+    {
+      "publicPath": "downloads/results/e8-m1-reference.json",
+      "sourcePath": "abstracts/experiments/public_results/core/e8_m1_reference.json",
+      "sourceSha256": "70424f75424518a00334b767f5630ad95d39883180fc59329aaa11a061ca74c8",
+      "bytes": 21843,
+      "sha256": "70424f75424518a00334b767f5630ad95d39883180fc59329aaa11a061ca74c8",
+      "transformation": "verbatim copy"
+    },
+    {
+      "publicPath": "downloads/results/e8-m1-comparison.json",
+      "sourcePath": "abstracts/experiments/public_results/core/e8_m1_comparison.json",
+      "sourceSha256": "83297c5953c47f45b293afb3aab70525f28cb638f046601c4986d34b3affd451",
+      "bytes": 43101,
+      "sha256": "83297c5953c47f45b293afb3aab70525f28cb638f046601c4986d34b3affd451",
+      "transformation": "verbatim copy"
+    },
+    {
+      "publicPath": "downloads/scripts/parser-benchmark.cjs",
+      "sourcePath": "bseq/benchmarking/node/run_benchmark.cjs",
+      "sourceSha256": "7fea7b45b0a6bdabeb9652846d054f95123c8c88f6fc31e7bae7eb7e2db55dcf",
+      "bytes": 32466,
+      "sha256": "7fea7b45b0a6bdabeb9652846d054f95123c8c88f6fc31e7bae7eb7e2db55dcf",
+      "transformation": "verbatim copy"
+    },
+    {
+      "publicPath": "downloads/scripts/browser-benchmark.cjs",
+      "sourcePath": "bseq/benchmarking/browser/run_browser_benchmark.cjs",
+      "sourceSha256": "5b3635f0f500aa06b2b7934f9b208652bd161fdfd2394d6b9e3bc29004303978",
+      "bytes": 34386,
+      "sha256": "5b3635f0f500aa06b2b7934f9b208652bd161fdfd2394d6b9e3bc29004303978",
+      "transformation": "verbatim copy"
+    },
+    {
+      "publicPath": "downloads/scripts/benchmark-plots.cjs",
+      "sourcePath": "bseq/benchmarking/plots/generate_plots.cjs",
+      "sourceSha256": "6bc25803475c117b8a9bc8594d559f05c7dac1d63d5b12d7f30496faaf1aafd5",
+      "bytes": 19545,
+      "sha256": "6bc25803475c117b8a9bc8594d559f05c7dac1d63d5b12d7f30496faaf1aafd5",
+      "transformation": "verbatim copy"
+    },
+    {
+      "publicPath": "downloads/scripts/m1-analytic-reference.py",
+      "sourcePath": "abstracts/experiments/scripts/core/m1_analytic_reference.py",
+      "sourceSha256": "0eca03e39b036e67baaf7ead71f0190df55569a17315ec39e8dd0b5cda621515",
+      "bytes": 6621,
+      "sha256": "0eca03e39b036e67baaf7ead71f0190df55569a17315ec39e8dd0b5cda621515",
+      "transformation": "verbatim copy"
+    },
+    {
+      "publicPath": "downloads/scripts/m1-comparison.cjs",
+      "sourcePath": "abstracts/experiments/scripts/core/stage3_compare_m1.cjs",
+      "sourceSha256": "bbab313366c297af2d9937c7a085b8c12c3c3e57c96798a14471f684382e9d71",
+      "bytes": 4440,
+      "sha256": "bbab313366c297af2d9937c7a085b8c12c3c3e57c96798a14471f684382e9d71",
+      "transformation": "verbatim copy"
+    },
+    {
+      "publicPath": "downloads/scripts/pulseq-matlab-reference.m",
+      "sourcePath": "abstracts/experiments/scripts/core/export_pulseq_matlab_reference.m",
+      "sourceSha256": "8a1a6a215d4c31965b7523032c9ff792df8610f7c1e7f236b9fcbc17ae518680",
+      "bytes": 5725,
+      "sha256": "8a1a6a215d4c31965b7523032c9ff792df8610f7c1e7f236b9fcbc17ae518680",
+      "transformation": "verbatim copy"
+    },
+    {
+      "publicPath": "downloads/scripts/pypulseq-reference.py",
+      "sourcePath": "abstracts/experiments/scripts/core/export_pypulseq_reference.py",
+      "sourceSha256": "be483c14db9c27dd5b7dfd80aa477b29c836becaed86aebffeed9a42b8e811f1",
+      "bytes": 6332,
+      "sha256": "be483c14db9c27dd5b7dfd80aa477b29c836becaed86aebffeed9a42b8e811f1",
+      "transformation": "verbatim copy"
+    },
+    {
+      "publicPath": "downloads/scripts/seqeyes-checkpoints.cjs",
+      "sourcePath": "abstracts/experiments/scripts/core/export_seqeyes_checkpoints.cjs",
+      "sourceSha256": "82e35fb8d5396153f811a9686527fe88db54feb3f3cbd920a8e502e9431c925b",
+      "bytes": 7275,
+      "sha256": "82e35fb8d5396153f811a9686527fe88db54feb3f3cbd920a8e502e9431c925b",
+      "transformation": "verbatim copy"
+    },
+    {
+      "publicPath": "downloads/scripts/compare-seqeyes-pulseq.m",
+      "sourcePath": "abstracts/experiments/scripts/core/compare_seqeyes_to_pulseq_matlab.m",
+      "sourceSha256": "a4ce6f6ac45f2a14dd06231f51da92a33108dcb589e2120d78063005bb63204c",
+      "bytes": 7333,
+      "sha256": "a4ce6f6ac45f2a14dd06231f51da92a33108dcb589e2120d78063005bb63204c",
+      "transformation": "verbatim copy"
+    },
+    {
+      "publicPath": "downloads/scripts/compare-full-kspace.py",
+      "sourcePath": "abstracts/experiments/scripts/core/compare_full_kspace_arrays.py",
+      "sourceSha256": "7c37a259e1b248c128dc4fc94fb5d2f4252da6ce6b8f3692a2575405d9203099",
+      "bytes": 13787,
+      "sha256": "7c37a259e1b248c128dc4fc94fb5d2f4252da6ce6b8f3692a2575405d9203099",
+      "transformation": "verbatim copy"
+    },
+    {
+      "publicPath": "downloads/scripts/matlab-host-smoke.m",
+      "sourcePath": "abstracts/experiments/scripts/core/stage3_matlab_inmemory_smoke.m",
+      "sourceSha256": "f5c95e58f482778f97b4fb8b9274f4e6f893829374360b7a107b8d99db968bde",
+      "bytes": 3500,
+      "sha256": "f5c95e58f482778f97b4fb8b9274f4e6f893829374360b7a107b8d99db968bde",
+      "transformation": "verbatim copy"
+    },
+    {
+      "publicPath": "downloads/scripts/python-host-smoke.py",
+      "sourcePath": "abstracts/experiments/scripts/core/stage3_python_notebook_smoke.py",
+      "sourceSha256": "03000bb12e4b0fc9391ad6540360a15d622df592ce7c78090e914b886c587284",
+      "bytes": 3505,
+      "sha256": "03000bb12e4b0fc9391ad6540360a15d622df592ce7c78090e914b886c587284",
+      "transformation": "verbatim copy"
+    },
+    {
+      "publicPath": "downloads/protocols/figure2b-d-cross-tool.json",
+      "sourcePath": "abstracts/experiments/public_protocols/figure2b-d_37_sequence_cross_tool_protocol.json",
+      "sourceSha256": "3226db9767e4278827026e0ec4a5482f392e548863f6c14c4118c7141d924afb",
+      "bytes": 12987,
+      "sha256": "73232b3fd5ab07d4c305447a1957c14626774f762d88ad54de89470850767cf4",
+      "transformation": "Excluded the local stress case from the core public Figure 2B-C/D cohort and recomputed affected aggregate ratios."
+    },
+    {
+      "publicPath": "downloads/results/figure2b-c-data.csv",
+      "sourcePath": "abstracts/experiments/public_results/expanded_37_sequence/browser/figure2b-c_37_case_plot_data.csv",
+      "sourceSha256": "cb2a0933a486738bd539d2e9fa729f9a1238a5a4e67f9bc1c327a14ee795e6e0",
+      "bytes": 8425,
+      "sha256": "77d388520c02b01960a92a0c8490bf6087ab939c238a2f38a26a3dd4136e74ef",
+      "transformation": "Excluded the local stress case from the core public Figure 2B-C/D cohort and recomputed affected aggregate ratios."
+    },
+    {
+      "publicPath": "downloads/results/figure2b-d-summary.json",
+      "sourcePath": "abstracts/experiments/public_results/expanded_37_sequence/cross_tool/derived/figure2b-d_37_case_summary.json",
+      "sourceSha256": "35643e8d2305357b4982fdaef25c521617e61b35f36aad050280577c229d9b5f",
+      "bytes": 57122,
+      "sha256": "9071e76970c62b83ab9feab6d3412daa8a9481277fc82df50d7453c62466b33e",
+      "transformation": "Excluded the local stress case from the core public Figure 2B-C/D cohort and recomputed affected aggregate ratios."
+    },
+    {
+      "publicPath": "downloads/results/figure2b-d-data.csv",
+      "sourcePath": "abstracts/experiments/public_results/expanded_37_sequence/cross_tool/derived/figure2b-d_37_case_plot_data.csv",
+      "sourceSha256": "84e205be56279041e2de5092163d4a1209bcccb4bfb97adfaa9a8f37dd808c46",
+      "bytes": 87258,
+      "sha256": "74efb75c1a0a621d4946e1aba6dd636dac6b1fa0963505b5b729cd7ecc23702c",
+      "transformation": "Excluded the local stress case from the core public Figure 2B-C/D cohort and recomputed affected aggregate ratios."
+    }
+  ]
+}
