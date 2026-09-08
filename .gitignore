@@ -1,4 +1,34 @@
+# This repository is public. Keep local, generated, and scratch files out of it.
+
+# macOS and Windows shell metadata
 .DS_Store
+._*
+Thumbs.db
+desktop.ini
+
+# Editor swap, backup, and merge leftovers
+*~
+*.swp
+*.swo
+*.bak
+*.orig
+*.rej
+~$*
+
+# Dependencies and interpreter caches
 node_modules/
 __pycache__/
 *.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Scratch space and local run output. Published evidence lives under site/,
+# so anything landing in these paths is a working file, not a result.
+tmp/
+temp/
+scratch/
+*.tmp
+*.temp
+*.log
+npm-debug.log*
