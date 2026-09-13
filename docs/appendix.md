@@ -28,8 +28,9 @@ evidence rests on distributable, hash-bound inputs.
 Two fixtures are measured but excluded from every denominator.
 `wave_test_R3x2` is not an official Pulseq-derived file. The 4D-flow
 acquisition is a production sequence and is not distributed - it is too large
-for a repository, and its k-space is not calculated at all: the estimate exceeds
-the interactive memory gate by a wide margin, and the gate is left alone.
+for a repository, and its k-space is not calculated at all: the estimated cost
+is far above the viewer's 1 GiB interactive safety ceiling, which was left
+untouched for the experiments.
 
 ## Reproduction
 
@@ -76,7 +77,7 @@ by up to **2.8e-3 1/m**, about 2e-5 of the trajectory extent. Per sequence:
    both `write()` and `writeBinary()`. No conversion step sits between them.
 2. The difference is already in the **decoded gradients**, before any
    integration. For Trufi, 4,610 of 7,703 gradient samples differ, by at most
-   5.0 Hz/m against a 1.28 MHz/m peak - inside the frozen gradient gate - with
+   5.0 Hz/m against a 1.28 MHz/m peak - inside the frozen gradient limit - with
    sample times identical to the bit.
 3. The text stores shapes **run-length compressed** at about nine significant
    digits: one shape declares 600 samples in 396 stored lines.
@@ -127,12 +128,34 @@ fix changed both lanes, not only VS Code: the standalone lane gained the ceiling
 on its samples path, unreachable across the official set but now shared by
 decision rather than absent.
 
-## E5 — a claim not made
+## Two experiments planned and not run
 
-An experiment was planned to compare one canonical numerical checkpoint from all
-four host wrappers. The wrappers do not all export that artifact, and adding it
-was not attempted. Shared code is architectural consistency, not an independent
-cross-host numerical result, and no such result is reported.
+**E5 — cross-host numerical equivalence.** An experiment was planned to compare
+one canonical numerical checkpoint from all four host wrappers. The wrappers do
+not all export that artifact, and adding it was not attempted. Shared code is
+architectural consistency, not an independent cross-host numerical result, and
+no such result is reported.
+
+**E12 — k-space view geometry.** The plugin's browser suite already asserts that
+rotation pivots on the origin regardless of panning, that panning tracks the
+cursor within a pixel, and that the settled cloud contains every uploaded point.
+The one remaining claim - that autofit brings the whole trajectory into frame -
+was measured directly and had nothing to report.
+
+## The suite that runs on every change
+
+The experiments in the results are an audit: they ask whether the software is
+right, by comparing it against implementations that are not SeqEyes-Plus, and
+they take hours and a licensed MATLAB to run. Underneath them is a test suite
+that asks whether a change broke something, by comparing the software against
+its own past behaviour, and runs in minutes on every commit with nothing beyond
+the repository.
+
+It covers the parser, decoder, k-space, M1 and PNS, the gradient spectrogram, RF
+response and the display transport as unit tests; the standalone viewer,
+spectrogram panel and VS Code webview under Chromium; the extension host end to
+end; the packaged VSIX; and the Python renderer. It excludes licensed MATLAB
+runtime work and long benchmarks, which do not belong in a pull-request gate.
 
 ## Version history
 

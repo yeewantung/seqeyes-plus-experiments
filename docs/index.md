@@ -15,15 +15,16 @@ This is the evidence behind it: what was tested, how, and what the results were.
 
 ## Demos
 
-### Zoom until the samples are the drawing
+### Zoom, from the whole sequence to a few TRs
 
-<video src="downloads/demos/demo-zoom.webm" poster="downloads/demos/demo-zoom-sample.png"
+<video src="downloads/demos/demo-zoom.webm" poster="downloads/demos/demo-zoom-tr.png"
        controls muted loop playsinline width="100%"></video>
 
-A spiral sequence from its full 5.4 seconds down to 600 microseconds - forty
-gradient samples - and back. At the deepest view the drawn trajectory **is** the
-native samples, one segment each. Nothing is interpolated, and no line is drawn
-between samples that are not adjacent.
+A spiral sequence from its full 5.4 seconds down to three repetitions and back,
+in one continuous movement. Zoom keeps going past that depth, down to individual
+gradient samples, and at those depths the drawn trajectory **is** the native
+samples, one line segment each: nothing interpolated, and no segment between
+samples that are not adjacent.
 
 <details>
 <summary>How this was verified</summary>
@@ -40,18 +41,18 @@ experiment</a>.
 <video src="downloads/demos/demo-kspace.webm" poster="downloads/demos/demo-kspace.png"
        controls muted loop playsinline width="100%"></video>
 
-A 3D radial trajectory: rotate, zoom toward the cursor, pan, resize the ADC
-markers, flip between perspective and projection. Rotation pivots on k = 0, so
-the cloud turns in place instead of orbiting an offset centre.
+A 3D radial trajectory, all 122,880 acquired points: rotate, zoom toward the
+cursor, pan, resize the ADC markers, flip between perspective and projection.
+Rotation pivots on k = 0, so the cloud turns in place instead of orbiting an
+offset centre.
 
 <details>
 <summary>How this was verified</summary>
 
-The settled view always contains the complete ADC trajectory - the optimisation
+The settled view always contains the complete ADC trajectory: the optimisation
 that draws a strided subset while the camera moves restores every point once it
-stops. Verified in the plugin's own browser suite, which this report treats as
-<a href="#how-seqeyes-plus-is-tested-continuously">continuous testing</a> rather
-than as an experiment.
+stops. The plugin's browser suite asserts that, along with the rotation pivot
+and that panning tracks the cursor within a pixel.
 </details>
 
 ### Sequence spectrogram, with the sound
@@ -60,14 +61,13 @@ than as an experiment.
 
 The gradient spectrogram over the visible window, with the acoustic resonance
 bands a scanner declares drawn on top, played as audio while a marker crosses
-it. The point is the sound, so this slot stays empty until a recording with an
-audio track exists rather than showing a silent substitute.
+it. This slot waits on a recording with an audio track.
 
 <details>
 <summary>How this was verified</summary>
 
 Every column of the spectrogram was compared against an independently written
-short-time Fourier transform: 16,845,534 cells, none outside tolerance. See
+short-time Fourier transform: 16,845,534 cells, all within its limit. See
 <a href="#e9-spectrogram-and-acoustic-analysis">the spectrogram experiment</a>.
 </details>
 
@@ -88,9 +88,9 @@ artifacts** rather than a development checkout. See
 
 ## How SeqEyes-Plus was tested
 
-The results below are a point-in-time audit, carried out in September 2026
-against release v0.3.8. They rest on a method worth stating before the numbers,
-because the numbers only mean what the method makes them mean.
+The results below come from a point-in-time audit carried out in September 2026,
+against releases v0.3.6 through v0.3.8. Three properties of the method decide
+what the numbers mean, so they come first.
 
 ### Compared against something that is not SeqEyes-Plus
 
@@ -133,59 +133,51 @@ amplitude:
 
 That single check validates bin spacing, frequency-axis offset and the
 gyromagnetic scaling together. It failed on its first run and blocked the
-experiment until the cause was found - the tolerance had been set below the
+experiment until the cause was found - the limit had been set below the
 resolution of the float32 values being compared, so no correct implementation
 could have passed it.
 
 The Bloch propagator was held to rect pulses whose flip angle follows from the
 time integral of B1. It reproduced 90, 180 and 30 degrees to 1.2e-16 relative,
 with M<sub>z</sub> matching the cosine of that angle to 1.8e-14, and preserved
-|M| = 1 to 2.6e-14 throughout - a propagator that loses the magnetisation norm
-is not a rotation, so that was checked rather than assumed.
+|M| = 1 to 2.6e-14 throughout, since a propagator that loses the magnetisation
+norm is not a rotation.
 
-### Tolerances were fixed before the measurements
+### Every limit was fixed before the measurement
 
-Every threshold was written down, with the reason for its value, before the
-experiment that used it ran. A tolerance chosen after seeing the error is not a
-threshold; it is a description of the error.
+Each numerical experiment declares a **limit** before it runs: the largest
+disagreement with its reference that will still count as agreement, written down
+with the reason for that particular value. A limit chosen after seeing the error
+is not a limit; it is a description of the error.
 
-Four were amended, always before a result was accepted, and each amendment is
-recorded with its basis. Three came from reading the implementation: amplitudes
-travel through the display transport as float32, phase is wrapped into
-[0, 2&pi;), and the spectrogram matrices are float32 - so "exact" means exact
-after a float32 round, and a tolerance finer than float32 could never be met.
+Four were amended, each before a result was accepted and each recorded with its
+basis. Three came from reading the implementation: amplitudes travel through the
+display transport as float32, phase is wrapped into [0, 2&pi;), and the
+spectrogram matrices are float32 - so "exact" means exact after a float32 round,
+and a limit finer than float32 could never be met by anything.
 
-The fourth is the one worth naming, because it was prompted by a failure. The
-min/max band tolerance began as a per-column relative bound, and three windows
-exceeded it. A per-column relative tolerance is undefined where a waveform
-crosses zero: a column whose values sit near zero gets a punishing absolute
-bound for no physical reason, and all three failures were at a single near-zero
-column. The replacement is the form the frozen protocol already uses for
-gradient comparison - absolute, scaled to the signal's full scale. The measured
-worst case is published beside it so the gate can be judged separately from the
-agreement.
-
-### What a passing number is not
-
-An exactness result is a claim about a comparison, so the comparison is stated
-with each result: what was compared, to what, and under which conditions. Where
-a result rests on a proxy, the proxy is named. Where an experiment could not
-establish something, that is said rather than left to inference.
+The fourth was prompted by a failure. The min/max band limit began as a
+per-column relative bound, and three windows exceeded it. A per-column relative
+bound is undefined where a waveform crosses zero: a column whose values sit near
+zero is held to a punishing absolute bound for no physical reason, and all three
+failures were at a single near-zero column. The replacement is the form the
+frozen protocol already uses for gradient comparison - absolute, scaled to the
+signal's full scale.
 
 ## Results
 
-Every gate passed. The figure below puts each numerical experiment against the
-tolerance that was fixed before it ran, on one axis, because the experiments
-report in five different units and a table of them cannot be compared by eye.
+Every numerical experiment came in under the limit it declared before it ran.
+How far under is the figure below: E3, the tightest, by a factor of 8; E10, the
+loosest, by a factor of 5.4 billion.
 
 <img src="downloads/figures/results-margins.svg"
-     alt="Margin below the declared tolerance for each numerical experiment, on a logarithmic axis: E3 8 times, E11 68 times, E9 forty thousand times, E8 one hundred sixty million times, E10 five point four billion times.">
+     alt="How far under its declared limit each numerical result came in, on a logarithmic axis: E3 a factor of 8, E11 68, E9 forty thousand, E8 one hundred sixty million, E10 five point four billion.">
 
 | Group | Experiments | Result |
 |---|---|---|
-| Numerical accuracy | E3, E8, E9, E10, E11 | every gate passed, margins from 8x to 5.4e9 |
+| Numerical accuracy | E3, E8, E9, E10, E11 | all under their limits, by factors of 8 to 5.4e9 |
 | Format equivalence | E1, E2 | 37/37 and 37/37 |
-| Scale and performance | E7, Figure 2B-C, Figure 2B-D | reported as measurements, not gates |
+| Scale and performance | E7, Figure 2B-C, Figure 2B-D | timings, on one Apple M3 Pro |
 | Workflow and platform | E4 | 5/5 surfaces |
 
 Version note: E1, E2, E7, E8 and Figure 2B-C were measured on v0.3.6; E9, E10
@@ -212,12 +204,12 @@ at least 1e-6 of the sequence peak, and every ADC k-space coordinate.
 **Why the design is valid.** Pulseq MATLAB is maintained independently of this
 project and is the implementation sequences are usually authored against. The
 RF-phase floor exists because phase is meaningless where there is no RF to carry
-it, and comparing it there would manufacture disagreement. Tolerances - 1e-5
-1/m on k-space, 5e-6 relative on gradients - are the frozen abstract's own, kept
+it, and comparing it there would manufacture disagreement. The limits - 1e-5 1/m
+on k-space, 5e-6 relative on gradients - are the frozen abstract's own, kept
 unchanged so this run is comparable to it.
 
 **The result.** 11/11 passed. The worst k-space error was **1.19e-6 1/m** on ZTE
-PETRA, a sequence carrying 3,383,700 ADC samples, against a 1e-5 1/m gate.
+PETRA, a sequence carrying 3,383,700 ADC samples, against a 1e-5 1/m limit.
 
 **What it does not establish.** The oracle moved too: this run used Pulseq
 MATLAB at a later commit than the frozen evidence. A difference from those
@@ -241,7 +233,7 @@ the comparison needs. Decimal arithmetic removes the possibility that the
 reference and the implementation share a floating-point mistake.
 
 **The result.** 4/4 passed in both conventions, with maximum errors near
-**3e-18 s/m** against tolerances near 1.1e-9. The errors are **bit-identical**
+**3e-18 s/m** against limits near 1.1e-9. The errors are **bit-identical**
 to those recorded against v0.2.8, so the M1 path has not moved through the
 entire v0.3.x line.
 
@@ -264,21 +256,21 @@ only the transform is under test. Six conventions had to be matched exactly:
 window shape, per-frame DC removal, zero-pad length, magnitude scaling,
 coherent-gain normalisation, and the gyromagnetic unit conversion.
 
-**Why the design is valid.** Splitting the configurations is what keeps the
-claim honest. Reproducing the anti-aliasing filter would have made the reference
-a reimplementation rather than an oracle, so the decimation-free configuration
-carries the independence and the default configuration confirms the transform is
-unchanged by the surrounding plumbing. The oracle was certified against a
-closed-form sinusoid before it judged anything.
+**Why the design is valid.** The two configurations do different jobs.
+Reproducing the anti-aliasing filter would have made the reference a
+reimplementation, so the decimation-free configuration is where the independence
+lives; the default configuration then shows the transform is unchanged by the
+plumbing around it. The oracle was certified against a closed-form sinusoid
+before it judged anything.
 
-**The result.** **16,845,534 matrix cells compared, none outside tolerance**,
+**The result.** **16,845,534 matrix cells compared, none outside the limit**,
 99.69% of them bit-identical after a float32 round, worst disagreement 2.5e-11
 of the matrix maximum. Acoustic band tables and out-of-range counts matched an
 independent parse exactly, including a profile carrying a decoy band under a
 different key prefix and a zero-frequency padding entry.
 
 **What it does not establish.** The anti-aliasing filter's own behaviour, which
-is excluded deliberately and stated rather than implied.
+sits outside the comparison by design.
 
 #### E10 — RF response against a Bloch propagator
 
@@ -299,12 +291,12 @@ M<sub>z</sub> to be comparable. The reported polar flip angle is `acos(mz)`, a
 function of M<sub>z</sub> rather than an independent measurement, so it is
 checked for consistency rather than counted as a second endpoint.
 
-**The result.** Agreement at **1e-14**, four orders inside the 1e-3 gates. The
+**The result.** Agreement at **1e-14**, four orders inside the 1e-3 limits. The
 multiband bands were located 1.15 Hz from where they were placed, well inside
-the 7.63 Hz half-bin limit of a 65,536-point transform - which is what that
-tolerance was declared for. The 131,072-sample fallback was measured rather than
-asserted: one sample above the ceiling, the analyzer reported `limited`,
-analysed no spectrum, and kept the carrier area correct to 8.2e-15.
+the 7.63 Hz half-bin resolution of a 65,536-point transform - which is what that
+limit was declared for. The 131,072-sample fallback was exercised at one sample
+above the ceiling: the analyzer reported `limited`, analysed no spectrum, and
+kept the carrier area correct to 8.2e-15.
 
 This experiment also confirms three values the development record had claimed
 for the hypersecant case - 287.145 degrees of carrier area, 175.95 degrees of
@@ -361,32 +353,31 @@ decoded RF, gradient and ADC events, extensions and metadata. E2 opens both in
 fresh browser pages and compares the state the viewer reaches, the validity of
 its canvases, and - after the change described below - the k-space each produces.
 
-**Why the design is valid, and a correction that was needed.** E2's gate
-originally compared k-space content at load. Under v0.3.x k-space is calculated
+**Why the design is valid, and a correction that was needed.** E2's comparison
+originally read k-space content at load. Under v0.3.x k-space is calculated
 lazily when the panel opens, so those fields were empty at capture time and
-three of the gate's nine comparisons were passing on `null` against `null`. The
-run was reported as 37/37 and would have been published as equivalent to the
-frozen 37/37, which compared up to 6,428,672 real ADC samples. The gate now
+three of the nine comparisons were passing on `null` against `null`. The run was
+reported as 37/37 and would have been published as equivalent to the frozen
+37/37, which compared up to 6,428,672 real ADC samples. The comparison now
 captures state a second time, after k-space has actually been calculated, and
 records how many checks compared something.
 
 **The result.** **37/37** paired-format agreement and **37/37** browser parity,
 with k-space compared for all 37 against 35 in the frozen run, and no console
 errors. Trajectory and ADC sample counts are **identical** to the frozen
-evidence on every pair in both formats - exact equality, not a tolerance.
+evidence on every pair in both formats - exact equality, not a limit.
 
 **A measured difference worth knowing.** The two formats' k-space trajectories
-differ by up to 2.8e-3 1/m, about 2e-5 of the trajectory extent. No gate covers
-this and none is violated; it had simply never been measured, because E2
-compared sample counts rather than values. The
+differ by up to 2.8e-3 1/m, about 2e-5 of the trajectory extent. No limit covers
+this one; it had never been measured, because E2 compared sample counts rather
+than values. The
 <a href="appendix.html#text-versus-binary-fidelity">appendix</a> gives the
 measurement and a hypothesis about its cause, labelled as one.
 
 ### Scale and performance
 
-These are measurements, not gates. They describe one Apple M3 Pro running the
-recorded software versions, and their value is in what they separate rather than
-in any single number.
+Three timing experiments, all on one Apple M3 Pro at the recorded software
+versions. What each one separates matters more than any single number in it.
 
 #### E7 — what binary input changes
 
@@ -400,30 +391,28 @@ endpoint is measured apart from both.
 
 **Why the design matters here.** Parser time is not viewer time. The two formats
 share everything after parsing - timing detection, block decoding, rendering,
-k-space - so a parser speedup cannot become an end-to-end claim, and the
-separation is kept in the reporting rather than left to the reader.
+k-space - so the parser figure and the browser figure are reported separately
+and each says which one it is.
 
 <img src="downloads/figures/results-parser-speedup.svg"
      alt="Per-sequence parser speedup, text divided by binary, for 31 sequences, ranging from 2.7 to 17 times with a geometric mean of 5.24.">
 
 **The result.** Parser speedup **5.24x** geometric mean across 31 sequences;
-storage **26.0%** smaller. Six further sequences parse in under 0.5 ms and
-cannot be timed by this harness, so they are excluded and named rather than
-folded into the mean.
+storage **26.0%** smaller. Six further sequences parse in under 0.5 ms, below
+what this harness can resolve; they are named and excluded from the mean.
 
-**What a single run could not tell us.** The first comparison against the frozen
+**What one run could not settle.** The first comparison against the frozen
 numbers appeared to show 20-37% regressions on three sequences. Within-run
 sample spread reaches 23-870% of the median, so a single run cannot separate a
 version difference from ordinary variation. A repeat run put all three inside
-their own noise. The aggregate changed by 0.010x against a 0.061x noise floor -
-which is to say it did not change - and every per-sequence difference is now
-published beside the noise floor that qualifies it.
+their own noise, and the aggregate moved by 0.010x against a 0.061x noise floor.
+Every per-sequence difference is published beside that floor.
 
 #### Figure 2B-C — how ready time scales
 
 **The design.** File-input-to-ready time for each `.bseq`, against the ADC sample
-count, fitted log-log. The fit is descriptive: ADC count is not a complete
-workload model, and the scatter says so.
+count, fitted log-log. The fit is descriptive: ADC count is one term in the
+workload, not the whole of it, and the scatter shows how much else there is.
 
 <img src="downloads/figures/results-scaling.svg"
      alt="Log-log scatter of ready time against ADC sample count for 36 sequences, with a fitted line of slope 0.500 and R-squared 0.565.">
@@ -431,12 +420,12 @@ workload model, and the scatter says so.
 **The result.** Slope **0.500**, R² 0.565, against 0.557 and 0.600 frozen - the
 same weak sub-linear relationship.
 
-**A measurement trap worth reporting.** Measured from outside the browser, this
-endpoint carries about 124 ms of harness round-trip. A near-constant offset on a
-power law flattens its slope, most where the underlying time is smallest: fitted
-that way the slope came out 0.311, which would have read as a large regression
-in scaling and was entirely an artifact. The endpoint is now reconstructed from
-in-page marks alone.
+**Where the clock is read.** Measured from outside the browser, this endpoint
+carries about 124 ms of harness round-trip. A near-constant offset on a power law
+flattens its slope, most where the underlying time is smallest: fitted that way
+the slope came out 0.311, which would have read as a large regression in scaling
+and was entirely an artifact of the measurement point. The endpoint is
+reconstructed from in-page marks alone.
 
 #### Figure 2B-D — against MATLAB and PyPulseq
 
@@ -473,10 +462,9 @@ tool completed:
 | Pulseq MATLAB | **62.1x** | **1.32x** | 36 |
 | PyPulseq | **20.1x** | **2.61x** | 32 |
 
-Splitting them is what makes this readable. Nearly all of the difference is in
-getting a sequence on screen; once k-space is requested, the three tools are
-within a small factor of each other. One composite number could not have said
-that, and the frozen 8.438x had no way to.
+The split is where the information is. Nearly all of the difference is in getting
+a sequence on screen; once k-space is requested, the three tools are within a
+small factor of each other.
 
 The components show things a ratio hides. PyPulseq's 3D scatter on the spiral
 case takes **7.708 s against MATLAB's 0.115 s**. And on `writeFid`,
@@ -486,12 +474,12 @@ and preparing the WebGL layer, which dominates on a sequence that small.
 
 **Four cases PyPulseq could not read.** Three carry rotation extensions and one
 an RF-shim extension, which PyPulseq 1.5.0.post1 does not support against
-Pulseq 1.5.1 files. They stay in the dataset as explicit failures rather than
-being dropped from the denominator.
+Pulseq 1.5.1 files. They are counted in the dataset as failures, which is why
+PyPulseq's denominator is 32 and MATLAB's is 36.
 
 **Not comparable to the frozen ratios.** The frozen 8.438x and 4.618x were
-measured when one formula covered different work. No claim of improvement over
-them is made.
+measured when one formula covered different work, so no improvement over them is
+claimed here.
 
 ### Workflow and platform
 
@@ -522,38 +510,8 @@ tests including the portrait mobile layout.
 **What it does not establish.** Numerical equivalence between host wrappers.
 That would require every wrapper to export the same canonical checkpoints, which
 they do not, and it is
-<a href="appendix.html#e5-a-claim-not-made">not claimed</a>. Mobile is emulated
+<a href="appendix.html#two-experiments-planned-and-not-run">not claimed</a>. Mobile is emulated
 viewports rather than a physical device.
-
-## How SeqEyes-Plus is tested, continuously
-
-The experiments above are an audit. Underneath them is a suite that runs on
-every change, and the two answer different questions.
-
-| | Continuous suite | Experiments |
-|---|---|---|
-| Asks | did this change break something | is this right |
-| Compares against | the software's own past behavior | an implementation that is not SeqEyes-Plus |
-| Runs | in minutes, on every commit | in hours, deliberately |
-| Needs | nothing beyond the repository | licensed MATLAB, a physical host, a built toolbox |
-
-Neither substitutes for the other. A suite that compares software to itself
-cannot catch an error that was always there; an audit that runs twice a year
-cannot catch a regression introduced on Tuesday.
-
-The suite covers the parser, decoder, k-space, M1 and PNS, the gradient
-spectrogram, RF response and the display transport as unit tests; the standalone
-viewer, spectrogram panel and VS Code webview under Chromium; the extension host
-end to end; the packaged VSIX; and the Python renderer. It deliberately excludes
-licensed MATLAB runtime work and long benchmarks that do not belong in a
-pull-request gate.
-
-Where the two meet is worth stating rather than hiding. One planned experiment -
-k-space view geometry - was **not run**, because the browser suite already
-asserts that rotation pivots on the origin regardless of panning, that panning
-tracks the cursor within a pixel, and that the settled cloud contains every
-uploaded point. Its one remaining claim was measured directly and had nothing to
-report. That is the division working.
 
 ## Try it
 
