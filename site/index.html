@@ -12,955 +12,559 @@
   <header class="topbar">
     <div>
       <strong>SeqEyes-Plus experiment evidence</strong>
-      <span>Technical supplement · draft</span>
+      <span>Technical supplement</span>
     </div>
-    <a href="downloads/manifest.json">Evidence manifest</a>
+    <nav class="site-nav" aria-label="Pages">
+      <span aria-current="page">Report</span>
+      <a href="appendix.html">Appendix</a>
+    </nav>
   </header>
   <div class="layout">
     <aside>
       <div class="toc-title">Contents</div>
-      <nav aria-label="Report contents"><ol><li class="toc-level-2"><a href="#1-scope-and-terminology">1. Scope and terminology</a></li>
-<li class="toc-level-2"><a href="#2-software-and-machine-snapshots">2. Software and machine snapshots</a></li>
-<li class="toc-level-2"><a href="#3-sequence-cohorts">3. Sequence cohorts</a></li>
-<li class="toc-level-3"><a href="#representative-11-sequence-numerical-reference-subset">Representative 11-sequence numerical-reference subset</a></li>
-<li class="toc-level-3"><a href="#july-seq-bseq-benchmark-cohort">July `.seq`/`.bseq` benchmark cohort</a></li>
-<li class="toc-level-2"><a href="#4-experiment-overview">4. Experiment overview</a></li>
-<li class="toc-level-2"><a href="#5-e1-paired-format-structural-and-numerical-agreement">5. E1 — Paired-format structural and numerical agreement</a></li>
-<li class="toc-level-3"><a href="#description">Description</a></li>
-<li class="toc-level-3"><a href="#methods-and-implementation">Methods and implementation</a></li>
-<li class="toc-level-3"><a href="#related-code-and-evidence">Related code and evidence</a></li>
-<li class="toc-level-3"><a href="#final-results">Final results</a></li>
-<li class="toc-level-2"><a href="#6-e2-browser-state-and-canvas-parity">6. E2 — Browser state and canvas parity</a></li>
-<li class="toc-level-3"><a href="#description-2">Description</a></li>
-<li class="toc-level-3"><a href="#methods-and-implementation-2">Methods and implementation</a></li>
-<li class="toc-level-3"><a href="#related-code-and-evidence-2">Related code and evidence</a></li>
-<li class="toc-level-3"><a href="#final-results-2">Final results</a></li>
-<li class="toc-level-2"><a href="#7-e3-pulseq-matlab-waveform-rf-and-k-space-reference">7. E3 — Pulseq MATLAB waveform, RF, and k-space reference</a></li>
-<li class="toc-level-3"><a href="#description-3">Description</a></li>
-<li class="toc-level-3"><a href="#methods-and-implementation-3">Methods and implementation</a></li>
-<li class="toc-level-3"><a href="#related-code-and-evidence-3">Related code and evidence</a></li>
-<li class="toc-level-3"><a href="#final-results-3">Final results</a></li>
-<li class="toc-level-2"><a href="#8-e4-workflow-integration-in-four-environments">8. E4 — Workflow integration in four environments</a></li>
-<li class="toc-level-3"><a href="#description-4">Description</a></li>
-<li class="toc-level-3"><a href="#methods-and-implementation-4">Methods and implementation</a></li>
-<li class="toc-level-3"><a href="#related-code-and-evidence-4">Related code and evidence</a></li>
-<li class="toc-level-3"><a href="#final-results-4">Final results</a></li>
-<li class="toc-level-2"><a href="#9-e5-cross-host-numerical-consistency">9. E5 — Cross-host numerical consistency</a></li>
-<li class="toc-level-3"><a href="#description-and-result">Description and result</a></li>
-<li class="toc-level-2"><a href="#10-e6-local-wave-stress-experiment-disposition">10. E6 — Local Wave stress experiment disposition</a></li>
-<li class="toc-level-2"><a href="#11-e7-binary-i-o-parser-storage-and-ready-time">11. E7 — Binary I/O, parser, storage, and ready time</a></li>
-<li class="toc-level-3"><a href="#binary-input-implementation">Binary input implementation</a></li>
-<li class="toc-level-3"><a href="#benchmark-method">Benchmark method</a></li>
-<li class="toc-level-3"><a href="#related-code-and-evidence-5">Related code and evidence</a></li>
-<li class="toc-level-3"><a href="#july-aggregate-results">July aggregate results</a></li>
-<li class="toc-level-2"><a href="#12-e8-independent-analytical-m1-agreement">12. E8 — Independent analytical M1 agreement</a></li>
-<li class="toc-level-3"><a href="#description-5">Description</a></li>
-<li class="toc-level-3"><a href="#methods-and-implementation-5">Methods and implementation</a></li>
-<li class="toc-level-3"><a href="#related-code-and-evidence-6">Related code and evidence</a></li>
-<li class="toc-level-3"><a href="#final-results-5">Final results</a></li>
-<li class="toc-level-2"><a href="#13-abstract-figure-evidence">13. Abstract-figure evidence</a></li>
-<li class="toc-level-3"><a href="#figure-1-architecture-and-interactive-inspection">Figure 1 — Architecture and interactive inspection</a></li>
-<li class="toc-level-3"><a href="#figure-2a-multiresolution-hierarchical-rendering">Figure 2A — Multiresolution hierarchical rendering</a></li>
-<li class="toc-level-3"><a href="#figure-2b-c-browser-ready-time-scaling">Figure 2B-C — Browser ready-time scaling</a></li>
-<li class="toc-level-3"><a href="#figure-2b-d-cross-tool-visualization-workflow">Figure 2B-D — Cross-tool visualization workflow</a></li>
-<li class="toc-level-2"><a href="#14-supplementary-seq-versus-bseq-benchmark">14. Supplementary `.seq` versus `.bseq` benchmark</a></li>
-<li class="toc-level-3"><a href="#real-benchmark-figure">Real benchmark figure</a></li>
-<li class="toc-level-3"><a href="#per-sequence-numerical-table">Per-sequence numerical table</a></li>
-<li class="toc-level-3"><a href="#bounded-4d-flow-parser-diagnostic">Bounded 4D-flow parser diagnostic</a></li>
-<li class="toc-level-2"><a href="#15-limitations-and-interpretation-boundaries">15. Limitations and interpretation boundaries</a></li>
-<li class="toc-level-2"><a href="#16-reproduction-and-downloads">16. Reproduction and downloads</a></li>
-<li class="toc-level-3"><a href="#format-benchmark">Format benchmark</a></li>
-<li class="toc-level-3"><a href="#evidence-index">Evidence index</a></li>
-<li class="toc-level-2"><a href="#17-license-and-attribution">17. License and attribution</a></li></ol></nav>
+      <nav aria-label="Page contents"><ol><li class="toc-level-2"><a href="#demos">Demos</a></li>
+<li class="toc-level-3"><a href="#zoom-from-the-whole-sequence-to-a-few-trs">🔬 Zoom, from the whole sequence to a few TRs</a></li>
+<li class="toc-level-3"><a href="#k-space-you-can-turn-over">🌐 K-space you can turn over</a></li>
+<li class="toc-level-3"><a href="#sequence-spectrogram-with-the-sound">🎧 Sequence spectrogram, with the sound</a></li>
+<li class="toc-level-3"><a href="#the-same-engine-four-places">🧩 The same engine, four places</a></li>
+<li class="toc-level-2"><a href="#how-seqeyes-plus-was-tested">How SeqEyes-Plus was tested</a></li>
+<li class="toc-level-3"><a href="#compared-against-something-that-is-not-seqeyes-plus">Compared against something that is not SeqEyes-Plus</a></li>
+<li class="toc-level-3"><a href="#the-reference-had-to-prove-itself-first">The reference had to prove itself first</a></li>
+<li class="toc-level-3"><a href="#every-limit-was-fixed-before-the-measurement">Every limit was fixed before the measurement</a></li>
+<li class="toc-level-2"><a href="#results">Results</a></li>
+<li class="toc-level-3"><a href="#numerical-accuracy">Numerical accuracy</a></li>
+<li class="toc-level-4"><a href="#waveforms-and-k-space-against-official-pulseq-matlab">🌀 Waveforms and k-space, against official Pulseq MATLAB</a></li>
+<li class="toc-level-4"><a href="#first-moment-against-a-closed-form-integral">🧮 First moment, against a closed-form integral</a></li>
+<li class="toc-level-4"><a href="#spectrogram-and-acoustic-analysis">🔊 Spectrogram and acoustic analysis</a></li>
+<li class="toc-level-4"><a href="#rf-response-against-a-bloch-propagator">🧲 RF response, against a Bloch propagator</a></li>
+<li class="toc-level-4"><a href="#viewport-detail-does-the-drawing-tell-the-truth">🔍 Viewport detail: does the drawing tell the truth?</a></li>
+<li class="toc-level-3"><a href="#format-equivalence">Format equivalence</a></li>
+<li class="toc-level-4"><a href="#does-binary-mean-the-same-as-text">⚖️ Does binary mean the same as text?</a></li>
+<li class="toc-level-3"><a href="#scale-and-performance">Scale and performance</a></li>
+<li class="toc-level-4"><a href="#what-binary-input-changes">⚡ What binary input changes</a></li>
+<li class="toc-level-4"><a href="#how-ready-time-scales-with-sequence-size">📈 How ready time scales with sequence size</a></li>
+<li class="toc-level-4"><a href="#the-same-workflow-in-three-tools">⏱️ The same workflow in three tools</a></li>
+<li class="toc-level-3"><a href="#workflow-and-platform">Workflow and platform</a></li>
+<li class="toc-level-4"><a href="#four-environments-plus-mobile">🖥️ Four environments, plus mobile</a></li>
+<li class="toc-level-2"><a href="#try-it">Try it</a></li></ol></nav>
     </aside>
-    <main id="report"><article><h1 id="seqeyes-plus-experiment-evidence">SeqEyes-Plus experiment evidence</h1>
-<p>This technical supplement documents the experiment design, implementation,
-source code, results, and limitations used to evaluate SeqEyes-Plus. It is a
-reproducibility report, not a copy of the submitted abstract and not a product
-landing page.</p>
-<p><span class="status-line">Draft evidence report · updated 24 July 2026</span></p>
-<h2 id="1-scope-and-terminology">1. Scope and terminology</h2>
-<p>SeqEyes-Plus is the TypeScript/JavaScript, browser-native distribution in the
-SeqEyes lineage. It was designed from experience with SeqEyes Qt, but it does
-not depend on Qt or C++. The same inspection engine is packaged for a
-standalone browser, a VS Code custom editor, MATLAB, and Python/Jupyter
-workflows.</p>
-<p>The viewer accepts Pulseq text (<code>.seq</code>) and binary (<code>.bseq</code>) inputs. It exposes
-RF magnitude, RF/ADC phase, three gradient axes, ADC/trigger information, and
-optional M1 and advisory SAFE-based peripheral nerve stimulation estimates.
-The experiments below distinguish verified behavior from implementation
-capabilities and from claims that were deliberately not made.</p>
-<p>Evidence is separated into three layers:</p>
+    <main id="report"><article><h1 id="seqeyes-plus">SeqEyes-Plus</h1>
+<p>SeqEyes-Plus reads Pulseq sequence files and draws what is in them: RF magnitude
+and phase, three gradient axes, ADC and trigger events, the k-space trajectory,
+a gradient spectrogram, and optional first-moment and advisory PNS estimates. It
+accepts both Pulseq text (<code>.seq</code>) and binary (<code>.bseq</code>) input.</p>
+<p>One TypeScript engine is packaged for four environments, so a sequence can be
+inspected without leaving the place it was written: a standalone browser page, a
+VS Code custom editor, a MATLAB toolbox, and a Python package that renders
+inline in Jupyter. It extends the SeqEyes lineage, designed from experience with
+SeqEyes Qt, with no Qt or C++ dependency.</p>
+<p>This is the evidence behind it: what was tested, how, and what the results were.</p>
+<h2 id="demos">Demos</h2>
+<h3 id="zoom-from-the-whole-sequence-to-a-few-trs">🔬 Zoom, from the whole sequence to a few TRs</h3>
+<p><video src="downloads/demos/demo-zoom.webm" poster="downloads/demos/demo-zoom-tr.png"
+       controls muted loop playsinline width="100%"></video></p>
+<p>A spiral sequence from its full 5.4 seconds down to three repetitions and back,
+in one continuous movement. The amplitude axes zoom separately, one channel at a
+time with ctrl or cmd held: here Gz expands from the ±1.7 MHz/m shared
+gradient full scale to ±458 kHz/m, and its slice-select plateau and
+rewinder fill the row while the time window stays put.</p>
+<p>Zoom in time keeps going past three repetitions, down to individual gradient
+samples, and at those depths the drawn trajectory <strong>is</strong> the native samples, one
+line segment each: nothing interpolated, and no segment between samples that are
+not adjacent.</p>
+<details>
+<summary>How this was verified</summary>
+<p>384 windows, from one nanosecond wide up to a whole 695-second sequence, were
+each compared against a reconstruction built from the parsed shape that never
+calls the display path. 721,952 samples matched bit for bit. See
+<a href="#viewport-detail-does-the-drawing-tell-the-truth">the detail
+experiment</a>.</p>
+</details>
+<h3 id="k-space-you-can-turn-over">🌐 K-space you can turn over</h3>
+<p><video src="downloads/demos/demo-kspace.webm" poster="downloads/demos/demo-kspace.png"
+       controls muted loop playsinline width="100%"></video></p>
+<p>A 3D radial trajectory, all 122,880 acquired points: rotate, zoom toward the
+cursor, pan, resize the ADC markers, flip between perspective and projection.
+Rotation pivots on k = 0, so the cloud turns in place instead of orbiting an
+offset centre.</p>
+<p>The cloud is the points acquired inside the visible time window, so it follows
+the sequence view. At the end of the clip the waveform panel zooms from the
+whole 860 ms to 21.6 ms, and the disc becomes the seven radial spokes acquired
+in that window - 3,049 of the 122,880 points. Fitting the sequence back to full
+width brings the rest back.</p>
+<details>
+<summary>How this was verified</summary>
+<p>The settled view always contains the complete ADC trajectory: the optimisation
+that draws a strided subset while the camera moves restores every point once it
+stops. The plugin’s browser suite asserts that, along with the rotation pivot
+and that panning tracks the cursor within a pixel.</p>
+</details>
+<h3 id="sequence-spectrogram-with-the-sound">🎧 Sequence spectrogram, with the sound</h3>
+<div class="figure-placeholder">Spectrogram audition video — recording pending</div>
+<p>The gradient spectrogram over the visible window, with the acoustic resonance
+bands a scanner declares drawn on top, played as audio while a marker crosses
+it.</p>
+<details>
+<summary>How this was verified</summary>
+<p>Every column of the spectrogram was compared against an independently written
+short-time Fourier transform: 16,845,534 cells, all within its limit. See
+<a href="#spectrogram-and-acoustic-analysis">the spectrogram experiment</a>.</p>
+</details>
+<h3 id="the-same-engine-four-places">🧩 The same engine, four places</h3>
+<div class="figure-placeholder">Four-platform composite — VS Code and MATLAB panels pending</div>
+<p>Browser, VS Code, MATLAB, and Jupyter, each showing the same sequence through
+the same engine.</p>
+<details>
+<summary>How this was verified</summary>
+<p>All four were exercised, plus a mobile browser layout, against the <strong>distributed
+artifacts</strong> rather than a development checkout. See
+<a href="#four-environments-plus-mobile">the workflow experiment</a>.</p>
+</details>
+<h2 id="how-seqeyes-plus-was-tested">How SeqEyes-Plus was tested</h2>
+<p>The results below come from a point-in-time audit carried out in September 2026,
+against releases v0.3.6 through v0.3.8. Three properties of the method decide
+what the numbers mean.</p>
+<h3 id="compared-against-something-that-is-not-seqeyes-plus">Compared against something that is not SeqEyes-Plus</h3>
+<p>A test suite compares software to its own past behavior. It catches regressions
+and cannot catch an error that was always there. Every numerical experiment here
+therefore compares against an implementation written independently of the one it
+checks:</p>
 <table>
 <thead>
 <tr>
-<th>Layer</th>
-<th>Meaning</th>
+<th>Experiment</th>
+<th>Checked against</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Frozen abstract evidence</td>
-<td>E1–E8 results collected under the predefined protocol</td>
+<td>Waveforms and k-space</td>
+<td>Official Pulseq MATLAB</td>
 </tr>
 <tr>
-<td>Versioned follow-up</td>
-<td>Expanded official-sequence and 11-sequence reference results</td>
+<td>First moment M1</td>
+<td>A closed-form integral in 50-digit decimal arithmetic</td>
 </tr>
 <tr>
-<td>Supplementary benchmark</td>
-<td>New <code>.seq</code>/<code>.bseq</code>, 3D-MRF, and bounded 4D-flow engineering measurements</td>
+<td>Gradient spectrogram</td>
+<td>A short-time Fourier transform written from the definition</td>
+</tr>
+<tr>
+<td>RF response</td>
+<td>A Bloch propagator using explicit 3D rotations, not spinors</td>
+</tr>
+<tr>
+<td>Viewport detail</td>
+<td>A reconstruction from the parsed shape that never calls the display path</td>
 </tr>
 </tbody>
 </table>
-<h2 id="2-software-and-machine-snapshots">2. Software and machine snapshots</h2>
-<p>The frozen experiments and the later format benchmark used different,
-explicitly recorded software snapshots. Values are not silently transferred
-between snapshots.</p>
+<p>Two places where that independence could have leaked are closed by
+construction. The RF reference uses Rodrigues’ rotation formula while the
+implementation uses
+Cayley-Klein spinors, so an algebraic error in one cannot be reproduced by the
+other. The spectrogram reference writes its own window function rather than
+calling a library, because the implementation’s window is a periodic Hann
+advanced by one sample and matches neither of SciPy’s forms - calling for the
+wrong one would have produced a small, plausible, entirely spurious
+disagreement.</p>
+<h3 id="the-reference-had-to-prove-itself-first">The reference had to prove itself first</h3>
+<p>A reference that is wrong in the same direction as the implementation proves
+nothing. Two experiments therefore required their oracle to reproduce a
+closed-form result before it was allowed to judge anything.</p>
+<p>The spectrogram reference was given a sinusoid chosen to fall exactly on a
+transform bin. Its peak had to land in the predicted bin and carry the predicted
+amplitude:</p>
 <table>
 <thead>
 <tr>
-<th>Item</th>
-<th>Frozen E1–E8 evidence</th>
-<th>24 July format benchmark</th>
+<th>Check</th>
+<th>Predicted</th>
+<th>Measured</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Computer</td>
-<td>Apple M3 Pro, 11 logical cores, 18 GB</td>
-<td>Same hardware class</td>
+<td>Peak bin</td>
+<td>204.000000</td>
+<td><strong>204</strong></td>
 </tr>
 <tr>
-<td>Operating system</td>
-<td>macOS 15.7.1, arm64</td>
-<td><code>darwin</code>, arm64</td>
-</tr>
-<tr>
-<td>Node.js</td>
-<td>20.20.2</td>
-<td>20.20.2</td>
-</tr>
-<tr>
-<td>Browser</td>
-<td>Chromium 149.0.7827.55, headless, 1280 × 900</td>
-<td>Chromium 149.0.7827.55, headless, 1280 × 900</td>
-</tr>
-<tr>
-<td>MATLAB</td>
-<td>R2024b, 24.2.0.2712019</td>
-<td>Not used for timing</td>
-</tr>
-<tr>
-<td>PyPulseq</td>
-<td>1.5.0.post1</td>
-<td>Used for 3D-MRF generation/conversion workflow</td>
-</tr>
-<tr>
-<td>SeqEyes-Plus</td>
-<td>frozen baseline/corrective commits recorded in protocol; fixes released in v0.2.9 and v0.2.11</td>
-<td>package 0.2.12, plugin commit <code>80cabb39</code></td>
-</tr>
-<tr>
-<td>Workspace commit</td>
-<td>frozen protocol records each producing commit</td>
-<td><code>84c112b</code></td>
+<td>Peak amplitude</td>
+<td>0.5 mT/m</td>
+<td>0.4999999974</td>
 </tr>
 </tbody>
 </table>
-<p>The full frozen environment and amendment history are available in the
-<a href="downloads/protocols/e1-e8-frozen.md">E1–E8 protocol</a>.</p>
-<h2 id="3-sequence-cohorts">3. Sequence cohorts</h2>
-<p>The submitted evidence, later numerical-reference expansion, comprehensive
-format screen, and July benchmark use related but non-identical cohorts.
-Denominators are therefore always reported with their cohort.</p>
-<h3 id="representative-11-sequence-numerical-reference-subset">Representative 11-sequence numerical-reference subset</h3>
+<p>That single check validates bin spacing, frequency-axis offset and the
+gyromagnetic scaling together. It failed on its first run and blocked the
+experiment until the cause was found - the limit had been set below the
+resolution of the float32 values being compared, so no correct implementation
+could have passed it.</p>
+<p>The Bloch propagator was held to rect pulses whose flip angle follows from the
+time integral of B1. It reproduced 90, 180 and 30 degrees to 1.2e-16 relative,
+with M<sub>z</sub> matching the cosine of that angle to 1.8e-14, and preserved
+|M| = 1 to 2.6e-14 throughout, since a propagator that loses the magnetisation
+norm is not a rotation.</p>
+<h3 id="every-limit-was-fixed-before-the-measurement">Every limit was fixed before the measurement</h3>
+<p>Each numerical experiment declares a <strong>limit</strong> before it runs: the largest
+disagreement with its reference that will still count as agreement, written down
+with the reason for that particular value. A limit chosen after seeing the error
+is not a limit; it is a description of the error.</p>
+<p>Four were amended, each before a result was accepted and each recorded with its
+basis. Three came from reading the implementation: amplitudes travel through the
+display transport as float32, phase is wrapped into [0, 2π), and the
+spectrogram matrices are float32 - so “exact” means exact after a float32 round,
+and a limit finer than float32 could not be met.</p>
+<p>The fourth was prompted by a failure. The min/max band limit began as a
+per-column relative bound, and three windows exceeded it. A per-column relative
+bound is undefined where a waveform crosses zero: a column whose values sit near
+zero is held to a punishing absolute bound for no physical reason, and all three
+failures were at a single near-zero column. The replacement is the form the
+frozen protocol already uses for gradient comparison - absolute, scaled to the
+signal’s full scale.</p>
+<h2 id="results">Results</h2>
+<p>Each numerical experiment fixes a <strong>limit</strong> before it runs: the largest
+disagreement with its independent reference that will still count as agreement,
+recorded together with the reason for that value.</p>
+<p>The k-space comparison makes it concrete. SeqEyes-Plus and Pulseq MATLAB each
+expand the same file into a trajectory; subtracting them coordinate by
+coordinate across 3,383,700 ADC samples leaves a largest difference of
+<strong>1.19e-6 1/m</strong>. The limit set beforehand was 1e-5 1/m, an error far below
+anything that reaches a reconstructed image. The measurement is under the limit,
+so the two implementations agree by a standard fixed before either one ran.</p>
+<p>Every numerical experiment came in under its limit. How far under differs by
+nine orders of magnitude across them, and that spread is a fact about the limits
+rather than about the results: one limit is the error that would change an
+image, another is the resolution of a float32. Each experiment reports its own
+measurement against its own limit, in its own units.</p>
 <table>
 <thead>
 <tr>
-<th>ID</th>
-<th>Public label</th>
-<th>Coverage</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>writeEpi</code></td>
-<td>EPI</td>
-<td>Cartesian EPI</td>
-</tr>
-<tr>
-<td><code>writeEpiRS</code></td>
-<td>EPI-RS</td>
-<td>Ramp-sampled/arbitrary-gradient EPI</td>
-</tr>
-<tr>
-<td><code>writeGradientEcho_label</code></td>
-<td>Labelled GRE</td>
-<td>Cartesian GRE and labels</td>
-</tr>
-<tr>
-<td><code>writeFastRadialGradientEcho_rot3D</code></td>
-<td>3D radial GRE</td>
-<td>Radial and rotated 3D gradients</td>
-</tr>
-<tr>
-<td><code>writeSpiral</code></td>
-<td>Spiral</td>
-<td>Non-Cartesian spiral trajectory</td>
-</tr>
-<tr>
-<td><code>writeUTE</code></td>
-<td>UTE</td>
-<td>Ultrashort-echo trajectory</td>
-</tr>
-<tr>
-<td><code>writeEpiSpinEchoRS</code></td>
-<td>EPI spin echo RS</td>
-<td>Refocused ramp-sampled EPI</td>
-</tr>
-<tr>
-<td><code>writeHASTE</code></td>
-<td>HASTE</td>
-<td>Single-shot turbo spin echo</td>
-</tr>
-<tr>
-<td><code>writeTrufi</code></td>
-<td>Trufi</td>
-<td>Balanced steady-state sequence</td>
-</tr>
-<tr>
-<td><code>writeTSE</code></td>
-<td>TSE</td>
-<td>Multi-echo turbo spin echo</td>
-</tr>
-<tr>
-<td><code>writeZTE_Petra</code></td>
-<td>ZTE PETRA</td>
-<td>Large hybrid radial/Cartesian ZTE</td>
-</tr>
-</tbody>
-</table>
-<h3 id="july-seq-bseq-benchmark-cohort">July <code>.seq</code>/<code>.bseq</code> benchmark cohort</h3>
-<p>The new benchmark has 13 paired rows after two explicit additions:</p>
-<ul>
-<li>11 official demo pairs in the primary rerun;</li>
-<li>one local reduced Wave stress pair in the generated supplementary figure;</li>
-<li>one appended <code>pypulseq_3dmrf</code> pair.</li>
-</ul>
-<p>This is a supplementary engineering cohort, not the 11-case numerical
-reference subset above. In particular, ordinary GRE and radial GRE replace
-the labelled and rotated 3D variants in this benchmark. The Wave row is not an
-official fixture and is not used to change an E1–E8 public denominator. No
-fixture binary is distributed by this report.</p>
-<h2 id="4-experiment-overview">4. Experiment overview</h2>
-<table>
-<thead>
-<tr>
-<th>ID</th>
-<th>Question</th>
-<th>Principal endpoint</th>
+<th>Group</th>
+<th style="text-align:right">Experiments</th>
 <th>Result</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>E1</td>
-<td>Do paired <code>.seq</code> and <code>.bseq</code> files decode equivalently?</td>
-<td>Structural/numerical gates</td>
-<td>24/24 frozen; 36/36 official follow-up</td>
+<td>Numerical accuracy</td>
+<td style="text-align:right">5</td>
+<td>all under their limits</td>
 </tr>
 <tr>
-<td>E2</td>
-<td>Do paired formats reach equivalent browser state and valid canvases?</td>
-<td>State/canvas parity</td>
-<td>24/24 frozen; 36/36 official follow-up</td>
+<td>Format equivalence</td>
+<td style="text-align:right">2</td>
+<td>37/37 and 37/37</td>
 </tr>
 <tr>
-<td>E3</td>
-<td>Does SeqEyes-Plus agree with Pulseq MATLAB at 3 T?</td>
-<td>Waveform, RF, and k-space error</td>
-<td>4/4 frozen; 11/11 follow-up</td>
+<td>Scale and performance</td>
+<td style="text-align:right">3</td>
+<td>timings, on one Apple M3 Pro</td>
 </tr>
 <tr>
-<td>E4</td>
-<td>Can inspection remain inside four development environments?</td>
-<td>Host invocation and viewer readiness</td>
-<td>4/4 environments</td>
-</tr>
-<tr>
-<td>E5</td>
-<td>Was independent numerical equivalence established across all hosts?</td>
-<td>Canonical checkpoint artifact</td>
-<td>Not claimed</td>
-</tr>
-<tr>
-<td>E6</td>
-<td>Was the local Wave stress experiment eligible as public core evidence?</td>
-<td>Fixture/publication policy</td>
-<td>Excluded from core evidence</td>
-</tr>
-<tr>
-<td>E7</td>
-<td>What changes when input is binary rather than text?</td>
-<td>Storage, acquisition, parser, and ready time</td>
-<td>Parser improved; ready time mostly shared work</td>
-</tr>
-<tr>
-<td>E8</td>
-<td>Does M1 agree with independent analytical calculations?</td>
-<td>Maximum error and RMSE in both conventions</td>
-<td>4/4 analytical cases</td>
+<td>Workflow and platform</td>
+<td style="text-align:right">1</td>
+<td>5/5 surfaces</td>
 </tr>
 </tbody>
 </table>
-<h2 id="5-e1-paired-format-structural-and-numerical-agreement">5. E1 — Paired-format structural and numerical agreement</h2>
-<h3 id="description">Description</h3>
-<p>E1 tests whether the text and binary readers construct equivalent sequence
-content before their outputs enter the shared visualization engine. It is an
-accuracy gate for the performance comparisons, not a byte-equality test.</p>
-<h3 id="methods-and-implementation">Methods and implementation</h3>
-<p>Both files of each pair are read from preloaded bytes. The runner compares:</p>
+<p>The plugin moved during the work, and each result records the build that
+produced it: v0.3.6, v0.3.7 or v0.3.8. The re-measurements happened because
+these experiments found a defect, which was fixed and then confirmed - the
+<a href="appendix.html#version-history">appendix</a> gives the sequence, and
+maps each section here to the protocol and result files behind it.</p>
+<h3 id="numerical-accuracy">Numerical accuracy</h3>
+<h4 id="waveforms-and-k-space-against-official-pulseq-matlab">🌀 Waveforms and k-space, against official Pulseq MATLAB</h4>
+<p><strong>The question.</strong> Does SeqEyes-Plus expand a sequence into the same waveforms
+and the same k-space trajectory as the reference implementation the Pulseq
+community uses?</p>
+<p><strong>The design.</strong> Eleven representative sequences - Cartesian and non-Cartesian,
+labelled, rotated, single-shot and multi-echo - are read by official Pulseq
+MATLAB at a fixed B0 of 3 T. Both implementations expand waveforms and
+calculate the ADC k-space trajectory, and the results are compared at physical
+checkpoints: three gradient axes, RF magnitude, RF phase where the magnitude is
+at least 1e-6 of the sequence peak, and every ADC k-space coordinate.</p>
+<p><strong>Why the design is valid.</strong> Pulseq MATLAB is maintained independently of this
+project and is the implementation sequences are usually authored against. The
+RF-phase floor exists because phase is meaningless where there is no RF to carry
+it, and comparing it there would manufacture disagreement. The limits - 1e-5 1/m
+on k-space, 5e-6 relative on gradients - are the frozen abstract’s own, kept
+unchanged so this run is comparable to it. The reference itself is at a later
+commit than the frozen evidence used, so the result speaks for the current pair.</p>
+<p><strong>The result.</strong> 11/11 passed. The worst k-space error was <strong>1.19e-6 1/m</strong> on ZTE
+PETRA, a sequence carrying 3,383,700 ADC samples, against a 1e-5 1/m limit.</p>
+<h4 id="first-moment-against-a-closed-form-integral">🧮 First moment, against a closed-form integral</h4>
+<p><strong>The question.</strong> Is the M1 calculation right, independently of how it is
+implemented?</p>
+<p><strong>The design.</strong> A Python reference evaluates the exact integral of each
+piecewise-linear gradient segment in 50-digit decimal arithmetic, and never
+imports SeqEyes code. Four cases - constant gradient, linear ramp, continuous
+bipolar, and an excitation/refocusing sign flip - are compared at every shared
+checkpoint, in both reference-time conventions.</p>
+<p><strong>Why the design is valid.</strong> The reference is not an approximation of the
+implementation; it is the analytic answer, computed to far more precision than
+the comparison needs. Decimal arithmetic removes the possibility that the
+reference and the implementation share a floating-point mistake.</p>
+<p><strong>The result.</strong> 4/4 passed in both conventions, with maximum errors near
+<strong>3e-18 s/m</strong> against limits near 1.1e-9. The errors are <strong>bit-identical</strong>
+to those recorded against v0.2.8, so the M1 path has not moved through the
+entire v0.3.x line.</p>
+<h4 id="spectrogram-and-acoustic-analysis">🔊 Spectrogram and acoustic analysis</h4>
+<p><strong>The question.</strong> Does the gradient spectrogram compute what a short-time
+Fourier transform of the same signal computes, and does forbidden-band screening
+agree with an independent reading of the same profile?</p>
+<p><strong>The design.</strong> The spectrogram is compared column by column against a NumPy
+transform written from the definition, over eleven sequences at two
+configurations. One configuration disables decimation entirely, so the whole
+transform is compared with no filter in the path; the other is the panel’s
+default, where the reference consumes the implementation’s decimated samples and
+only the transform is under test. Six conventions had to be matched exactly:
+window shape, per-frame DC removal, zero-pad length, magnitude scaling,
+coherent-gain normalisation, and the gyromagnetic unit conversion.</p>
+<p><strong>Why the design is valid.</strong> The two configurations do different jobs.
+Reproducing the anti-aliasing filter would have made the reference a
+reimplementation, so the decimation-free configuration is where the independence
+lives; the default configuration then shows the transform is unchanged by the
+plumbing around it. The oracle was certified against a closed-form sinusoid
+before it judged anything.</p>
+<p><strong>The result.</strong> <strong>16,845,534 matrix cells compared, none outside the limit</strong>,
+99.69% of them bit-identical after a float32 round, worst disagreement 2.5e-11
+of the matrix maximum. Acoustic band tables and out-of-range counts matched an
+independent parse exactly, including a profile carrying a decoy band under a
+different key prefix and a zero-frequency padding entry.</p>
+<h4 id="rf-response-against-a-bloch-propagator">🧲 RF response, against a Bloch propagator</h4>
+<p><strong>The question.</strong> Are the estimated band centres, per-band flip angle and
+M<sub>z</sub> right for a multiband or adiabatic pulse?</p>
+<p><strong>The design.</strong> An independent Python propagator rotates the magnetisation
+through each hard-pulse segment using Rodrigues’ formula, without relaxation, and
+is compared against the implementation’s Cayley-Klein spinor evaluation. Cases
+are a stored multiband example, an MPRAGE hyperbolic-secant inversion, and rect
+and sinc pulses with analytic expectations.</p>
+<p><strong>Why the design is valid.</strong> The two use different algebra for the same physics,
+so an error in the spinor formulation cannot be reproduced by the reference.
+M<sub>z</sub> carries the comparison because it is invariant to the handedness of
+the rotation - the two formulations need not share a sign convention for
+M<sub>z</sub> to be comparable. The reported polar flip angle is <code>acos(mz)</code>, a
+function of M<sub>z</sub> rather than an independent measurement, so it is
+checked for consistency rather than counted as a second endpoint.</p>
+<p><strong>The result.</strong> Agreement at <strong>1e-14</strong>, four orders inside the 1e-3 limits. The
+multiband bands were located 1.15 Hz from where they were placed, well inside
+the 7.63 Hz half-bin resolution of a 65,536-point transform - which is what that
+limit was declared for. The 131,072-sample fallback was exercised at one sample
+above the ceiling: the analyzer reported <code>limited</code>, analysed no spectrum, and
+kept the carrier area correct to 8.2e-15.</p>
+<p>This experiment also confirms three values the development record had claimed
+for the hypersecant case - 287.145 degrees of carrier area, 175.95 degrees of
+polar response, M<sub>z</sub> = -0.9975 - independently reproducing them as
+287.1448, 175.9515 and -0.997505.</p>
+<h4 id="viewport-detail-does-the-drawing-tell-the-truth">🔍 Viewport detail: does the drawing tell the truth?</h4>
+<p><strong>The question.</strong> When the viewer draws a waveform, is what appears on screen
+the data, or a summary of it?</p>
+<p><strong>The design.</strong> The detail path dispatches three ways by window size: every
+native sample below 50,000, a per-column min/max band below 2,000,000, and the
+precomputed hierarchy above that. Each regime is compared against a
+reconstruction built directly from the parsed shape. 384 windows are swept, from
+one nanosecond wide up to the whole sequence, over three sequences including the
+459 MiB 4D-flow case - whose full width is 695 seconds, so the sweep covers
+twelve orders of magnitude.</p>
+<p><strong>Why the design is valid.</strong> The reference never calls the display path, so the
+comparison is not circular. The runner routes every window through the viewer’s
+own dispatch function and reads back which regime was chosen, rather than
+re-deriving the thresholds - an earlier version re-derived them and ended up
+testing a function the viewer never calls at two of the three zoom levels.</p>
+<p>The band reference is derived from the definition rather than from the
+accumulation loop: on a piecewise-linear function the extremum over a column is
+attained at an endpoint of that column or at a native sample inside it, so
+evaluating both edges and every interior sample is exact.</p>
+<p><strong>The result.</strong> <strong>294 of 294</strong> exact-regime windows returned every native
+sample: equal counts, bit-exact times, and values bit-exact after the float32
+round the transport applies - <strong>721,952 samples</strong> compared. 54 of 54 band
+windows agreed, 106,562 of 106,705 columns bit-exactly, worst disagreement
+0.125 Hz/m against a 1.7 MHz/m full scale. 36 of 36 hierarchy windows declined
+as the contract requires, and the load-time hierarchy preserved every block’s
+extrema.</p>
+<p>The two rendering lanes are compared on dispatch and geometry: the standalone
+viewer reports which regime it chose and how many columns it produced, and
+exposes no accessor for the drawn values. Dispatch and geometry are what the
+lanes duplicate, and what
+<a href="appendix.html#a-defect-these-experiments-found">drifted</a>.</p>
+<h3 id="format-equivalence">Format equivalence</h3>
+<h4 id="does-binary-mean-the-same-as-text">⚖️ Does binary mean the same as text?</h4>
+<p><strong>The question.</strong> A <code>.bseq</code> file is meant to be the same sequence as its <code>.seq</code>
+counterpart. Is it?</p>
+<p><strong>The design.</strong> 37 paired files are read by both readers. E1 compares the parsed
+models: version and definitions, block order and duration, decompressed shapes,
+decoded RF, gradient and ADC events, extensions and metadata. E2 opens both in
+fresh browser pages and compares the state the viewer reaches, the validity of
+its canvases, and - after the change described below - the k-space each produces.</p>
+<p><strong>Why the design is valid, and a correction that was needed.</strong> E2’s comparison
+originally read k-space content at load. Under v0.3.x k-space is calculated
+lazily when the panel opens, so those fields were empty at capture time and
+three of the nine comparisons were passing on <code>null</code> against <code>null</code>. The run was
+reported as 37/37 and would have been published as equivalent to the frozen
+37/37, which compared up to 6,428,672 real ADC samples. The comparison now
+captures state a second time, after k-space has actually been calculated, and
+records how many checks compared something.</p>
+<p><strong>The result.</strong> <strong>37/37</strong> paired-format agreement and <strong>37/37</strong> browser parity,
+with k-space compared for all 37 against 35 in the frozen run, and no console
+errors. Trajectory and ADC sample counts are <strong>identical</strong> to the frozen
+evidence on every pair in both formats - exact equality, not a limit.</p>
+<p><strong>A difference between the two formats.</strong> The two formats’ k-space trajectories
+differ by up to 2.8e-3 1/m, about 2e-5 of the trajectory extent. No limit covers
+this one; it had never been measured, because E2 compared sample counts rather
+than values. The
+<a href="appendix.html#text-versus-binary-fidelity">appendix</a> gives the
+per-sequence measurement, and a hypothesis about its cause.</p>
+<h3 id="scale-and-performance">Scale and performance</h3>
+<p>Three timing experiments, all on one Apple M3 Pro at the recorded software
+versions.</p>
+<h4 id="what-binary-input-changes">⚡ What binary input changes</h4>
+<p><strong>The question.</strong> Binary files parse faster and take less space. By how much,
+and does that make the viewer faster?</p>
+<p><strong>The design.</strong> Both files of each pair are parsed from bytes already in memory,
+three warm-up and fifteen measured iterations per format, with the format order
+alternating. File acquisition and parsing are timed separately, and the browser
+endpoint is measured apart from both.</p>
+<p><strong>Why the design matters here.</strong> Parser time is not viewer time. The two formats
+share everything after parsing - timing detection, block decoding, rendering,
+k-space - so the parser result and the browser result are reported separately.</p>
+<p><img src="downloads/figures/results-parser-speedup.svg"
+     alt="Per-sequence parser speedup, text divided by binary, for 31 sequences, ranging from 2.7 to 17 times with a geometric mean of 5.24."></p>
+<p><strong>The result.</strong> Parser speedup <strong>5.24x</strong> geometric mean across 31 sequences;
+storage <strong>26.0%</strong> smaller. Six further sequences parse in under 0.5 ms, below
+what this harness can resolve; they are named and excluded from the mean.</p>
+<p><strong>What one run could not settle.</strong> The first comparison against the frozen
+numbers appeared to show 20-37% regressions on three sequences. Within-run
+sample spread reaches 23-870% of the median, so a single run cannot separate a
+version difference from ordinary variation. A repeat run put all three inside
+their own noise, and the aggregate moved by 0.010x against a 0.061x noise floor.</p>
+<h4 id="how-ready-time-scales-with-sequence-size">📈 How ready time scales with sequence size</h4>
+<p>This is Figure 2B-C of the abstract.</p>
+<p><strong>The design.</strong> File-input-to-ready time for each <code>.bseq</code>, against the ADC sample
+count, fitted log-log. The fit is descriptive: ADC count is one term in the
+workload, not the whole of it, and the scatter shows how much else there is.</p>
+<p><img src="downloads/figures/results-scaling.svg"
+     alt="Log-log scatter of ready time against ADC sample count for 36 sequences, with a fitted line of slope 0.500 and R-squared 0.565."></p>
+<p><strong>The result.</strong> Slope <strong>0.500</strong>, R² 0.565, against 0.557 and 0.600 frozen - the
+same weak sub-linear relationship.</p>
+<p><strong>Where the clock is read.</strong> Measured from outside the browser, this endpoint
+carries about 124 ms of harness round-trip. A near-constant offset on a power law
+flattens its slope, most where the underlying time is smallest: fitted that way
+the slope came out 0.311, which would have read as a large regression in scaling
+and was entirely an artifact of the measurement point. The endpoint is
+reconstructed from in-page marks alone.</p>
+<h4 id="the-same-workflow-in-three-tools">⏱️ The same workflow in three tools</h4>
+<p>This is Figure 2B-D of the abstract.</p>
+<p><strong>The question.</strong> How long does the same inspection workflow take in each tool:
+read a sequence, plot its waveforms, calculate the ADC k-space, and draw the 3D
+scatter?</p>
+<p><strong>The design, and why it changed.</strong> The frozen figure reported one number per
+tool. That composite was built from a formula that covered k-space only while
+k-space was calculated during load; under lazy calculation it covers it for some
+sequences and not others. Assembled anyway it gave 27.6x against MATLAB where
+the frozen run gave 8.4x - a threefold jump in our own favour, produced by work
+falling outside the measurement rather than by any improvement.</p>
+<p>The composite is retired. Two endpoints are reported instead, each defined by
+what it measures:</p>
 <ul>
-<li>version and supported definitions;</li>
-<li>block order, duration, and event-library membership;</li>
-<li>decompressed shapes and decoded RF/gradient/ADC events;</li>
-<li>total duration;</li>
-<li>extension and metadata content.</li>
+<li><strong>A</strong> — file input to sequence diagram ready</li>
+<li><strong>B</strong> — k-space requested, to calculated and drawn</li>
 </ul>
-<p>Discrete structure and array lengths must match exactly. Decoded time/duration
-uses a <code>1e-9 s</code> absolute tolerance. Gradient differences are limited to
-<code>max(1e-9, 5e-6 × maximum gradient magnitude)</code>. RF magnitude and phase use
-<code>1e-3</code> absolute and <code>1e-3 rad</code> gates. Shape and metadata checks use the
-absolute-plus-relative tolerances recorded in the runner.</p>
-<h3 id="related-code-and-evidence">Related code and evidence</h3>
-<ul>
-<li>Runner: <a href="downloads/scripts/parser-benchmark.cjs"><code>run_benchmark.cjs</code></a></li>
-<li>Frozen protocol: <a href="downloads/protocols/e1-e8-frozen.md">E1–E8 protocol</a></li>
-<li>Frozen result: <a href="downloads/results/e1-e8-summary.md">E1–E8 summary</a></li>
-<li>New raw report: <a href="downloads/benchmark/latest.json">latest.json</a></li>
-</ul>
-<h3 id="final-results">Final results</h3>
-<div class="result-box">
-<strong>Passed.</strong> The immutable abstract snapshot passed 24/24 paired
-accuracy gates. The later comprehensive result passed 37/37; after separating
-the one local Wave case, all 36 official Pulseq-derived pairs passed.
-The new July benchmark also passed all 13 of its explicitly reported pairs.
-</div>
-<p>The result establishes semantic/numerical agreement within the binary format’s
-documented precision. It does not imply that <code>.seq</code> and <code>.bseq</code> are
-byte-identical or that all third-party writers produce identical rounding.</p>
-<h2 id="6-e2-browser-state-and-canvas-parity">6. E2 — Browser state and canvas parity</h2>
-<h3 id="description-2">Description</h3>
-<p>E2 asks whether equivalent parsed models reach the same scientific browser
-state and produce non-empty functional canvases.</p>
-<h3 id="methods-and-implementation-2">Methods and implementation</h3>
-<p>Each format is opened in a fresh headless Chromium page. The browser runner
-records decoded sequence descriptors, state used by the viewer, k-space
-counts, notices/safety state, and whether waveform and minimap canvases vary.
-It also records console errors and interaction completion. The test is not a
-pixel-by-pixel screenshot comparison; “parity” refers to the predefined
-state/canvas gate.</p>
-<p>The July run used three fresh-page measurements per format at 1280 × 900.
-Format order was paired, and the progress overlay’s intentional 500 ms fade
-was excluded from file-to-ready time.</p>
-<h3 id="related-code-and-evidence-2">Related code and evidence</h3>
-<ul>
-<li>Runner: <a href="downloads/scripts/browser-benchmark.cjs"><code>run_browser_benchmark.cjs</code></a></li>
-<li>Frozen protocol: <a href="downloads/protocols/e1-e8-frozen.md">E1–E8 protocol</a></li>
-<li>New browser report: <a href="downloads/benchmark/latest-browser.json">latest-browser.json</a></li>
-<li>Human-readable report: <a href="downloads/benchmark/latest-browser.md">latest-browser.md</a></li>
-</ul>
-<h3 id="final-results-2">Final results</h3>
-<div class="result-box">
-<strong>Passed.</strong> Browser parity passed 24/24 pairs in the frozen
-snapshot and 36/36 official pairs in the follow-up cohort. The July
-supplementary run passed all 13 reported pairs. These are state/canvas results,
-not a claim of pixel-identical rendering.
-</div>
-<h2 id="7-e3-pulseq-matlab-waveform-rf-and-k-space-reference">7. E3 — Pulseq MATLAB waveform, RF, and k-space reference</h2>
-<h3 id="description-3">Description</h3>
-<p>E3 compares SeqEyes-Plus numerical outputs with official Pulseq MATLAB
-expansion at a fixed <code>B0 = 3 T</code>. PyPulseq is a secondary compatibility check;
-it is not the sole numerical oracle.</p>
-<h3 id="methods-and-implementation-3">Methods and implementation</h3>
-<p>The reference exporter reads the complete Pulseq sequence, expands waveforms,
-and calculates the ADC k-space trajectory. SeqEyes-Plus exports matching
-physical checkpoints. The comparison checks:</p>
-<ul>
-<li>Gx, Gy, and Gz;</li>
-<li>RF magnitude;</li>
-<li>RF phase only where magnitude is at least <code>1e-6</code> of the sequence RF peak;</li>
-<li>complete ADC k-space coordinates.</li>
-</ul>
-<p>Exact duplicate waveform times are resolved by the predefined comparison
-procedure. MATLAB’s non-unique/non-monotonic time warning occurred for labelled
-GRE, spiral, UTE, TSE, and ZTE PETRA; no case was removed or substituted.
-K-space tolerance remained <code>1e-5 1/m</code>.</p>
-<h3 id="related-code-and-evidence-3">Related code and evidence</h3>
-<ul>
-<li>MATLAB exporter: <a href="downloads/scripts/pulseq-matlab-reference.m"><code>export_pulseq_matlab_reference.m</code></a></li>
-<li>PyPulseq exporter: <a href="downloads/scripts/pypulseq-reference.py"><code>export_pypulseq_reference.py</code></a></li>
-<li>SeqEyes exporter: <a href="downloads/scripts/seqeyes-checkpoints.cjs"><code>export_seqeyes_checkpoints.cjs</code></a></li>
-<li>Comparator: <a href="downloads/scripts/compare-seqeyes-pulseq.m"><code>compare_seqeyes_to_pulseq_matlab.m</code></a></li>
-<li>Full-array comparator: <a href="downloads/scripts/compare-full-kspace.py"><code>compare_full_kspace_arrays.py</code></a></li>
-<li>Protocol: <a href="downloads/protocols/eleven-sequence-reference.json">eleven-sequence reference JSON</a></li>
-<li>Results: <a href="downloads/results/e3-eleven-sequence-summary.json">eleven-sequence summary JSON</a></li>
-</ul>
-<h3 id="final-results-3">Final results</h3>
+<p>MATLAB and PyPulseq already record the four components that compose these, so
+only the SeqEyes-Plus lane needed re-measuring. Its endpoint B is timed inside
+the page: the page clocks its own click, watches its own state, and returns one
+elapsed number, so no process round-trip falls inside the interval.</p>
+<p><img src="downloads/figures/results-cross-tool-components.svg"
+     alt="Grouped bars on a logarithmic axis showing read, waveform plot, k-space calculation and 3D scatter times for SeqEyes-Plus, Pulseq MATLAB and PyPulseq."></p>
+<p><strong>The result.</strong> Geometric mean relative to SeqEyes-Plus, over the sequences each
+tool completed:</p>
 <table>
 <thead>
 <tr>
-<th>Sequence</th>
-<th style="text-align:right">Maximum k-space error (1/m)</th>
-<th style="text-align:center">Result</th>
+<th>Tool</th>
+<th style="text-align:right">A: to diagram</th>
+<th style="text-align:right">B: to k-space drawn</th>
+<th style="text-align:right">Cases</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>EPI</td>
-<td style="text-align:right"><code>1.544e-9</code></td>
-<td style="text-align:center">Pass</td>
+<td>Pulseq MATLAB</td>
+<td style="text-align:right"><strong>62.1x</strong></td>
+<td style="text-align:right"><strong>1.32x</strong></td>
+<td style="text-align:right">36</td>
 </tr>
 <tr>
-<td>EPI-RS</td>
-<td style="text-align:right"><code>2.689e-11</code></td>
-<td style="text-align:center">Pass</td>
-</tr>
-<tr>
-<td>Labelled GRE</td>
-<td style="text-align:right"><code>3.027e-8</code></td>
-<td style="text-align:center">Pass</td>
-</tr>
-<tr>
-<td>3D radial GRE</td>
-<td style="text-align:right"><code>2.809e-9</code></td>
-<td style="text-align:center">Pass</td>
-</tr>
-<tr>
-<td>Spiral</td>
-<td style="text-align:right"><code>4.889e-9</code></td>
-<td style="text-align:center">Pass</td>
-</tr>
-<tr>
-<td>UTE</td>
-<td style="text-align:right"><code>3.494e-9</code></td>
-<td style="text-align:center">Pass</td>
-</tr>
-<tr>
-<td>EPI spin echo RS</td>
-<td style="text-align:right"><code>3.444e-10</code></td>
-<td style="text-align:center">Pass</td>
-</tr>
-<tr>
-<td>HASTE</td>
-<td style="text-align:right"><code>4.900e-11</code></td>
-<td style="text-align:center">Pass</td>
-</tr>
-<tr>
-<td>Trufi</td>
-<td style="text-align:right"><code>4.803e-10</code></td>
-<td style="text-align:center">Pass</td>
-</tr>
-<tr>
-<td>TSE</td>
-<td style="text-align:right"><code>7.615e-9</code></td>
-<td style="text-align:center">Pass</td>
-</tr>
-<tr>
-<td>ZTE PETRA</td>
-<td style="text-align:right"><code>1.190e-6</code></td>
-<td style="text-align:center">Pass</td>
+<td>PyPulseq</td>
+<td style="text-align:right"><strong>20.1x</strong></td>
+<td style="text-align:right"><strong>2.61x</strong></td>
+<td style="text-align:right">32</td>
 </tr>
 </tbody>
 </table>
-<div class="result-box">
-<strong>Passed 11/11.</strong> Every sequence passed the predefined waveform,
-eligible RF, and k-space gates at 3 T. The v0.2.11 complete-array follow-up
-also passed HASTE (`6.185e-11 1/m`, 9,216 ADC samples), TSE
-(`8.344e-9 1/m`, 65,536 samples), and ZTE PETRA
-(`1.657e-6 1/m`, 3,383,700 samples).
-</div>
-<h2 id="8-e4-workflow-integration-in-four-environments">8. E4 — Workflow integration in four environments</h2>
-<h3 id="description-4">Description</h3>
-<p>E4 verifies the principal workflow claim: sequence inspection can be invoked
-without leaving the environment used to develop the sequence.</p>
-<h3 id="methods-and-implementation-4">Methods and implementation</h3>
+<p>Nearly all of the difference is in getting a sequence on screen. Once k-space is
+requested, the three tools are within a small factor of each other.</p>
+<p>The components show things a ratio hides. PyPulseq’s 3D scatter on the spiral
+case takes <strong>7.708 s against MATLAB’s 0.115 s</strong>. And on <code>writeFid</code>,
+SeqEyes-Plus is the slower tool for endpoint B - 0.514 s against MATLAB’s
+0.060 s - because its k-space path carries a fixed cost for opening the panel
+and preparing the WebGL layer, which dominates on a sequence that small.</p>
+<p><strong>Four cases PyPulseq could not read.</strong> Three carry rotation extensions and one
+an RF-shim extension, which PyPulseq 1.5.0.post1 does not support against
+Pulseq 1.5.1 files. They are counted in the dataset as failures, which is why
+PyPulseq’s denominator is 32 and MATLAB’s is 36.</p>
+<p><strong>Not comparable to the frozen ratios.</strong> The frozen 8.438x and 4.618x were
+measured when one formula covered different work. They are not the same quantity
+as the numbers above.</p>
+<h3 id="workflow-and-platform">Workflow and platform</h3>
+<h4 id="four-environments-plus-mobile">🖥️ Four environments, plus mobile</h4>
+<p><strong>The question.</strong> Can a sequence be inspected without leaving the environment it
+was developed in?</p>
+<p><strong>The design.</strong> Each host is exercised on its own terms: the standalone viewer
+under Chromium, the VS Code extension through its extension host, the MATLAB
+toolbox by building a figure from an in-memory <code>mr.Sequence</code>, and the Python
+package through the IPython display path in both its file and in-memory modes.
+Mobile is covered at declared phone viewports.</p>
+<p><strong>Why the design changed.</strong> The frozen run exercised development-tree scripts.
+That establishes that the code works, not that what a user installs works. This
+run drives the <strong>distributed artifacts</strong>: the installed 0.3.8 MATLAB toolbox and
+the 0.3.8 wheel resolved from site-packages.</p>
+<p><strong>The result.</strong> <strong>5/5.</strong> 29 browser tests; 10 extension-host tests with the host
+exiting cleanly, covering custom-editor and command-driven open, k-space export,
+binary fixtures, spectrogram over a view window, ASC profile loading and
+parse-error handling; a MATLAB figure built from a 2,567-block sequence with the
+host stamped and the sequence preloaded; the Python display object, inline
+iframe, embedded viewer and binary bytes all present; and 31 spectrogram-panel
+tests including the portrait mobile layout.</p>
+<h2 id="try-it">Try it</h2>
 <table>
 <thead>
 <tr>
-<th>Host</th>
-<th>Invocation tested</th>
-<th>Readiness evidence</th>
+<th></th>
+<th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Web</td>
-<td>Local <code>.seq</code>/<code>.bseq</code> file input</td>
-<td>Viewer state and canvases ready</td>
+<td>Standalone viewer</td>
+<td>a single page, no install</td>
 </tr>
 <tr>
 <td>VS Code</td>
-<td>Custom-editor open/export through Extension Host</td>
-<td>All selected files opened; host exited successfully</td>
+<td><code>seqeyes-web</code> extension, opens <code>.seq</code> and <code>.bseq</code> as a custom editor</td>
+</tr>
+<tr>
+<td>Python</td>
+<td><code>pip install seqeyes-python</code>, renders inline in Jupyter</td>
 </tr>
 <tr>
 <td>MATLAB</td>
-<td><code>seqeyes(seq)</code> with an in-memory <code>mr.Sequence</code>; file path for binary input</td>
-<td>MATLAB figure and <code>uihtml</code> created, host stamped, sequence preloaded</td>
-</tr>
-<tr>
-<td>Python/Jupyter</td>
-<td><code>seq.plot()</code>/IPython display and <code>SeqEyesViewer.from_file_bseq</code></td>
-<td>Display object, inline iframe, embedded viewer, and binary bytes present</td>
+<td>toolbox, <code>seqeyes(seq)</code> on an in-memory <code>mr.Sequence</code></td>
 </tr>
 </tbody>
 </table>
-<p>The MATLAB graphical viewer requires desktop MATLAB, whereas MATLAB reference
-exports use <code>-batch</code>. The Python notebook test targets VS Code notebooks; a
-separate JupyterLab installation is not required.</p>
-<h3 id="related-code-and-evidence-4">Related code and evidence</h3>
-<ul>
-<li>MATLAB smoke: <a href="downloads/scripts/matlab-host-smoke.m"><code>stage3_matlab_inmemory_smoke.m</code></a></li>
-<li>Python smoke: <a href="downloads/scripts/python-host-smoke.py"><code>stage3_python_notebook_smoke.py</code></a></li>
-<li>MATLAB result: <a href="downloads/results/e4-matlab.json">e4-matlab.json</a></li>
-<li>Python/Jupyter result: <a href="downloads/results/e4-python-jupyter.json">e4-python-jupyter.json</a></li>
-<li>Host-neutral design: <a href="downloads/protocols/host-checkpoint-schema.md">checkpoint schema</a></li>
-</ul>
-<h3 id="final-results-4">Final results</h3>
-<div class="result-box">
-<strong>Passed 4/4 environments:</strong> Web, VS Code, MATLAB, and
-Python/Jupyter. This validates workflow invocation and readiness. It does not
-establish independent numerical equivalence among every host wrapper.
-</div>
-<h2 id="9-e5-cross-host-numerical-consistency">9. E5 — Cross-host numerical consistency</h2>
-<h3 id="description-and-result">Description and result</h3>
-<p>E5 was intended to compare one canonical numerical checkpoint artifact from
-all four host wrappers. The wrappers did not all expose that frozen artifact.</p>
-<div class="nonclaim-box">
-<strong>Result: not claimed.</strong> Web and Python used the same viewer
-bundle and its SHA-256 matched exactly, but shared code is architectural
-consistency—not an independent cross-host numerical experiment. No N/N
-numerical consistency result is reported.
-</div>
-<p>A future E5 requires every wrapper to export the same duration, counts,
-waveform checkpoints, and k-space coordinates defined by the
-<a href="downloads/protocols/host-checkpoint-schema.md">host checkpoint schema</a>.</p>
-<h2 id="10-e6-local-wave-stress-experiment-disposition">10. E6 — Local Wave stress experiment disposition</h2>
-<p>The reduced Wave-MPRAGE pair is a local, non-official stress fixture. It is not
-part of the official 36-pair public cohort and its files are not distributed.
-The earlier full Wave candidate was retired after it failed the predefined
-promotion rule.</p>
-<p>The newly requested supplementary SVG contains the reduced Wave row because it
-is an exact rendering of the July benchmark report. That row is labelled as a
-stress case and must not be interpreted as official Pulseq-demo evidence or as
-changing an E1–E8 denominator.</p>
-<h2 id="11-e7-binary-i-o-parser-storage-and-ready-time">11. E7 — Binary I/O, parser, storage, and ready time</h2>
-<h3 id="binary-input-implementation">Binary input implementation</h3>
-<p>The <code>.seq</code> and <code>.bseq</code> readers differ only until they produce the common
-TypeScript <code>PulseqSequence</code> model.</p>
-<ol>
-<li>Input bytes are acquired with <code>File.arrayBuffer()</code> in the browser or an
-equivalent byte read in Node.</li>
-<li>The loader detects text versus binary format.</li>
-<li>The <code>.seq</code> path performs UTF-8 decoding, section parsing, decimal-number
-conversion, shape ingestion/decompression, and validation.</li>
-<li>The <code>.bseq</code> path reads binary sections and typed numeric records directly,
-reconstructs packed shapes, converts stored units, and performs the same
-model validation.</li>
-<li>Both paths then use the shared timing detector, block decoder,
-multiresolution waveform preparation, rendering, k-space, M1, and advisory
-PNS implementations.</li>
-</ol>
-<p>This boundary is why parser speedup must not be described as end-to-end viewer
-speedup.</p>
-<h3 id="benchmark-method">Benchmark method</h3>
-<p>The Node benchmark uses three warm-up and 15 measured iterations per format,
-alternating format order. File acquisition and parsing are timed separately.
-Parser timing starts with bytes in memory and includes UTF-8 decoding for
-<code>.seq</code>, plus complete parser validation and shape decompression for both
-formats. Acquisition values are warm filesystem measurements, not controlled
-cold-cache I/O.</p>
-<p>The browser benchmark uses three fresh-page measurements per format. Its
-file-input-to-ready endpoint includes local byte transport, parsing, timing
-detection, block decoding, display serialization/overview construction,
-k-space policy/calculation, and initial drawing.</p>
-<h3 id="related-code-and-evidence-5">Related code and evidence</h3>
-<ul>
-<li>Parser runner: <a href="downloads/scripts/parser-benchmark.cjs"><code>run_benchmark.cjs</code></a></li>
-<li>Browser runner: <a href="downloads/scripts/browser-benchmark.cjs"><code>run_browser_benchmark.cjs</code></a></li>
-<li>Plot generator: <a href="downloads/scripts/benchmark-plots.cjs"><code>generate_plots.cjs</code></a></li>
-<li>Tooling and interpretation: <a href="downloads/benchmark/tooling-readme.md">benchmark README</a></li>
-<li>Parser report: <a href="downloads/benchmark/latest.md">latest.md</a></li>
-<li>Browser report: <a href="downloads/benchmark/latest-browser.md">latest-browser.md</a></li>
-</ul>
-<h3 id="july-aggregate-results">July aggregate results</h3>
-<table>
-<thead>
-<tr>
-<th>Endpoint</th>
-<th style="text-align:right">Result</th>
-<th>Interpretation</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Paired accuracy</td>
-<td style="text-align:right">13/13 pass</td>
-<td>Timing cases passed the paired gates</td>
-</tr>
-<tr>
-<td>Browser parity</td>
-<td style="text-align:right">13/13 pass</td>
-<td>Includes appended 3D-MRF</td>
-</tr>
-<tr>
-<td>Aggregate storage</td>
-<td style="text-align:right">16.51 MiB <code>.seq</code>; 12.76 MiB <code>.bseq</code></td>
-<td>22.7% reduction after 3D-MRF append</td>
-</tr>
-<tr>
-<td>Parser speedup</td>
-<td style="text-align:right">5.085× geometric mean; 4.607× median</td>
-<td>Preloaded bytes; <code>.seq</code> median / <code>.bseq</code> median</td>
-</tr>
-<tr>
-<td>File-input-to-ready speedup</td>
-<td style="text-align:right">1.033× geometric mean; 1.025× median</td>
-<td>Complete browser endpoint</td>
-</tr>
-<tr>
-<td>K-space speedup</td>
-<td style="text-align:right">1.004× geometric mean; 1.000× median</td>
-<td>12/13; 3D-MRF skipped by safety gate</td>
-</tr>
-</tbody>
-</table>
-<p>The result supports a narrower conclusion: binary parsing and storage improve
-substantially for many inputs, while complete ready time is usually dominated
-by shared decoding, k-space, and rendering work.</p>
-<h2 id="12-e8-independent-analytical-m1-agreement">12. E8 — Independent analytical M1 agreement</h2>
-<h3 id="description-5">Description</h3>
-<p>E8 tests the SeqEyes-Plus M1 implementation without importing SeqEyes M1 code
-into the reference. The primary/default convention is <code>rfCenter</code>; the
-secondary diagnostic convention is <code>observationTime</code>.</p>
-<h3 id="methods-and-implementation-5">Methods and implementation</h3>
-<p>The Python reference evaluates the closed-form integral of each
-piecewise-linear gradient segment using 50-digit Decimal arithmetic. It tests:</p>
-<ul>
-<li>constant gradient;</li>
-<li>linear ramp;</li>
-<li>continuous bipolar gradient;</li>
-<li>excitation/refocusing sign bookkeeping;</li>
-<li>amplitude and time-scaling identities.</li>
-</ul>
-<p>SeqEyes-Plus results are compared at every shared checkpoint. The tolerance is
-<code>1e-9 s/m + 1e-8 × reference magnitude</code>.</p>
-<h3 id="related-code-and-evidence-6">Related code and evidence</h3>
-<ul>
-<li>Independent reference: <a href="downloads/scripts/m1-analytic-reference.py"><code>m1_analytic_reference.py</code></a></li>
-<li>SeqEyes comparison: <a href="downloads/scripts/m1-comparison.cjs"><code>stage3_compare_m1.cjs</code></a></li>
-<li>Reference output: <a href="downloads/results/e8-m1-reference.json">e8-m1-reference.json</a></li>
-<li>Comparison output: <a href="downloads/results/e8-m1-comparison.json">e8-m1-comparison.json</a></li>
-</ul>
-<h3 id="final-results-5">Final results</h3>
-<table>
-<thead>
-<tr>
-<th>Case</th>
-<th style="text-align:right">Maximum absolute error (s/m)</th>
-<th style="text-align:right">RMSE (s/m)</th>
-<th style="text-align:right">Tolerance (s/m)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Constant gradient</td>
-<td style="text-align:right"><code>3.469e-18</code></td>
-<td style="text-align:right"><code>1.542e-18</code></td>
-<td style="text-align:right"><code>1.200e-9</code></td>
-</tr>
-<tr>
-<td>Linear ramp</td>
-<td style="text-align:right"><code>8.674e-18</code></td>
-<td style="text-align:right"><code>2.278e-18</code></td>
-<td style="text-align:right"><code>1.360e-9</code></td>
-</tr>
-<tr>
-<td>Bipolar gradient</td>
-<td style="text-align:right"><code>1.735e-18</code></td>
-<td style="text-align:right"><code>5.668e-19</code></td>
-<td style="text-align:right"><code>1.050e-9</code></td>
-</tr>
-<tr>
-<td>Refocusing sign flip</td>
-<td style="text-align:right"><code>3.469e-18</code></td>
-<td style="text-align:right"><code>1.142e-18</code></td>
-<td style="text-align:right"><code>1.100e-9</code></td>
-</tr>
-</tbody>
-</table>
-<div class="result-box">
-<strong>Passed 4/4 analytical cases in both reference-time conventions.</strong>
-The reference establishes mathematical agreement for the defined
-piecewise-linear segment representation. It does not claim that the simplified
-RF-pathway bookkeeping is a complete physical model for every coherent
-steady-state sequence.
-</div>
-<h2 id="13-abstract-figure-evidence">13. Abstract-figure evidence</h2>
-<p>The abstract figures are being revised separately. The blank regions below are
-deliberately non-data placeholders; they contain no illustrative dots, lines,
-waveforms, or inferred values.</p>
-<h3 id="figure-1-architecture-and-interactive-inspection">Figure 1 — Architecture and interactive inspection</h3>
-<div class="figure-placeholder">Figure 1 placeholder<br>final reviewed figure pending</div>
-<p class="figure-caption"><strong>Planned scope.</strong> System architecture,
-workflow adapters, shared TypeScript engine, and the waveform/k-space view of
-the spiral demonstration.</p>
-<h3 id="figure-2a-multiresolution-hierarchical-rendering">Figure 2A — Multiresolution hierarchical rendering</h3>
-<div class="figure-placeholder">Figure 2A placeholder<br>final reviewed figure pending</div>
-<p class="figure-caption"><strong>Planned scope.</strong> Fine waveform detail
-when zoomed in and hierarchical semi-transparent envelopes when zoomed out.
-No quantitative advantage is claimed from this schematic alone.</p>
-<h3 id="figure-2b-c-browser-ready-time-scaling">Figure 2B-C — Browser ready-time scaling</h3>
-<div class="figure-placeholder">Figure 2B-C placeholder<br>final plot pending</div>
-<p class="figure-caption"><strong>Experiment.</strong> Complete `.bseq`
-file-input-to-ready time versus ADC sample count. The 36-official-case
-descriptive log-log fit had slope 0.557 and R² 0.600. ADC count is not a
-complete workload model. <a href="downloads/results/figure2b-c-data.csv">Download
-the source CSV.</a></p>
-<h3 id="figure-2b-d-cross-tool-visualization-workflow">Figure 2B-D — Cross-tool visualization workflow</h3>
-<div class="figure-placeholder">Figure 2B-D placeholder<br>final plot pending</div>
-<p class="figure-caption"><strong>Experiment.</strong> Five runs per case and
-tool; endpoint comprises complete `.seq` read, off-screen waveform plot,
-complete ADC k-space calculation, and off-screen 3D ADC scatterplot.
-Application startup is excluded. <a
-href="downloads/results/figure2b-d-data.csv">Download the source CSV.</a></p>
-<p>The private comprehensive follow-up contained 37 cases. The public derivative
-contains 36 official Pulseq-derived cases after excluding the local stress
-case. SeqEyes-Plus and Pulseq MATLAB completed 36/36; PyPulseq completed 32/36.
-Four extension-bearing inputs were retained as unsupported results (three
-rotation-extension cases and one RF-shim case). Across supported official
-cases, the geometric mean of median time relative to SeqEyes-Plus was 8.438×
-for Pulseq MATLAB and 4.618× for PyPulseq. These ratios describe the exact
-tested endpoint and environment, not application startup or general language
-performance.</p>
-<h2 id="14-supplementary-seq-versus-bseq-benchmark">14. Supplementary <code>.seq</code> versus <code>.bseq</code> benchmark</h2>
-<blockquote>
-<p>These measurements are ongoing engineering evidence and were not part of the
-submitted abstract. They are shown for technical transparency. The local
-Wave row and appended 3D-MRF case are labelled cohort additions.</p>
-</blockquote>
-<h3 id="real-benchmark-figure">Real benchmark figure</h3>
-<div class="real-figure">
-  <img src="downloads/benchmark/speedup-comparison.svg"
-       alt="Per-sequence BSEQ-to-SEQ comparison of storage, parser time, file-to-ready time, and k-space time on a log2 speedup axis.">
-</div>
-<p class="figure-caption"><strong>Supplementary benchmark.</strong> Values are
-`.seq ÷ .bseq`; values right of 1× favor BSEQ. The figure is copied without
-redrawing from the 24 July benchmark output. Aggregate values include the
-appended 3D-MRF pair; k-space excludes it because the safety estimate was
-62.4 GiB. <a href="downloads/benchmark/speedup-comparison.svg">Download the
-SVG.</a></p>
-<h3 id="per-sequence-numerical-table">Per-sequence numerical table</h3>
-<table>
-<thead>
-<tr>
-<th>Pair</th>
-<th style="text-align:right">Parser speedup</th>
-<th style="text-align:right">Ready speedup</th>
-<th style="text-align:right">K-space speedup</th>
-<th style="text-align:right">Storage reduction</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>writeEpi</code></td>
-<td style="text-align:right">7.564×</td>
-<td style="text-align:right">1.025×</td>
-<td style="text-align:right">1.000×</td>
-<td style="text-align:right">50.6%</td>
-</tr>
-<tr>
-<td><code>writeEpiRS</code></td>
-<td style="text-align:right">9.830×</td>
-<td style="text-align:right">1.079×</td>
-<td style="text-align:right">1.000×</td>
-<td style="text-align:right">67.0%</td>
-</tr>
-<tr>
-<td><code>writeEpiSpinEchoRS</code></td>
-<td style="text-align:right">11.190×</td>
-<td style="text-align:right">1.040×</td>
-<td style="text-align:right">1.000×</td>
-<td style="text-align:right">65.0%</td>
-</tr>
-<tr>
-<td><code>writeGradientEcho</code></td>
-<td style="text-align:right">4.238×</td>
-<td style="text-align:right">1.026×</td>
-<td style="text-align:right">0.979×</td>
-<td style="text-align:right">33.5%</td>
-</tr>
-<tr>
-<td><code>writeHASTE</code></td>
-<td style="text-align:right">6.329×</td>
-<td style="text-align:right">1.014×</td>
-<td style="text-align:right">0.995×</td>
-<td style="text-align:right">50.7%</td>
-</tr>
-<tr>
-<td><code>writeRadialGradientEcho</code></td>
-<td style="text-align:right">3.099×</td>
-<td style="text-align:right">1.009×</td>
-<td style="text-align:right">0.993×</td>
-<td style="text-align:right">21.2%</td>
-</tr>
-<tr>
-<td><code>writeSpiral</code></td>
-<td style="text-align:right">15.274×</td>
-<td style="text-align:right">1.004×</td>
-<td style="text-align:right">1.002×</td>
-<td style="text-align:right">65.8%</td>
-</tr>
-<tr>
-<td><code>writeTSE</code></td>
-<td style="text-align:right">4.607×</td>
-<td style="text-align:right">1.005×</td>
-<td style="text-align:right">0.994×</td>
-<td style="text-align:right">31.7%</td>
-</tr>
-<tr>
-<td><code>writeTrufi</code></td>
-<td style="text-align:right">3.036×</td>
-<td style="text-align:right">1.016×</td>
-<td style="text-align:right">1.015×</td>
-<td style="text-align:right">3.1%</td>
-</tr>
-<tr>
-<td><code>writeUTE</code></td>
-<td style="text-align:right">3.471×</td>
-<td style="text-align:right">1.017×</td>
-<td style="text-align:right">0.998×</td>
-<td style="text-align:right">10.5%</td>
-</tr>
-<tr>
-<td><code>writeZTE_Petra</code></td>
-<td style="text-align:right">3.160×</td>
-<td style="text-align:right">1.098×</td>
-<td style="text-align:right">1.025×</td>
-<td style="text-align:right">20.8%</td>
-</tr>
-<tr>
-<td><code>wave_test_R3x2</code> (local stress)</td>
-<td style="text-align:right">8.254×</td>
-<td style="text-align:right">1.046×</td>
-<td style="text-align:right">1.054×</td>
-<td style="text-align:right">50.8%</td>
-</tr>
-<tr>
-<td><code>pypulseq_3dmrf</code> (appended)</td>
-<td style="text-align:right">1.136×</td>
-<td style="text-align:right">1.060×</td>
-<td style="text-align:right">Not calculated</td>
-<td style="text-align:right">9.2%</td>
-</tr>
-</tbody>
-</table>
-<p>The parser column uses the Node benchmark’s 15-iteration medians except for
-the explicitly appended 3D-MRF run, which used the same protocol. Browser
-values use three fresh pages per format. The table intentionally keeps parser,
-ready, and k-space speedups separate.</p>
-<h3 id="bounded-4d-flow-parser-diagnostic">Bounded 4D-flow parser diagnostic</h3>
-<p>The 459 MiB <code>4Dflow_3dradial_brain_iso1.seq</code> file was converted with the
-official PyPulseq reader plus the attributed local Pulseq 1.5.2 binary
-serializer. Conversion took 26.76 s and produced a signed 168.04 MiB file.</p>
-<p>The normal paired runner could not retain both parsed formats and decoded
-comparison state within available resources. Each format was therefore parsed
-once in an isolated Node process, with no block decoding, rendering, or
-k-space calculation.</p>
-<table>
-<thead>
-<tr>
-<th>Format</th>
-<th style="text-align:right">File size</th>
-<th style="text-align:right">Read time</th>
-<th style="text-align:right">Parse time</th>
-<th style="text-align:right">RSS after parse</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>.seq</code></td>
-<td style="text-align:right">458.68 MiB</td>
-<td style="text-align:right">52.028 ms</td>
-<td style="text-align:right">4,783.322 ms</td>
-<td style="text-align:right">1.46 GiB</td>
-</tr>
-<tr>
-<td><code>.bseq</code></td>
-<td style="text-align:right">168.04 MiB</td>
-<td style="text-align:right">18.018 ms</td>
-<td style="text-align:right">570.294 ms</td>
-<td style="text-align:right">805.36 MiB</td>
-</tr>
-</tbody>
-</table>
-<div class="result-box">
-<strong>Diagnostic result:</strong> 8.387× isolated parser speedup and 63.4%
-storage reduction. Both parsers reported 512,768 blocks, 24 RF events,
-179,648 arbitrary-gradient events, 87,507 trapezoids, 24 ADC events, and
-179,651 shapes.
-</div>
-<p>These are single diagnostic samples and are excluded from the 13-pair
-aggregate. A single browser attempt per format terminated before producing a
-report; no ready, rendering, or k-space time is claimed. The failure is
-interpreted as full-viewer resource exhaustion after both individual parsers
-had succeeded.</p>
-<h2 id="15-limitations-and-interpretation-boundaries">15. Limitations and interpretation boundaries</h2>
-<ul>
-<li>Timings describe one Apple M3 Pro system and the recorded software versions.</li>
-<li>Warm file acquisition is not a controlled cold-cache experiment.</li>
-<li>Parser speedup is not equivalent to complete visualization speedup.</li>
-<li>Browser parity is not pixel-identical screenshot comparison.</li>
-<li>E4 validates host workflow capability, not cross-host numerical equivalence.</li>
-<li>E5 remains a documented non-claim.</li>
-<li>Figure 2B-C’s ADC-count regression is descriptive.</li>
-<li>PyPulseq lacks support for four newer extension-bearing cases in the
-comprehensive cross-tool screen.</li>
-<li>The reduced Wave row is a local stress result, not official fixture evidence.</li>
-<li>The 4D-flow numbers are isolated single parser samples; browser rendering
-failed and is not timed.</li>
-<li>SAFE-based PNS is advisory and was not externally validated here.</li>
-<li>M1 validation establishes the implemented mathematical convention, not a
-complete physical signal-pathway model.</li>
-</ul>
-<h2 id="16-reproduction-and-downloads">16. Reproduction and downloads</h2>
-<h3 id="format-benchmark">Format benchmark</h3>
-<pre><code class="language-bash">./bseq/benchmarking/run_full_benchmark.sh
-./bseq/benchmarking/generate_plots.sh
-</code></pre>
-<p>The runner records raw samples, hashes, software versions, ordering policy, and
-all accuracy mismatches. See the <a href="downloads/benchmark/tooling-readme.md">benchmark tooling
-documentation</a>.</p>
-<h3 id="evidence-index">Evidence index</h3>
-<ul>
-<li><a href="downloads/manifest.json">Evidence manifest with SHA-256 values</a></li>
-<li><a href="downloads/protocols/e1-e8-frozen.md">Frozen E1–E8 protocol</a></li>
-<li><a href="downloads/protocols/eleven-sequence-reference.json">Eleven-sequence reference protocol</a></li>
-<li><a href="downloads/results/e1-e8-summary.md">E1–E8 summary</a></li>
-<li><a href="downloads/results/e3-eleven-sequence-summary.json">Eleven-sequence E3 summary</a></li>
-<li><a href="downloads/benchmark/latest.md">July parser report</a></li>
-<li><a href="downloads/benchmark/latest-browser.md">July browser report</a></li>
-<li><a href="downloads/results/figure2b-c-data.csv">Figure 2B-C data</a></li>
-<li><a href="downloads/results/figure2b-d-data.csv">Figure 2B-D data</a></li>
-</ul>
-<h2 id="17-license-and-attribution">17. License and attribution</h2>
-<p>Original report code and documentation are provided under the MIT License.
-Pulseq, PyPulseq, MATLAB, SeqEyes project assets, and third-party source
-material retain their own terms. The unpublished SeqEyes Qt manuscript,
-coauthor working files, sequence fixture binaries, and the submitted abstract
-PDF are not distributed by this site.</p>
+<p>Source: <a href="https://github.com/bughht/seqeyes_plugin">bughht/seqeyes_plugin</a>.</p>
 </article></main>
   </div>
 </body>

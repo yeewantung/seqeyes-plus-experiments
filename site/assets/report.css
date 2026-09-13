@@ -6,7 +6,7 @@
   --link: #155f8a;
   --accent: #0b6e69;
   --warn: #8a5a00;
-  --max: 920px;
+  --max: 880px;
 }
 
 * {
@@ -22,8 +22,8 @@ body {
   color: var(--ink);
   background: #fff;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 15px;
-  line-height: 1.62;
+  font-size: 17px;
+  line-height: 1.65;
 }
 
 a {
@@ -66,13 +66,13 @@ a {
 }
 
 .topbar strong {
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .topbar span,
 .topbar > a {
   color: var(--muted);
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .layout {
@@ -95,7 +95,7 @@ aside {
 .toc-title {
   margin-bottom: 12px;
   color: var(--muted);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -115,7 +115,7 @@ aside a {
   display: block;
   padding: 4px 0;
   color: #404850;
-  font-size: 12px;
+  font-size: 13.5px;
   line-height: 1.35;
   text-decoration: none;
 }
@@ -132,7 +132,16 @@ aside a:focus-visible {
 
 .toc-level-3 a {
   color: var(--muted);
-  font-size: 11px;
+  font-size: 12.5px;
+}
+
+.toc-level-4 {
+  padding-left: 26px;
+}
+
+.toc-level-4 a {
+  color: var(--muted);
+  font-size: 12px;
 }
 
 main {
@@ -153,9 +162,16 @@ h4 {
   line-height: 1.25;
 }
 
+/* The top bar is sticky and 58px tall, so an anchor has to stop below it. */
+h2,
+h3,
+h4 {
+  scroll-margin-top: 78px;
+}
+
 h1 {
   margin: 0 0 10px;
-  font-size: 36px;
+  font-size: 40px;
   letter-spacing: -0.02em;
 }
 
@@ -163,17 +179,18 @@ h2 {
   margin: 62px 0 18px;
   padding-bottom: 8px;
   border-bottom: 1px solid var(--line);
-  font-size: 26px;
+  font-size: 29px;
 }
 
 h3 {
-  margin: 38px 0 12px;
-  font-size: 20px;
+  margin: 40px 0 12px;
+  font-size: 24px;
 }
 
 h4 {
-  margin: 28px 0 8px;
-  font-size: 16px;
+  margin: 40px 0 12px;
+  color: #0a5f5a;
+  font-size: 20px;
 }
 
 p,
@@ -188,7 +205,7 @@ pre {
 
 article > p:first-of-type {
   color: var(--muted);
-  font-size: 17px;
+  font-size: 19px;
 }
 
 code {
@@ -217,7 +234,7 @@ table {
   width: 100%;
   overflow-x: auto;
   border-collapse: collapse;
-  font-size: 13px;
+  font-size: 15px;
 }
 
 th,
@@ -257,7 +274,7 @@ blockquote p:last-child {
   border-radius: 3px;
   color: #07534f;
   background: #edf8f6;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
 }
 
@@ -299,7 +316,7 @@ blockquote p:last-child {
   border: 2px solid #aab2b9;
   background: #fff;
   color: var(--muted);
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 700;
   text-align: center;
 }
@@ -308,7 +325,7 @@ blockquote p:last-child {
   max-width: 760px;
   margin: 0 auto 26px;
   color: var(--muted);
-  font-size: 13px;
+  font-size: 14.5px;
 }
 
 .real-figure {
@@ -330,7 +347,7 @@ blockquote p:last-child {
 
 .small {
   color: var(--muted);
-  font-size: 12px;
+  font-size: 13.5px;
 }
 
 hr {
@@ -365,7 +382,7 @@ hr {
 
 @media (max-width: 560px) {
   body {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .topbar {
@@ -390,11 +407,11 @@ hr {
   }
 
   h1 {
-    font-size: 29px;
+    font-size: 32px;
   }
 
   h2 {
-    font-size: 23px;
+    font-size: 25px;
   }
 }
 
@@ -417,4 +434,63 @@ hr {
   a {
     color: inherit;
   }
+}
+
+/* Page navigation in the top bar. The current page is a span, not a link. */
+.site-nav {
+  display: flex;
+  gap: 1.1rem;
+  align-items: center;
+  font-size: 0.95rem;
+}
+.site-nav a { color: var(--link); text-decoration: none; }
+.site-nav a:hover { text-decoration: underline; }
+.site-nav [aria-current="page"] { color: var(--ink); font-weight: 600; }
+
+/* Demo videos sit in the flow like figures, and never overflow their column. */
+article video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1.4rem 0 0.4rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--soft);
+}
+
+/* A disclosure is a sentence the reader may not need, so it stays quiet. */
+article details {
+  margin: 0.5rem 0 1.6rem;
+  border-left: 3px solid var(--line);
+  padding: 0.1rem 0 0.1rem 0.9rem;
+}
+article details summary {
+  cursor: pointer;
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+article details[open] summary { margin-bottom: 0.5rem; }
+article details p { margin: 0.4rem 0; font-size: 0.96rem; }
+
+/* Results figures fill the column: at their intrinsic width their labels come
+   out smaller than the body text they sit in. */
+article img[src$=".svg"] {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: 1.4rem 0;
+}
+
+/* Prose keeps a readable measure; tables and figures use the whole column. */
+article p,
+article ul,
+article ol,
+article details {
+  max-width: 74ch;
+}
+
+article details p,
+article details ul {
+  max-width: none;
 }
