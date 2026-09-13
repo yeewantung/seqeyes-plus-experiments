@@ -35,9 +35,8 @@
 <li class="toc-level-2"><a href="#license-and-attribution">License and attribution</a></li></ol></nav>
     </aside>
     <main id="report"><article><h1 id="appendix">Appendix</h1>
-<p>Material a reader consults rather than reads: what was measured on, how to
-repeat it, what is deliberately not claimed, and the findings that belong on
-record without belonging in the results.</p>
+<p>What was measured on, how to repeat it, the scope of the claims, and the
+findings that belong on record without belonging in the results.</p>
 <h2 id="sequence-sets">Sequence sets</h2>
 <p>Three sets, drawn from one source. Every experiment names the set it used, so a
 denominator is never ambiguous.</p>
@@ -52,8 +51,8 @@ several minutes per case.</p>
 <p><strong>The large group</strong> carries the size range: <code>writeZTE_Petra_sodium</code> (11.7 MB),
 <code>writeZTE_Petra</code> (5.8 MB) and <code>writeGradientEcho3D</code> (809 KB) from the official
 set, plus <code>pypulseq_3dmrf</code>, <code>wave_test_R3x2</code>, and a 458.7 MiB production 4D-flow
-acquisition. Three of the six are official files, so most of the large-sequence
-evidence rests on distributable, hash-bound inputs.</p>
+acquisition. Three of the six are official files, bound by hash and
+distributable.</p>
 <p>Two fixtures are measured but excluded from every denominator.
 <code>wave_test_R3x2</code> is not an official Pulseq-derived file. The 4D-flow
 acquisition is a production sequence and is not distributed - it is too large
@@ -72,8 +71,8 @@ extension build clears <code>out/</code> before writing, so running <code>tsc</c
 exactly the modules the runners need. Verify by requiring one of them rather
 than by trusting the command sequence.</p>
 <p>MATLAB experiments need a licensed R2024b and an official Pulseq MATLAB
-checkout, located by argument or by <code>PULSEQ_MATLAB_PATH</code>. They are not ordinary
-hosted CI and should not be described as such.</p>
+checkout, located by argument or by <code>PULSEQ_MATLAB_PATH</code>. They run on a
+workstation, not in hosted CI.</p>
 <p>One thing a reader will meet: k-space calculation runs synchronously on the VS
 Code extension host and takes several seconds on a large sequence, which trips
 the editor’s unresponsiveness watchdog. The calculation completes.</p>
@@ -251,6 +250,10 @@ defect, the defect being fixed, and the experiment being re-run to confirm.</p>
 <li>Parser speedup is not viewer speedup: both formats share everything after
 parsing.</li>
 <li>Browser parity is a state and canvas comparison, not a pixel comparison.</li>
+<li>E9 compares the transform. The anti-aliasing filter ahead of it is outside the
+comparison.</li>
+<li>E11 compares the two rendering lanes on dispatch and geometry, not on drawn
+values.</li>
 <li>Figure 2B-C’s fit is descriptive. ADC count is not a complete workload model.</li>
 <li>E4 establishes that each host can invoke inspection and reach a ready viewer,
 not that the hosts agree numerically.</li>

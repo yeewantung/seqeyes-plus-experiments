@@ -8,8 +8,8 @@ accepts both Pulseq text (`.seq`) and binary (`.bseq`) input.
 One TypeScript engine is packaged for four environments, so a sequence can be
 inspected without leaving the place it was written: a standalone browser page, a
 VS Code custom editor, a MATLAB toolbox, and a Python package that renders
-inline in Jupyter. It extends the SeqEyes lineage and was designed from
-experience with SeqEyes Qt, but depends on neither Qt nor C++.
+inline in Jupyter. It extends the SeqEyes lineage, designed from experience with
+SeqEyes Qt, with no Qt or C++ dependency.
 
 This is the evidence behind it: what was tested, how, and what the results were.
 
@@ -61,7 +61,7 @@ and that panning tracks the cursor within a pixel.
 
 The gradient spectrogram over the visible window, with the acoustic resonance
 bands a scanner declares drawn on top, played as audio while a marker crosses
-it. This slot waits on a recording with an audio track.
+it.
 
 <details>
 <summary>How this was verified</summary>
@@ -90,7 +90,7 @@ artifacts** rather than a development checkout. See
 
 The results below come from a point-in-time audit carried out in September 2026,
 against releases v0.3.6 through v0.3.8. Three properties of the method decide
-what the numbers mean, so they come first.
+what the numbers mean.
 
 ### Compared against something that is not SeqEyes-Plus
 
@@ -107,8 +107,9 @@ checks:
 | RF response | A Bloch propagator using explicit 3D rotations, not spinors |
 | Viewport detail | A reconstruction from the parsed shape that never calls the display path |
 
-Where the independence could be compromised, it was designed out. The RF
-reference uses Rodrigues' rotation formula while the implementation uses
+Two places where that independence could have leaked are closed by
+construction. The RF reference uses Rodrigues' rotation formula while the
+implementation uses
 Cayley-Klein spinors, so an algebraic error in one cannot be reproduced by the
 other. The spectrogram reference writes its own window function rather than
 calling a library, because the implementation's window is a periodic Hann
@@ -154,7 +155,7 @@ Four were amended, each before a result was accepted and each recorded with its
 basis. Three came from reading the implementation: amplitudes travel through the
 display transport as float32, phase is wrapped into [0, 2&pi;), and the
 spectrogram matrices are float32 - so "exact" means exact after a float32 round,
-and a limit finer than float32 could never be met by anything.
+and a limit finer than float32 could not be met.
 
 The fourth was prompted by a failure. The min/max band limit began as a
 per-column relative bound, and three windows exceeded it. A per-column relative
@@ -206,15 +207,11 @@ project and is the implementation sequences are usually authored against. The
 RF-phase floor exists because phase is meaningless where there is no RF to carry
 it, and comparing it there would manufacture disagreement. The limits - 1e-5 1/m
 on k-space, 5e-6 relative on gradients - are the frozen abstract's own, kept
-unchanged so this run is comparable to it.
+unchanged so this run is comparable to it. The reference itself is at a later
+commit than the frozen evidence used, so the result speaks for the current pair.
 
 **The result.** 11/11 passed. The worst k-space error was **1.19e-6 1/m** on ZTE
 PETRA, a sequence carrying 3,383,700 ADC samples, against a 1e-5 1/m limit.
-
-**What it does not establish.** The oracle moved too: this run used Pulseq
-MATLAB at a later commit than the frozen evidence. A difference from those
-numbers would not be attributable to SeqEyes-Plus alone, so the result is that
-the pair still agrees, not that either is unchanged.
 
 #### E8 — first moment against a closed-form integral
 
@@ -236,10 +233,6 @@ reference and the implementation share a floating-point mistake.
 **3e-18 s/m** against limits near 1.1e-9. The errors are **bit-identical**
 to those recorded against v0.2.8, so the M1 path has not moved through the
 entire v0.3.x line.
-
-**What it does not establish.** That the simplified RF-pathway bookkeeping is a
-complete physical model for every coherent steady-state sequence. It establishes
-the implemented mathematical convention.
 
 #### E9 — spectrogram and acoustic analysis
 
@@ -268,9 +261,6 @@ before it judged anything.
 of the matrix maximum. Acoustic band tables and out-of-range counts matched an
 independent parse exactly, including a profile carrying a decoy band under a
 different key prefix and a zero-frequency padding entry.
-
-**What it does not establish.** The anti-aliasing filter's own behaviour, which
-sits outside the comparison by design.
 
 #### E10 — RF response against a Bloch propagator
 
@@ -334,10 +324,10 @@ windows agreed, 106,562 of 106,705 columns bit-exactly, worst disagreement
 as the contract requires, and the load-time hierarchy preserved every block's
 extrema.
 
-**What it does not establish.** Value-level agreement between the two rendering
-lanes. The standalone viewer exposes which regime and how many columns, but no
-accessor for the drawn values, so lane comparison is of dispatch and geometry -
-which is what is duplicated between them, and what
+The two rendering lanes are compared on dispatch and geometry: the standalone
+viewer reports which regime it chose and how many columns it produced, and
+exposes no accessor for the drawn values. Dispatch and geometry are what the
+lanes duplicate, and what
 <a href="appendix.html#a-defect-these-experiments-found">drifted</a>.
 
 ### Format equivalence
@@ -367,17 +357,17 @@ with k-space compared for all 37 against 35 in the frozen run, and no console
 errors. Trajectory and ADC sample counts are **identical** to the frozen
 evidence on every pair in both formats - exact equality, not a limit.
 
-**A measured difference worth knowing.** The two formats' k-space trajectories
+**A difference between the two formats.** The two formats' k-space trajectories
 differ by up to 2.8e-3 1/m, about 2e-5 of the trajectory extent. No limit covers
 this one; it had never been measured, because E2 compared sample counts rather
 than values. The
 <a href="appendix.html#text-versus-binary-fidelity">appendix</a> gives the
-measurement and a hypothesis about its cause, labelled as one.
+per-sequence measurement, and a hypothesis about its cause.
 
 ### Scale and performance
 
 Three timing experiments, all on one Apple M3 Pro at the recorded software
-versions. What each one separates matters more than any single number in it.
+versions.
 
 #### E7 — what binary input changes
 
@@ -391,8 +381,7 @@ endpoint is measured apart from both.
 
 **Why the design matters here.** Parser time is not viewer time. The two formats
 share everything after parsing - timing detection, block decoding, rendering,
-k-space - so the parser figure and the browser figure are reported separately
-and each says which one it is.
+k-space - so the parser result and the browser result are reported separately.
 
 <img src="downloads/figures/results-parser-speedup.svg"
      alt="Per-sequence parser speedup, text divided by binary, for 31 sequences, ranging from 2.7 to 17 times with a geometric mean of 5.24.">
@@ -406,7 +395,6 @@ numbers appeared to show 20-37% regressions on three sequences. Within-run
 sample spread reaches 23-870% of the median, so a single run cannot separate a
 version difference from ordinary variation. A repeat run put all three inside
 their own noise, and the aggregate moved by 0.010x against a 0.061x noise floor.
-Every per-sequence difference is published beside that floor.
 
 #### Figure 2B-C — how ready time scales
 
@@ -441,7 +429,7 @@ the frozen run gave 8.4x - a threefold jump in our own favour, produced by work
 falling outside the measurement rather than by any improvement.
 
 The composite is retired. Two endpoints are reported instead, each defined by
-what it measures rather than by which phase happens to contain it:
+what it measures:
 
 - **A** — file input to sequence diagram ready
 - **B** — k-space requested, to calculated and drawn
@@ -462,9 +450,8 @@ tool completed:
 | Pulseq MATLAB | **62.1x** | **1.32x** | 36 |
 | PyPulseq | **20.1x** | **2.61x** | 32 |
 
-The split is where the information is. Nearly all of the difference is in getting
-a sequence on screen; once k-space is requested, the three tools are within a
-small factor of each other.
+Nearly all of the difference is in getting a sequence on screen. Once k-space is
+requested, the three tools are within a small factor of each other.
 
 The components show things a ratio hides. PyPulseq's 3D scatter on the spiral
 case takes **7.708 s against MATLAB's 0.115 s**. And on `writeFid`,
@@ -478,8 +465,8 @@ Pulseq 1.5.1 files. They are counted in the dataset as failures, which is why
 PyPulseq's denominator is 32 and MATLAB's is 36.
 
 **Not comparable to the frozen ratios.** The frozen 8.438x and 4.618x were
-measured when one formula covered different work, so no improvement over them is
-claimed here.
+measured when one formula covered different work. They are not the same quantity
+as the numbers above.
 
 ### Workflow and platform
 
@@ -506,12 +493,6 @@ parse-error handling; a MATLAB figure built from a 2,567-block sequence with the
 host stamped and the sequence preloaded; the Python display object, inline
 iframe, embedded viewer and binary bytes all present; and 31 spectrogram-panel
 tests including the portrait mobile layout.
-
-**What it does not establish.** Numerical equivalence between host wrappers.
-That would require every wrapper to export the same canonical checkpoints, which
-they do not, and it is
-<a href="appendix.html#two-experiments-planned-and-not-run">not claimed</a>. Mobile is emulated
-viewports rather than a physical device.
 
 ## Try it
 

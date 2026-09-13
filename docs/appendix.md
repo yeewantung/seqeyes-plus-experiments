@@ -1,8 +1,7 @@
 # Appendix
 
-Material a reader consults rather than reads: what was measured on, how to
-repeat it, what is deliberately not claimed, and the findings that belong on
-record without belonging in the results.
+What was measured on, how to repeat it, the scope of the claims, and the
+findings that belong on record without belonging in the results.
 
 ## Sequence sets
 
@@ -22,8 +21,8 @@ several minutes per case.
 **The large group** carries the size range: `writeZTE_Petra_sodium` (11.7 MB),
 `writeZTE_Petra` (5.8 MB) and `writeGradientEcho3D` (809 KB) from the official
 set, plus `pypulseq_3dmrf`, `wave_test_R3x2`, and a 458.7 MiB production 4D-flow
-acquisition. Three of the six are official files, so most of the large-sequence
-evidence rests on distributable, hash-bound inputs.
+acquisition. Three of the six are official files, bound by hash and
+distributable.
 
 Two fixtures are measured but excluded from every denominator.
 `wave_test_R3x2` is not an official Pulseq-derived file. The 4D-flow
@@ -49,8 +48,8 @@ exactly the modules the runners need. Verify by requiring one of them rather
 than by trusting the command sequence.
 
 MATLAB experiments need a licensed R2024b and an official Pulseq MATLAB
-checkout, located by argument or by `PULSEQ_MATLAB_PATH`. They are not ordinary
-hosted CI and should not be described as such.
+checkout, located by argument or by `PULSEQ_MATLAB_PATH`. They run on a
+workstation, not in hosted CI.
 
 One thing a reader will meet: k-space calculation runs synchronously on the VS
 Code extension host and takes several seconds on a large sequence, which trips
@@ -181,6 +180,10 @@ defect, the defect being fixed, and the experiment being re-run to confirm.
 - Parser speedup is not viewer speedup: both formats share everything after
   parsing.
 - Browser parity is a state and canvas comparison, not a pixel comparison.
+- E9 compares the transform. The anti-aliasing filter ahead of it is outside the
+  comparison.
+- E11 compares the two rendering lanes on dispatch and geometry, not on drawn
+  values.
 - Figure 2B-C's fit is descriptive. ADC count is not a complete workload model.
 - E4 establishes that each host can invoke inspection and reach a ready viewer,
   not that the hosts agree numerically.
