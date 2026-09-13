@@ -418,3 +418,47 @@ hr {
     color: inherit;
   }
 }
+
+/* Page navigation in the top bar. The current page is a span, not a link. */
+.site-nav {
+  display: flex;
+  gap: 1.1rem;
+  align-items: center;
+  font-size: 0.95rem;
+}
+.site-nav a { color: var(--link); text-decoration: none; }
+.site-nav a:hover { text-decoration: underline; }
+.site-nav [aria-current="page"] { color: var(--ink); font-weight: 600; }
+
+/* Demo videos sit in the flow like figures, and never overflow their column. */
+article video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1.4rem 0 0.4rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--soft);
+}
+
+/* A disclosure is a sentence the reader may not need, so it stays quiet. */
+article details {
+  margin: 0.5rem 0 1.6rem;
+  border-left: 3px solid var(--line);
+  padding: 0.1rem 0 0.1rem 0.9rem;
+}
+article details summary {
+  cursor: pointer;
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+article details[open] summary { margin-bottom: 0.5rem; }
+article details p { margin: 0.4rem 0; font-size: 0.96rem; }
+
+/* Results figures are wide; let them use the column and no more. */
+article img[src$=".svg"] {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1.4rem 0;
+}

@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="SeqEyes-Plus experiment design, implementation, results, and reproducibility report.">
+  <title>SeqEyes-Plus experiment evidence</title>
+  <link rel="stylesheet" href="assets/report.css">
+</head>
+<body>
+  <a class="skip-link" href="#report">Skip to report</a>
+  <header class="topbar">
+    <div>
+      <strong>SeqEyes-Plus experiment evidence</strong>
+      <span>Technical supplement</span>
+    </div>
+    <nav class="site-nav" aria-label="Pages">
+      <a href="index.html">Report</a>
+      <span aria-current="page">Appendix</span>
+    </nav>
+  </header>
+  <div class="layout">
+    <aside>
+      <div class="toc-title">Contents</div>
+      <nav aria-label="Page contents"><ol><li class="toc-level-2"><a href="#sequence-sets">Sequence sets</a></li>
+<li class="toc-level-2"><a href="#reproduction">Reproduction</a></li>
+<li class="toc-level-2"><a href="#text-versus-binary-fidelity">Text versus binary fidelity</a></li>
+<li class="toc-level-3"><a href="#what-is-measured">What is measured</a></li>
+<li class="toc-level-3"><a href="#hypothesis">Hypothesis</a></li>
+<li class="toc-level-2"><a href="#a-defect-these-experiments-found">A defect these experiments found</a></li>
+<li class="toc-level-2"><a href="#e5-a-claim-not-made">E5 — a claim not made</a></li>
+<li class="toc-level-2"><a href="#version-history">Version history</a></li>
+<li class="toc-level-2"><a href="#scope-of-the-claims">Scope of the claims</a></li>
+<li class="toc-level-2"><a href="#license-and-attribution">License and attribution</a></li></ol></nav>
+    </aside>
+    <main id="report"><article><h1 id="appendix">Appendix</h1>
+<p>Material a reader consults rather than reads: what was measured on, how to
+repeat it, what is deliberately not claimed, and the findings that belong on
+record without belonging in the results.</p>
+<h2 id="sequence-sets">Sequence sets</h2>
+<p>Three sets, drawn from one source. Every experiment names the set it used, so a
+denominator is never ambiguous.</p>
+<p><strong>The official set</strong> is 36 paired <code>.seq</code> and <code>.bseq</code> files, each written from the
+same in-memory sequence object by a Pulseq MATLAB demo script. Every file is
+bound by SHA-256 in the evidence manifest; all 74 verify.</p>
+<p><strong>The reference subset</strong> is eleven of those 36, chosen to span Cartesian and
+non-Cartesian, labelled, rotated, single-shot and multi-echo acquisition: EPI,
+EPI-RS, labelled GRE, 3D radial GRE, spiral, UTE, EPI spin echo RS, HASTE,
+Trufi, TSE, ZTE PETRA. It is used where an experiment needs a licensed tool or
+several minutes per case.</p>
+<p><strong>The large group</strong> carries the size range: <code>writeZTE_Petra_sodium</code> (11.7 MB),
+<code>writeZTE_Petra</code> (5.8 MB) and <code>writeGradientEcho3D</code> (809 KB) from the official
+set, plus <code>pypulseq_3dmrf</code>, <code>wave_test_R3x2</code>, and a 458.7 MiB production 4D-flow
+acquisition. Three of the six are official files, so most of the large-sequence
+evidence rests on distributable, hash-bound inputs.</p>
+<p>Two fixtures are measured but excluded from every denominator.
+<code>wave_test_R3x2</code> is not an official Pulseq-derived file. The 4D-flow
+acquisition is a production sequence and is not distributed - it is too large
+for a repository, and its k-space is not calculated at all: the estimate exceeds
+the interactive memory gate by a wide margin, and the gate is left alone.</p>
+<h2 id="reproduction">Reproduction</h2>
+<p>The experiments run against a built plugin checkout. Clone
+<code>bughht/seqeyes_plugin</code> at the commit a result records, then:</p>
+<pre><code class="language-bash">npm run compile      # cleans out/, then builds the esbuild bundles
+npx tsc -p ./        # emits the module tree the runners import
+npm run build:web    # standalone web bundles
+</code></pre>
+<p>The order matters and reversed silently produces nothing: since v0.3.8 the
+extension build clears <code>out/</code> before writing, so running <code>tsc</code> first deletes
+exactly the modules the runners need. Verify by requiring one of them rather
+than by trusting the command sequence.</p>
+<p>MATLAB experiments need a licensed R2024b and an official Pulseq MATLAB
+checkout, located by argument or by <code>PULSEQ_MATLAB_PATH</code>. They are not ordinary
+hosted CI and should not be described as such.</p>
+<p>One thing a reader will meet: k-space calculation runs synchronously on the VS
+Code extension host and takes several seconds on a large sequence, which trips
+the editor’s unresponsiveness watchdog. The calculation completes.</p>
+<h2 id="text-versus-binary-fidelity">Text versus binary fidelity</h2>
+<p>The <code>.seq</code> and <code>.bseq</code> members of a pair produce k-space trajectories differing
+by up to <strong>2.8e-3 1/m</strong>, about 2e-5 of the trajectory extent. Per sequence:</p>
+<table>
+<thead>
+<tr>
+<th>Sequence</th>
+<th style="text-align:right">Difference (1/m)</th>
+<th></th>
+<th>Sequence</th>
+<th style="text-align:right">Difference (1/m)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Trufi</td>
+<td style="text-align:right">2.782e-3</td>
+<td></td>
+<td>TSE</td>
+<td style="text-align:right">7.100e-4</td>
+</tr>
+<tr>
+<td>3D radial GRE</td>
+<td style="text-align:right">2.361e-3</td>
+<td></td>
+<td>Spiral</td>
+<td style="text-align:right">6.800e-4</td>
+</tr>
+<tr>
+<td>EPI spin echo RS</td>
+<td style="text-align:right">1.874e-3</td>
+<td></td>
+<td>Labelled GRE</td>
+<td style="text-align:right">5.477e-4</td>
+</tr>
+<tr>
+<td>EPI</td>
+<td style="text-align:right">1.820e-3</td>
+<td></td>
+<td>UTE</td>
+<td style="text-align:right">2.206e-4</td>
+</tr>
+<tr>
+<td>EPI-RS</td>
+<td style="text-align:right">1.500e-3</td>
+<td></td>
+<td>ZTE PETRA</td>
+<td style="text-align:right">1.768e-4</td>
+</tr>
+<tr>
+<td>HASTE</td>
+<td style="text-align:right">7.887e-4</td>
+<td></td>
+<td></td>
+<td style="text-align:right"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="what-is-measured">What is measured</h3>
+<ol>
+<li>Both files are written from <strong>one in-memory sequence object</strong> by
+<code>gen_seq_file.m</code>, which runs each Pulseq demo and writes the result through
+both <code>write()</code> and <code>writeBinary()</code>. No conversion step sits between them.</li>
+<li>The difference is already in the <strong>decoded gradients</strong>, before any
+integration. For Trufi, 4,610 of 7,703 gradient samples differ, by at most
+5.0 Hz/m against a 1.28 MHz/m peak - inside the frozen gradient gate - with
+sample times identical to the bit.</li>
+<li>The text stores shapes <strong>run-length compressed</strong> at about nine significant
+digits: one shape declares 600 samples in 396 stored lines.</li>
+<li>The binary writer stores <strong>float64</strong> with no quantization.</li>
+<li>The binary’s distance from Pulseq MATLAB <strong>equals</strong> its distance from the
+text, case for case, while the text agrees with MATLAB to about 1e-9 1/m.</li>
+</ol>
+<h3 id="hypothesis">Hypothesis</h3>
+<p>Text decimal rounding, accumulated through run-length decompression, is what
+makes the two files differ - which would mean the binary file is the more
+faithful record of the sequence object and the text file is the lossy one.</p>
+<p>It fits every measurement, and point 5 is what points at it: a difference living
+in the text would be shared by every reader of the text and absent only from the
+binary, which is the pattern observed. It also explains why E3 never sees it -
+SeqEyes-Plus and Pulseq MATLAB both read the same <code>.seq</code> and inherit the same
+rounding.</p>
+<p>It is <strong>not established</strong>. Two things would settle it, neither done: decompress
+the text’s stored shape values independently and compare them against the
+binary’s stored samples at file level; and confirm that the two decompressors
+agree bit for bit on the same compressed input, ruling out a decoder difference
+that would produce the same signature.</p>
+<h2 id="a-defect-these-experiments-found">A defect these experiments found</h2>
+<p>At v0.3.6 the VS Code lane refused waveform detail for any window spanning more
+than 20,000 blocks, before choosing how to draw it. The standalone lane had no
+such limit - the constant was not even exported to its bundle.</p>
+<p>Only one of the three possible replies carries a per-block payload. The limit
+was tested before that branch, so it also refused replies whose size does not
+depend on block count. Sample count, which does govern cost, is not monotonic in
+blocks: one sequence was allowed at 179 blocks and 950,224 samples while another
+was refused at 24,876 blocks and 132,272.</p>
+<p>The limit dated from the earliest VS Code work, before hierarchy rendering
+existed, when downsampling was the only way to make the extension usable. The
+constraint it encoded no longer applied. It was moved inside the branch it
+protects and both lanes were given one shared dispatch; released as v0.3.7.</p>
+<p>Two corrections to how this was first reported, from the session that fixed it.
+It was not reachable through the interface at a whole-sequence view, because the
+dense overview is active there and neither lane requests detail - the divergence
+was reachable through the API and through a narrower interaction case. And the
+fix changed both lanes, not only VS Code: the standalone lane gained the ceiling
+on its samples path, unreachable across the official set but now shared by
+decision rather than absent.</p>
+<h2 id="e5-a-claim-not-made">E5 — a claim not made</h2>
+<p>An experiment was planned to compare one canonical numerical checkpoint from all
+four host wrappers. The wrappers do not all export that artifact, and adding it
+was not attempted. Shared code is architectural consistency, not an independent
+cross-host numerical result, and no such result is reported.</p>
+<h2 id="version-history">Version history</h2>
+<p>The plugin moved during this work, and each result records the build that
+produced it.</p>
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>What changed</th>
+<th>Effect on results</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.3.4</td>
+<td>the pin when Phase 0 froze</td>
+<td>superseded before any measurement</td>
+</tr>
+<tr>
+<td>0.3.6</td>
+<td>k-space render performance, rotation centre</td>
+<td>E1, E2, E7, E8, Figure 2B-C measured here</td>
+</tr>
+<tr>
+<td>0.3.7</td>
+<td>the detail dispatch fix these experiments found</td>
+<td>E9, E10, E11 measured here; E11 re-run because the fix changed its subject</td>
+</tr>
+<tr>
+<td>0.3.8</td>
+<td>VS Code k-space delivery</td>
+<td>E3, E4, Figure 2B-D measured here; nothing earlier affected, since no file under <code>src/pulseq</code> changed</td>
+</tr>
+</tbody>
+</table>
+<p>E11 was re-measured rather than edited. Every value was identical across the two
+versions; only the route by which oversized windows decline changed.</p>
+<p>Stated forward, the mixed versions are the record of a test suite finding a
+defect, the defect being fixed, and the experiment being re-run to confirm.</p>
+<h2 id="scope-of-the-claims">Scope of the claims</h2>
+<ul>
+<li>Timings describe one Apple M3 Pro and the recorded software versions.</li>
+<li>Parser speedup is not viewer speedup: both formats share everything after
+parsing.</li>
+<li>Browser parity is a state and canvas comparison, not a pixel comparison.</li>
+<li>Figure 2B-C’s fit is descriptive. ADC count is not a complete workload model.</li>
+<li>E4 establishes that each host can invoke inspection and reach a ready viewer,
+not that the hosts agree numerically.</li>
+<li>Mobile results are emulated viewports, not a physical device.</li>
+<li>PyPulseq 1.5.0.post1 cannot read four extension-bearing sequences in the
+cross-tool set; they are reported as failures rather than dropped.</li>
+<li>SAFE-based PNS estimation is advisory and was not externally validated here.</li>
+<li>M1 validation establishes the implemented mathematical convention, not a
+complete physical signal-pathway model.</li>
+</ul>
+<h2 id="license-and-attribution">License and attribution</h2>
+<p>Original code and documentation in this repository are under the MIT License.
+That does not relicense Pulseq, PyPulseq, MATLAB, or other third-party material,
+each of which retains its own terms. Sequence fixtures are not redistributed
+here; the official examples are regenerated from a pinned upstream commit and
+verified by hash.</p>
+<p>SeqEyes-Plus extends the SeqEyes lineage and was designed from experience with
+SeqEyes Qt. The Qt work is unpublished and is not distributed by this report.</p>
+</article></main>
+  </div>
+</body>
+</html>
