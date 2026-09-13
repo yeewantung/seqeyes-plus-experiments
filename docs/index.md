@@ -21,18 +21,23 @@ This is the evidence behind it: what was tested, how, and what the results were.
        controls muted loop playsinline width="100%"></video>
 
 A spiral sequence from its full 5.4 seconds down to three repetitions and back,
-in one continuous movement. Zoom keeps going past that depth, down to individual
-gradient samples, and at those depths the drawn trajectory **is** the native
-samples, one line segment each: nothing interpolated, and no segment between
-samples that are not adjacent.
+in one continuous movement. The amplitude axes zoom separately, one channel at a
+time with ctrl or cmd held: here Gz expands from the &plusmn;1.7 MHz/m shared
+gradient full scale to &plusmn;458 kHz/m, and its slice-select plateau and
+rewinder fill the row while the time window stays put.
+
+Zoom in time keeps going past three repetitions, down to individual gradient
+samples, and at those depths the drawn trajectory **is** the native samples, one
+line segment each: nothing interpolated, and no segment between samples that are
+not adjacent.
 
 <details>
 <summary>How this was verified</summary>
 
-Every window in a sweep across eight decades was compared against a
-reconstruction built from the parsed shape that never calls the display path.
-721,952 samples matched bit for bit. See
-<a href="#e11-viewport-detail-does-the-drawing-tell-the-truth">the detail
+384 windows, from one nanosecond wide up to a whole 695-second sequence, were
+each compared against a reconstruction built from the parsed shape that never
+calls the display path. 721,952 samples matched bit for bit. See
+<a href="#viewport-detail-does-the-drawing-tell-the-truth">the detail
 experiment</a>.
 </details>
 
@@ -45,6 +50,12 @@ A 3D radial trajectory, all 122,880 acquired points: rotate, zoom toward the
 cursor, pan, resize the ADC markers, flip between perspective and projection.
 Rotation pivots on k = 0, so the cloud turns in place instead of orbiting an
 offset centre.
+
+The cloud is the points acquired inside the visible time window, so it follows
+the sequence view. At the end of the clip the waveform panel zooms from the
+whole 860 ms to 21.6 ms, and the disc becomes the seven radial spokes acquired
+in that window - 3,049 of the 122,880 points. Fitting the sequence back to full
+width brings the rest back.
 
 <details>
 <summary>How this was verified</summary>
@@ -68,7 +79,7 @@ it.
 
 Every column of the spectrogram was compared against an independently written
 short-time Fourier transform: 16,845,534 cells, all within its limit. See
-<a href="#e9-spectrogram-and-acoustic-analysis">the spectrogram experiment</a>.
+<a href="#spectrogram-and-acoustic-analysis">the spectrogram experiment</a>.
 </details>
 
 ### The same engine, four places
@@ -83,7 +94,7 @@ the same engine.
 
 All four were exercised, plus a mobile browser layout, against the **distributed
 artifacts** rather than a development checkout. See
-<a href="#e4-four-environments-plus-mobile">the workflow experiment</a>.
+<a href="#four-environments-plus-mobile">the workflow experiment</a>.
 </details>
 
 ## How SeqEyes-Plus was tested
@@ -175,21 +186,21 @@ loosest, by a factor of 5.4 billion.
      alt="How far under its declared limit each numerical result came in, on a logarithmic axis: E3 a factor of 8, E11 68, E9 forty thousand, E8 one hundred sixty million, E10 five point four billion.">
 
 | Group | Experiments | Result |
-|---|---|---|
-| Numerical accuracy | E3, E8, E9, E10, E11 | all under their limits, by factors of 8 to 5.4e9 |
-| Format equivalence | E1, E2 | 37/37 and 37/37 |
-| Scale and performance | E7, Figure 2B-C, Figure 2B-D | timings, on one Apple M3 Pro |
-| Workflow and platform | E4 | 5/5 surfaces |
+|---|---:|---|
+| Numerical accuracy | 5 | all under their limits |
+| Format equivalence | 2 | 37/37 and 37/37 |
+| Scale and performance | 3 | timings, on one Apple M3 Pro |
+| Workflow and platform | 1 | 5/5 surfaces |
 
-Version note: E1, E2, E7, E8 and Figure 2B-C were measured on v0.3.6; E9, E10
-and E11 on v0.3.7; E3, E4 and Figure 2B-D on v0.3.8. Each result records the
-build that produced it. The re-measurements happened because these experiments
-found a defect, which was fixed and then confirmed - the
-<a href="appendix.html#version-history">appendix</a> gives the sequence.
+The plugin moved during the work, and each result records the build that
+produced it: v0.3.6, v0.3.7 or v0.3.8. The re-measurements happened because
+these experiments found a defect, which was fixed and then confirmed - the
+<a href="appendix.html#version-history">appendix</a> gives the sequence, and
+maps each section here to the protocol and result files behind it.
 
 ### Numerical accuracy
 
-#### E3 — waveforms and k-space against official Pulseq MATLAB
+#### Waveforms and k-space, against official Pulseq MATLAB
 
 **The question.** Does SeqEyes-Plus expand a sequence into the same waveforms
 and the same k-space trajectory as the reference implementation the Pulseq
@@ -213,7 +224,7 @@ commit than the frozen evidence used, so the result speaks for the current pair.
 **The result.** 11/11 passed. The worst k-space error was **1.19e-6 1/m** on ZTE
 PETRA, a sequence carrying 3,383,700 ADC samples, against a 1e-5 1/m limit.
 
-#### E8 — first moment against a closed-form integral
+#### First moment, against a closed-form integral
 
 **The question.** Is the M1 calculation right, independently of how it is
 implemented?
@@ -234,7 +245,7 @@ reference and the implementation share a floating-point mistake.
 to those recorded against v0.2.8, so the M1 path has not moved through the
 entire v0.3.x line.
 
-#### E9 — spectrogram and acoustic analysis
+#### Spectrogram and acoustic analysis
 
 **The question.** Does the gradient spectrogram compute what a short-time
 Fourier transform of the same signal computes, and does forbidden-band screening
@@ -262,7 +273,7 @@ of the matrix maximum. Acoustic band tables and out-of-range counts matched an
 independent parse exactly, including a profile carrying a decoy band under a
 different key prefix and a zero-frequency padding entry.
 
-#### E10 — RF response against a Bloch propagator
+#### RF response, against a Bloch propagator
 
 **The question.** Are the estimated band centres, per-band flip angle and
 M<sub>z</sub> right for a multiband or adiabatic pulse?
@@ -293,7 +304,7 @@ for the hypersecant case - 287.145 degrees of carrier area, 175.95 degrees of
 polar response, M<sub>z</sub> = -0.9975 - independently reproducing them as
 287.1448, 175.9515 and -0.997505.
 
-#### E11 — viewport detail: does the drawing tell the truth?
+#### Viewport detail: does the drawing tell the truth?
 
 **The question.** When the viewer draws a waveform, is what appears on screen
 the data, or a summary of it?
@@ -301,9 +312,10 @@ the data, or a summary of it?
 **The design.** The detail path dispatches three ways by window size: every
 native sample below 50,000, a per-column min/max band below 2,000,000, and the
 precomputed hierarchy above that. Each regime is compared against a
-reconstruction built directly from the parsed shape, across a sweep of window
-widths spanning eight decades on three sequences, including the 459 MiB 4D-flow
-case.
+reconstruction built directly from the parsed shape. 384 windows are swept, from
+one nanosecond wide up to the whole sequence, over three sequences including the
+459 MiB 4D-flow case - whose full width is 695 seconds, so the sweep covers
+twelve orders of magnitude.
 
 **Why the design is valid.** The reference never calls the display path, so the
 comparison is not circular. The runner routes every window through the viewer's
@@ -332,7 +344,7 @@ lanes duplicate, and what
 
 ### Format equivalence
 
-#### E1 and E2 — does binary mean the same as text?
+#### Does binary mean the same as text?
 
 **The question.** A `.bseq` file is meant to be the same sequence as its `.seq`
 counterpart. Is it?
@@ -369,7 +381,7 @@ per-sequence measurement, and a hypothesis about its cause.
 Three timing experiments, all on one Apple M3 Pro at the recorded software
 versions.
 
-#### E7 — what binary input changes
+#### What binary input changes
 
 **The question.** Binary files parse faster and take less space. By how much,
 and does that make the viewer faster?
@@ -396,7 +408,9 @@ sample spread reaches 23-870% of the median, so a single run cannot separate a
 version difference from ordinary variation. A repeat run put all three inside
 their own noise, and the aggregate moved by 0.010x against a 0.061x noise floor.
 
-#### Figure 2B-C — how ready time scales
+#### How ready time scales with sequence size
+
+This is Figure 2B-C of the abstract.
 
 **The design.** File-input-to-ready time for each `.bseq`, against the ADC sample
 count, fitted log-log. The fit is descriptive: ADC count is one term in the
@@ -415,7 +429,9 @@ the slope came out 0.311, which would have read as a large regression in scaling
 and was entirely an artifact of the measurement point. The endpoint is
 reconstructed from in-page marks alone.
 
-#### Figure 2B-D — against MATLAB and PyPulseq
+#### The same workflow in three tools
+
+This is Figure 2B-D of the abstract.
 
 **The question.** How long does the same inspection workflow take in each tool:
 read a sequence, plot its waveforms, calculate the ADC k-space, and draw the 3D
@@ -470,7 +486,7 @@ as the numbers above.
 
 ### Workflow and platform
 
-#### E4 — four environments, plus mobile
+#### Four environments, plus mobile
 
 **The question.** Can a sequence be inspected without leaving the environment it
 was developed in?

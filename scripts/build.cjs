@@ -57,7 +57,7 @@ function render(page) {
     const label = tokens[index + 1]?.content || "Section";
     const id = slugify(label);
     token.attrSet("id", id);
-    if (level === 2 || level === 3) toc.push({ level, label, id });
+    if (level >= 2 && level <= 4) toc.push({ level, label, id });
   }
   const article = md.renderer.render(tokens, md.options, {});
   const contents = toc

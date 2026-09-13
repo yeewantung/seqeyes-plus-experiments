@@ -30,6 +30,7 @@
 <li class="toc-level-2"><a href="#a-defect-these-experiments-found">A defect these experiments found</a></li>
 <li class="toc-level-2"><a href="#two-experiments-planned-and-not-run">Two experiments planned and not run</a></li>
 <li class="toc-level-2"><a href="#the-suite-that-runs-on-every-change">The suite that runs on every change</a></li>
+<li class="toc-level-2"><a href="#where-each-result-comes-from">Where each result comes from</a></li>
 <li class="toc-level-2"><a href="#version-history">Version history</a></li>
 <li class="toc-level-2"><a href="#scope-of-the-claims">Scope of the claims</a></li>
 <li class="toc-level-2"><a href="#license-and-attribution">License and attribution</a></li></ol></nav>
@@ -206,6 +207,72 @@ response and the display transport as unit tests; the standalone viewer,
 spectrogram panel and VS Code webview under Chromium; the extension host end to
 end; the packaged VSIX; and the Python renderer. It excludes licensed MATLAB
 runtime work and long benchmarks, which do not belong in a pull-request gate.</p>
+<h2 id="where-each-result-comes-from">Where each result comes from</h2>
+<p>The report is organised by question, so it does not carry the experiment
+numbers the protocols and result files use. They map like this.</p>
+<table>
+<thead>
+<tr>
+<th>Section of the report</th>
+<th>Experiment</th>
+<th>Results</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Waveforms and k-space, against official Pulseq MATLAB</td>
+<td>E3</td>
+<td><code>e3_eleven_sequence/</code></td>
+</tr>
+<tr>
+<td>First moment, against a closed-form integral</td>
+<td>E8</td>
+<td><code>e8_m1/</code></td>
+</tr>
+<tr>
+<td>Spectrogram and acoustic analysis</td>
+<td>E9</td>
+<td><code>e9_spectrogram/</code></td>
+</tr>
+<tr>
+<td>RF response, against a Bloch propagator</td>
+<td>E10</td>
+<td><code>e10_rf_response/</code></td>
+</tr>
+<tr>
+<td>Viewport detail</td>
+<td>E11</td>
+<td><code>e11_viewport_detail/</code></td>
+</tr>
+<tr>
+<td>Does binary mean the same as text?</td>
+<td>E1, E2</td>
+<td><code>e1_e7_parser/</code>, <code>e2_browser/</code></td>
+</tr>
+<tr>
+<td>What binary input changes</td>
+<td>E7</td>
+<td><code>e1_e7_parser/</code></td>
+</tr>
+<tr>
+<td>How ready time scales with sequence size</td>
+<td>Figure 2B-C</td>
+<td><code>figure2b-c/</code></td>
+</tr>
+<tr>
+<td>The same workflow in three tools</td>
+<td>Figure 2B-D</td>
+<td><code>figure2b-d/</code></td>
+</tr>
+<tr>
+<td>Four environments, plus mobile</td>
+<td>E4</td>
+<td><code>e4_hosts/</code></td>
+</tr>
+</tbody>
+</table>
+<p>Paths are under <code>abstracts/experiments/results/rerun_2026-09/</code> in the workspace,
+and each result names the protocol that declared it.</p>
 <h2 id="version-history">Version history</h2>
 <p>The plugin moved during this work, and each result records the build that
 produced it.</p>

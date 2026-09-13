@@ -156,6 +156,27 @@ spectrogram panel and VS Code webview under Chromium; the extension host end to
 end; the packaged VSIX; and the Python renderer. It excludes licensed MATLAB
 runtime work and long benchmarks, which do not belong in a pull-request gate.
 
+## Where each result comes from
+
+The report is organised by question, so it does not carry the experiment
+numbers the protocols and result files use. They map like this.
+
+| Section of the report | Experiment | Results |
+|---|---|---|
+| Waveforms and k-space, against official Pulseq MATLAB | E3 | `e3_eleven_sequence/` |
+| First moment, against a closed-form integral | E8 | `e8_m1/` |
+| Spectrogram and acoustic analysis | E9 | `e9_spectrogram/` |
+| RF response, against a Bloch propagator | E10 | `e10_rf_response/` |
+| Viewport detail | E11 | `e11_viewport_detail/` |
+| Does binary mean the same as text? | E1, E2 | `e1_e7_parser/`, `e2_browser/` |
+| What binary input changes | E7 | `e1_e7_parser/` |
+| How ready time scales with sequence size | Figure 2B-C | `figure2b-c/` |
+| The same workflow in three tools | Figure 2B-D | `figure2b-d/` |
+| Four environments, plus mobile | E4 | `e4_hosts/` |
+
+Paths are under `abstracts/experiments/results/rerun_2026-09/` in the workspace,
+and each result names the protocol that declared it.
+
 ## Version history
 
 The plugin moved during this work, and each result records the build that

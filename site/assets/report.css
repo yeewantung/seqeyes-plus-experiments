@@ -135,6 +135,15 @@ aside a:focus-visible {
   font-size: 12.5px;
 }
 
+.toc-level-4 {
+  padding-left: 26px;
+}
+
+.toc-level-4 a {
+  color: var(--muted);
+  font-size: 12px;
+}
+
 main {
   min-width: 0;
 }
