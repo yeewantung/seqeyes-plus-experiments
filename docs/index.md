@@ -15,7 +15,7 @@ This is the evidence behind it: what was tested, how, and what the results were.
 
 ## Demos
 
-### Zoom, from the whole sequence to a few TRs
+### 🔬 Zoom, from the whole sequence to a few TRs
 
 <video src="downloads/demos/demo-zoom.webm" poster="downloads/demos/demo-zoom-tr.png"
        controls muted loop playsinline width="100%"></video>
@@ -41,7 +41,7 @@ calls the display path. 721,952 samples matched bit for bit. See
 experiment</a>.
 </details>
 
-### K-space you can turn over
+### 🌐 K-space you can turn over
 
 <video src="downloads/demos/demo-kspace.webm" poster="downloads/demos/demo-kspace.png"
        controls muted loop playsinline width="100%"></video>
@@ -66,7 +66,7 @@ stops. The plugin's browser suite asserts that, along with the rotation pivot
 and that panning tracks the cursor within a pixel.
 </details>
 
-### Sequence spectrogram, with the sound
+### 🎧 Sequence spectrogram, with the sound
 
 <div class="figure-placeholder">Spectrogram audition video — recording pending</div>
 
@@ -82,7 +82,7 @@ short-time Fourier transform: 16,845,534 cells, all within its limit. See
 <a href="#spectrogram-and-acoustic-analysis">the spectrogram experiment</a>.
 </details>
 
-### The same engine, four places
+### 🧩 The same engine, four places
 
 <div class="figure-placeholder">Four-platform composite — VS Code and MATLAB panels pending</div>
 
@@ -178,12 +178,22 @@ signal's full scale.
 
 ## Results
 
-Every numerical experiment came in under the limit it declared before it ran.
-How far under is the figure below: E3, the tightest, by a factor of 8; E10, the
-loosest, by a factor of 5.4 billion.
+Each numerical experiment fixes a **limit** before it runs: the largest
+disagreement with its independent reference that will still count as agreement,
+recorded together with the reason for that value.
 
-<img src="downloads/figures/results-margins.svg"
-     alt="How far under its declared limit each numerical result came in, on a logarithmic axis: E3 a factor of 8, E11 68, E9 forty thousand, E8 one hundred sixty million, E10 five point four billion.">
+The k-space comparison makes it concrete. SeqEyes-Plus and Pulseq MATLAB each
+expand the same file into a trajectory; subtracting them coordinate by
+coordinate across 3,383,700 ADC samples leaves a largest difference of
+**1.19e-6 1/m**. The limit set beforehand was 1e-5 1/m, an error far below
+anything that reaches a reconstructed image. The measurement is under the limit,
+so the two implementations agree by a standard fixed before either one ran.
+
+Every numerical experiment came in under its limit. How far under differs by
+nine orders of magnitude across them, and that spread is a fact about the limits
+rather than about the results: one limit is the error that would change an
+image, another is the resolution of a float32. Each experiment reports its own
+measurement against its own limit, in its own units.
 
 | Group | Experiments | Result |
 |---|---:|---|
@@ -200,7 +210,7 @@ maps each section here to the protocol and result files behind it.
 
 ### Numerical accuracy
 
-#### Waveforms and k-space, against official Pulseq MATLAB
+#### 🌀 Waveforms and k-space, against official Pulseq MATLAB
 
 **The question.** Does SeqEyes-Plus expand a sequence into the same waveforms
 and the same k-space trajectory as the reference implementation the Pulseq
@@ -224,7 +234,7 @@ commit than the frozen evidence used, so the result speaks for the current pair.
 **The result.** 11/11 passed. The worst k-space error was **1.19e-6 1/m** on ZTE
 PETRA, a sequence carrying 3,383,700 ADC samples, against a 1e-5 1/m limit.
 
-#### First moment, against a closed-form integral
+#### 🧮 First moment, against a closed-form integral
 
 **The question.** Is the M1 calculation right, independently of how it is
 implemented?
@@ -245,7 +255,7 @@ reference and the implementation share a floating-point mistake.
 to those recorded against v0.2.8, so the M1 path has not moved through the
 entire v0.3.x line.
 
-#### Spectrogram and acoustic analysis
+#### 🔊 Spectrogram and acoustic analysis
 
 **The question.** Does the gradient spectrogram compute what a short-time
 Fourier transform of the same signal computes, and does forbidden-band screening
@@ -273,7 +283,7 @@ of the matrix maximum. Acoustic band tables and out-of-range counts matched an
 independent parse exactly, including a profile carrying a decoy band under a
 different key prefix and a zero-frequency padding entry.
 
-#### RF response, against a Bloch propagator
+#### 🧲 RF response, against a Bloch propagator
 
 **The question.** Are the estimated band centres, per-band flip angle and
 M<sub>z</sub> right for a multiband or adiabatic pulse?
@@ -304,7 +314,7 @@ for the hypersecant case - 287.145 degrees of carrier area, 175.95 degrees of
 polar response, M<sub>z</sub> = -0.9975 - independently reproducing them as
 287.1448, 175.9515 and -0.997505.
 
-#### Viewport detail: does the drawing tell the truth?
+#### 🔍 Viewport detail: does the drawing tell the truth?
 
 **The question.** When the viewer draws a waveform, is what appears on screen
 the data, or a summary of it?
@@ -344,7 +354,7 @@ lanes duplicate, and what
 
 ### Format equivalence
 
-#### Does binary mean the same as text?
+#### ⚖️ Does binary mean the same as text?
 
 **The question.** A `.bseq` file is meant to be the same sequence as its `.seq`
 counterpart. Is it?
@@ -381,7 +391,7 @@ per-sequence measurement, and a hypothesis about its cause.
 Three timing experiments, all on one Apple M3 Pro at the recorded software
 versions.
 
-#### What binary input changes
+#### ⚡ What binary input changes
 
 **The question.** Binary files parse faster and take less space. By how much,
 and does that make the viewer faster?
@@ -408,7 +418,7 @@ sample spread reaches 23-870% of the median, so a single run cannot separate a
 version difference from ordinary variation. A repeat run put all three inside
 their own noise, and the aggregate moved by 0.010x against a 0.061x noise floor.
 
-#### How ready time scales with sequence size
+#### 📈 How ready time scales with sequence size
 
 This is Figure 2B-C of the abstract.
 
@@ -429,7 +439,7 @@ the slope came out 0.311, which would have read as a large regression in scaling
 and was entirely an artifact of the measurement point. The endpoint is
 reconstructed from in-page marks alone.
 
-#### The same workflow in three tools
+#### ⏱️ The same workflow in three tools
 
 This is Figure 2B-D of the abstract.
 
@@ -486,7 +496,7 @@ as the numbers above.
 
 ### Workflow and platform
 
-#### Four environments, plus mobile
+#### 🖥️ Four environments, plus mobile
 
 **The question.** Can a sequence be inspected without leaving the environment it
 was developed in?

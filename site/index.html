@@ -23,29 +23,29 @@
     <aside>
       <div class="toc-title">Contents</div>
       <nav aria-label="Page contents"><ol><li class="toc-level-2"><a href="#demos">Demos</a></li>
-<li class="toc-level-3"><a href="#zoom-from-the-whole-sequence-to-a-few-trs">Zoom, from the whole sequence to a few TRs</a></li>
-<li class="toc-level-3"><a href="#k-space-you-can-turn-over">K-space you can turn over</a></li>
-<li class="toc-level-3"><a href="#sequence-spectrogram-with-the-sound">Sequence spectrogram, with the sound</a></li>
-<li class="toc-level-3"><a href="#the-same-engine-four-places">The same engine, four places</a></li>
+<li class="toc-level-3"><a href="#zoom-from-the-whole-sequence-to-a-few-trs">🔬 Zoom, from the whole sequence to a few TRs</a></li>
+<li class="toc-level-3"><a href="#k-space-you-can-turn-over">🌐 K-space you can turn over</a></li>
+<li class="toc-level-3"><a href="#sequence-spectrogram-with-the-sound">🎧 Sequence spectrogram, with the sound</a></li>
+<li class="toc-level-3"><a href="#the-same-engine-four-places">🧩 The same engine, four places</a></li>
 <li class="toc-level-2"><a href="#how-seqeyes-plus-was-tested">How SeqEyes-Plus was tested</a></li>
 <li class="toc-level-3"><a href="#compared-against-something-that-is-not-seqeyes-plus">Compared against something that is not SeqEyes-Plus</a></li>
 <li class="toc-level-3"><a href="#the-reference-had-to-prove-itself-first">The reference had to prove itself first</a></li>
 <li class="toc-level-3"><a href="#every-limit-was-fixed-before-the-measurement">Every limit was fixed before the measurement</a></li>
 <li class="toc-level-2"><a href="#results">Results</a></li>
 <li class="toc-level-3"><a href="#numerical-accuracy">Numerical accuracy</a></li>
-<li class="toc-level-4"><a href="#waveforms-and-k-space-against-official-pulseq-matlab">Waveforms and k-space, against official Pulseq MATLAB</a></li>
-<li class="toc-level-4"><a href="#first-moment-against-a-closed-form-integral">First moment, against a closed-form integral</a></li>
-<li class="toc-level-4"><a href="#spectrogram-and-acoustic-analysis">Spectrogram and acoustic analysis</a></li>
-<li class="toc-level-4"><a href="#rf-response-against-a-bloch-propagator">RF response, against a Bloch propagator</a></li>
-<li class="toc-level-4"><a href="#viewport-detail-does-the-drawing-tell-the-truth">Viewport detail: does the drawing tell the truth?</a></li>
+<li class="toc-level-4"><a href="#waveforms-and-k-space-against-official-pulseq-matlab">🌀 Waveforms and k-space, against official Pulseq MATLAB</a></li>
+<li class="toc-level-4"><a href="#first-moment-against-a-closed-form-integral">🧮 First moment, against a closed-form integral</a></li>
+<li class="toc-level-4"><a href="#spectrogram-and-acoustic-analysis">🔊 Spectrogram and acoustic analysis</a></li>
+<li class="toc-level-4"><a href="#rf-response-against-a-bloch-propagator">🧲 RF response, against a Bloch propagator</a></li>
+<li class="toc-level-4"><a href="#viewport-detail-does-the-drawing-tell-the-truth">🔍 Viewport detail: does the drawing tell the truth?</a></li>
 <li class="toc-level-3"><a href="#format-equivalence">Format equivalence</a></li>
-<li class="toc-level-4"><a href="#does-binary-mean-the-same-as-text">Does binary mean the same as text?</a></li>
+<li class="toc-level-4"><a href="#does-binary-mean-the-same-as-text">⚖️ Does binary mean the same as text?</a></li>
 <li class="toc-level-3"><a href="#scale-and-performance">Scale and performance</a></li>
-<li class="toc-level-4"><a href="#what-binary-input-changes">What binary input changes</a></li>
-<li class="toc-level-4"><a href="#how-ready-time-scales-with-sequence-size">How ready time scales with sequence size</a></li>
-<li class="toc-level-4"><a href="#the-same-workflow-in-three-tools">The same workflow in three tools</a></li>
+<li class="toc-level-4"><a href="#what-binary-input-changes">⚡ What binary input changes</a></li>
+<li class="toc-level-4"><a href="#how-ready-time-scales-with-sequence-size">📈 How ready time scales with sequence size</a></li>
+<li class="toc-level-4"><a href="#the-same-workflow-in-three-tools">⏱️ The same workflow in three tools</a></li>
 <li class="toc-level-3"><a href="#workflow-and-platform">Workflow and platform</a></li>
-<li class="toc-level-4"><a href="#four-environments-plus-mobile">Four environments, plus mobile</a></li>
+<li class="toc-level-4"><a href="#four-environments-plus-mobile">🖥️ Four environments, plus mobile</a></li>
 <li class="toc-level-2"><a href="#try-it">Try it</a></li></ol></nav>
     </aside>
     <main id="report"><article><h1 id="seqeyes-plus">SeqEyes-Plus</h1>
@@ -60,7 +60,7 @@ inline in Jupyter. It extends the SeqEyes lineage, designed from experience with
 SeqEyes Qt, with no Qt or C++ dependency.</p>
 <p>This is the evidence behind it: what was tested, how, and what the results were.</p>
 <h2 id="demos">Demos</h2>
-<h3 id="zoom-from-the-whole-sequence-to-a-few-trs">Zoom, from the whole sequence to a few TRs</h3>
+<h3 id="zoom-from-the-whole-sequence-to-a-few-trs">🔬 Zoom, from the whole sequence to a few TRs</h3>
 <p><video src="downloads/demos/demo-zoom.webm" poster="downloads/demos/demo-zoom-tr.png"
        controls muted loop playsinline width="100%"></video></p>
 <p>A spiral sequence from its full 5.4 seconds down to three repetitions and back,
@@ -80,7 +80,7 @@ calls the display path. 721,952 samples matched bit for bit. See
 <a href="#viewport-detail-does-the-drawing-tell-the-truth">the detail
 experiment</a>.</p>
 </details>
-<h3 id="k-space-you-can-turn-over">K-space you can turn over</h3>
+<h3 id="k-space-you-can-turn-over">🌐 K-space you can turn over</h3>
 <p><video src="downloads/demos/demo-kspace.webm" poster="downloads/demos/demo-kspace.png"
        controls muted loop playsinline width="100%"></video></p>
 <p>A 3D radial trajectory, all 122,880 acquired points: rotate, zoom toward the
@@ -99,7 +99,7 @@ that draws a strided subset while the camera moves restores every point once it
 stops. The plugin’s browser suite asserts that, along with the rotation pivot
 and that panning tracks the cursor within a pixel.</p>
 </details>
-<h3 id="sequence-spectrogram-with-the-sound">Sequence spectrogram, with the sound</h3>
+<h3 id="sequence-spectrogram-with-the-sound">🎧 Sequence spectrogram, with the sound</h3>
 <div class="figure-placeholder">Spectrogram audition video — recording pending</div>
 <p>The gradient spectrogram over the visible window, with the acoustic resonance
 bands a scanner declares drawn on top, played as audio while a marker crosses
@@ -110,7 +110,7 @@ it.</p>
 short-time Fourier transform: 16,845,534 cells, all within its limit. See
 <a href="#spectrogram-and-acoustic-analysis">the spectrogram experiment</a>.</p>
 </details>
-<h3 id="the-same-engine-four-places">The same engine, four places</h3>
+<h3 id="the-same-engine-four-places">🧩 The same engine, four places</h3>
 <div class="figure-placeholder">Four-platform composite — VS Code and MATLAB panels pending</div>
 <p>Browser, VS Code, MATLAB, and Jupyter, each showing the same sequence through
 the same engine.</p>
@@ -224,11 +224,20 @@ failures were at a single near-zero column. The replacement is the form the
 frozen protocol already uses for gradient comparison - absolute, scaled to the
 signal’s full scale.</p>
 <h2 id="results">Results</h2>
-<p>Every numerical experiment came in under the limit it declared before it ran.
-How far under is the figure below: E3, the tightest, by a factor of 8; E10, the
-loosest, by a factor of 5.4 billion.</p>
-<p><img src="downloads/figures/results-margins.svg"
-     alt="How far under its declared limit each numerical result came in, on a logarithmic axis: E3 a factor of 8, E11 68, E9 forty thousand, E8 one hundred sixty million, E10 five point four billion."></p>
+<p>Each numerical experiment fixes a <strong>limit</strong> before it runs: the largest
+disagreement with its independent reference that will still count as agreement,
+recorded together with the reason for that value.</p>
+<p>The k-space comparison makes it concrete. SeqEyes-Plus and Pulseq MATLAB each
+expand the same file into a trajectory; subtracting them coordinate by
+coordinate across 3,383,700 ADC samples leaves a largest difference of
+<strong>1.19e-6 1/m</strong>. The limit set beforehand was 1e-5 1/m, an error far below
+anything that reaches a reconstructed image. The measurement is under the limit,
+so the two implementations agree by a standard fixed before either one ran.</p>
+<p>Every numerical experiment came in under its limit. How far under differs by
+nine orders of magnitude across them, and that spread is a fact about the limits
+rather than about the results: one limit is the error that would change an
+image, another is the resolution of a float32. Each experiment reports its own
+measurement against its own limit, in its own units.</p>
 <table>
 <thead>
 <tr>
@@ -266,7 +275,7 @@ these experiments found a defect, which was fixed and then confirmed - the
 <a href="appendix.html#version-history">appendix</a> gives the sequence, and
 maps each section here to the protocol and result files behind it.</p>
 <h3 id="numerical-accuracy">Numerical accuracy</h3>
-<h4 id="waveforms-and-k-space-against-official-pulseq-matlab">Waveforms and k-space, against official Pulseq MATLAB</h4>
+<h4 id="waveforms-and-k-space-against-official-pulseq-matlab">🌀 Waveforms and k-space, against official Pulseq MATLAB</h4>
 <p><strong>The question.</strong> Does SeqEyes-Plus expand a sequence into the same waveforms
 and the same k-space trajectory as the reference implementation the Pulseq
 community uses?</p>
@@ -285,7 +294,7 @@ unchanged so this run is comparable to it. The reference itself is at a later
 commit than the frozen evidence used, so the result speaks for the current pair.</p>
 <p><strong>The result.</strong> 11/11 passed. The worst k-space error was <strong>1.19e-6 1/m</strong> on ZTE
 PETRA, a sequence carrying 3,383,700 ADC samples, against a 1e-5 1/m limit.</p>
-<h4 id="first-moment-against-a-closed-form-integral">First moment, against a closed-form integral</h4>
+<h4 id="first-moment-against-a-closed-form-integral">🧮 First moment, against a closed-form integral</h4>
 <p><strong>The question.</strong> Is the M1 calculation right, independently of how it is
 implemented?</p>
 <p><strong>The design.</strong> A Python reference evaluates the exact integral of each
@@ -301,7 +310,7 @@ reference and the implementation share a floating-point mistake.</p>
 <strong>3e-18 s/m</strong> against limits near 1.1e-9. The errors are <strong>bit-identical</strong>
 to those recorded against v0.2.8, so the M1 path has not moved through the
 entire v0.3.x line.</p>
-<h4 id="spectrogram-and-acoustic-analysis">Spectrogram and acoustic analysis</h4>
+<h4 id="spectrogram-and-acoustic-analysis">🔊 Spectrogram and acoustic analysis</h4>
 <p><strong>The question.</strong> Does the gradient spectrogram compute what a short-time
 Fourier transform of the same signal computes, and does forbidden-band screening
 agree with an independent reading of the same profile?</p>
@@ -324,7 +333,7 @@ before it judged anything.</p>
 of the matrix maximum. Acoustic band tables and out-of-range counts matched an
 independent parse exactly, including a profile carrying a decoy band under a
 different key prefix and a zero-frequency padding entry.</p>
-<h4 id="rf-response-against-a-bloch-propagator">RF response, against a Bloch propagator</h4>
+<h4 id="rf-response-against-a-bloch-propagator">🧲 RF response, against a Bloch propagator</h4>
 <p><strong>The question.</strong> Are the estimated band centres, per-band flip angle and
 M<sub>z</sub> right for a multiband or adiabatic pulse?</p>
 <p><strong>The design.</strong> An independent Python propagator rotates the magnetisation
@@ -349,7 +358,7 @@ kept the carrier area correct to 8.2e-15.</p>
 for the hypersecant case - 287.145 degrees of carrier area, 175.95 degrees of
 polar response, M<sub>z</sub> = -0.9975 - independently reproducing them as
 287.1448, 175.9515 and -0.997505.</p>
-<h4 id="viewport-detail-does-the-drawing-tell-the-truth">Viewport detail: does the drawing tell the truth?</h4>
+<h4 id="viewport-detail-does-the-drawing-tell-the-truth">🔍 Viewport detail: does the drawing tell the truth?</h4>
 <p><strong>The question.</strong> When the viewer draws a waveform, is what appears on screen
 the data, or a summary of it?</p>
 <p><strong>The design.</strong> The detail path dispatches three ways by window size: every
@@ -381,7 +390,7 @@ exposes no accessor for the drawn values. Dispatch and geometry are what the
 lanes duplicate, and what
 <a href="appendix.html#a-defect-these-experiments-found">drifted</a>.</p>
 <h3 id="format-equivalence">Format equivalence</h3>
-<h4 id="does-binary-mean-the-same-as-text">Does binary mean the same as text?</h4>
+<h4 id="does-binary-mean-the-same-as-text">⚖️ Does binary mean the same as text?</h4>
 <p><strong>The question.</strong> A <code>.bseq</code> file is meant to be the same sequence as its <code>.seq</code>
 counterpart. Is it?</p>
 <p><strong>The design.</strong> 37 paired files are read by both readers. E1 compares the parsed
@@ -410,7 +419,7 @@ per-sequence measurement, and a hypothesis about its cause.</p>
 <h3 id="scale-and-performance">Scale and performance</h3>
 <p>Three timing experiments, all on one Apple M3 Pro at the recorded software
 versions.</p>
-<h4 id="what-binary-input-changes">What binary input changes</h4>
+<h4 id="what-binary-input-changes">⚡ What binary input changes</h4>
 <p><strong>The question.</strong> Binary files parse faster and take less space. By how much,
 and does that make the viewer faster?</p>
 <p><strong>The design.</strong> Both files of each pair are parsed from bytes already in memory,
@@ -430,7 +439,7 @@ numbers appeared to show 20-37% regressions on three sequences. Within-run
 sample spread reaches 23-870% of the median, so a single run cannot separate a
 version difference from ordinary variation. A repeat run put all three inside
 their own noise, and the aggregate moved by 0.010x against a 0.061x noise floor.</p>
-<h4 id="how-ready-time-scales-with-sequence-size">How ready time scales with sequence size</h4>
+<h4 id="how-ready-time-scales-with-sequence-size">📈 How ready time scales with sequence size</h4>
 <p>This is Figure 2B-C of the abstract.</p>
 <p><strong>The design.</strong> File-input-to-ready time for each <code>.bseq</code>, against the ADC sample
 count, fitted log-log. The fit is descriptive: ADC count is one term in the
@@ -445,7 +454,7 @@ flattens its slope, most where the underlying time is smallest: fitted that way
 the slope came out 0.311, which would have read as a large regression in scaling
 and was entirely an artifact of the measurement point. The endpoint is
 reconstructed from in-page marks alone.</p>
-<h4 id="the-same-workflow-in-three-tools">The same workflow in three tools</h4>
+<h4 id="the-same-workflow-in-three-tools">⏱️ The same workflow in three tools</h4>
 <p>This is Figure 2B-D of the abstract.</p>
 <p><strong>The question.</strong> How long does the same inspection workflow take in each tool:
 read a sequence, plot its waveforms, calculate the ADC k-space, and draw the 3D
@@ -509,7 +518,7 @@ PyPulseq’s denominator is 32 and MATLAB’s is 36.</p>
 measured when one formula covered different work. They are not the same quantity
 as the numbers above.</p>
 <h3 id="workflow-and-platform">Workflow and platform</h3>
-<h4 id="four-environments-plus-mobile">Four environments, plus mobile</h4>
+<h4 id="four-environments-plus-mobile">🖥️ Four environments, plus mobile</h4>
 <p><strong>The question.</strong> Can a sequence be inspected without leaving the environment it
 was developed in?</p>
 <p><strong>The design.</strong> Each host is exercised on its own terms: the standalone viewer

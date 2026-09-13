@@ -34,7 +34,6 @@ const resultsRoot = path.join(
 
 const PUBLISHED = {
   "downloads/figures": [
-    "results-margins.svg",
     "results-scaling.svg",
     "results-cross-tool-components.svg",
     "results-parser-speedup.svg",
